@@ -36,7 +36,7 @@ export function getCatalystPointer(collection: Collection, item: Item) {
   if (!collection.contractAddress || !item.tokenId) {
     throw new Error('You need the collection and item to be published to get the catalyst entity id')
   }
-  return `${collection.contractAddress}-${item.tokenId}`
+  return `urn:decentraland:mumbai:collections-v2:${collection.contractAddress}:${item.tokenId}`
 }
 
 export function getBodyShapeType(item: Item) {
