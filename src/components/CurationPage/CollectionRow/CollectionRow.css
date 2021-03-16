@@ -44,8 +44,7 @@
   text-transform: uppercase;
 }
 
-.CollectionRow .image-column,
-.CollectionRow .action {
+.CollectionRow .image-column{
   display: flex;
   align-items: center;
 }
