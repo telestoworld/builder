@@ -117,6 +117,7 @@ function getAvatar(): Entity {
     avatarShape.eyeColor = new Color4(0.8671875, 0.6953125, 0.5625, 1)
     avatarShape.name = 'Builder Avatar'
     avatarShape.wearables = []
+    avatarShape.bodyShape = avatarShape.bodyShape.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/')
     avatar.addComponent(avatarShape)
     engine.addEntity(avatar)
   }

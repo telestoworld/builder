@@ -618,7 +618,7 @@ function handleEntitiesOutOfBoundaries(args: { entities: string[] }) {
 
 function* getDefaultWearables() {
   const bodyShape: WearableBodyShape = yield select(getBodyShape)
-  return (bodyShape === WearableBodyShape.MALE ? maleAvatar : femaleAvatar) as Wearable[]
+  return ((bodyShape === WearableBodyShape.MALE ? maleAvatar : femaleAvatar) as Wearable[]).map(w => ({ ...w, id: w.id.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/') }))
 }
 
 function* renderAvatar() {
@@ -627,6 +627,7 @@ function* renderAvatar() {
     const defaultWearables = yield getDefaultWearables()
     const wearables = mergeWearables(defaultWearables, visibleItems.map(toWearable))
     const animation = yield select(getAvatarAnimation)
+    console.log('aaaaa', wearables)
     yield call(async () => {
       editorWindow.editor.addWearablesToCatalog(wearables)
       editorWindow.editor.sendExternalAction(updateAvatar(wearables, animation))
