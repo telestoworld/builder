@@ -18,6 +18,7 @@ import {
   fetchCollectionFailure,
   FETCH_COLLECTION_REQUEST,
   SaveCollectionRequestAction,
+  saveCollectionRequest,
   saveCollectionSuccess,
   saveCollectionFailure,
   SAVE_COLLECTION_REQUEST,
@@ -59,6 +60,7 @@ import { setItemsTokenIdRequest, deployItemContentsRequest, FETCH_ITEMS_SUCCESS 
 import { locations } from 'routing/locations'
 import { getCollectionId } from 'modules/location/selectors'
 import { builder } from 'lib/api/builder'
+import { forum } from 'lib/api/forum'
 import { closeModal } from 'modules/modal/actions'
 import { Item } from 'modules/item/types'
 import { getWalletItems } from 'modules/item/selectors'
@@ -315,6 +317,14 @@ function* handleTransactionSuccess(action: FetchTransactionSuccessAction) {
         const items: Item[] = yield select(state => getCollectionItems(state, collectionId))
 
         yield deployItems(collection, items)
+
+        const forumLink: string = yield call(() =>
+          forum.create({
+            title: `Review collection: "${collection.name}"`,
+            raw: `Collection can be found at ${location.origin}${locations.itemEditor({ collectionId: collection.id })}`
+          })
+        )
+        yield put(saveCollectionRequest({ ...collection, forumLink }))
         break
       }
       default: {
