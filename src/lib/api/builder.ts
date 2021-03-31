@@ -17,6 +17,7 @@ import { Collection } from 'modules/collection/types'
 import { PreviewType } from 'modules/editor/types'
 import { WeeklyStats } from 'modules/stats/types'
 import { authorize } from './auth'
+import { ForumPost } from 'modules/forum/types'
 
 export const BUILDER_SERVER_URL = env.get('REACT_APP_BUILDER_SERVER_URL', '')
 
@@ -623,6 +624,10 @@ export class BuilderAPI extends BaseAPI {
 
   async getCommittee(): Promise<string[]> {
     return this.request('get', '/committee')
+  }
+
+  async createCollectionForumPost(collection: Collection, forumPost: ForumPost): Promise<string> {
+    return this.request('post', `/collections/${collection.id}/post`, { forumPost })
   }
 }
 
