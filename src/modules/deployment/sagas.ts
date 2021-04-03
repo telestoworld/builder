@@ -1,7 +1,7 @@
-import { CatalystClient, DeploymentWithMetadataContentAndPointers } from 'dcl-catalyst-client'
-import { utils } from 'decentraland-commons'
-import { Omit } from 'decentraland-dapps/dist/lib/types'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { CatalystClient, DeploymentWithMetadataContentAndPointers } from 'tw-catalyst-client'
+import { utils } from 'telestoworld-commons'
+import { Omit } from 'telestoworld-dapps/dist/lib/types'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { takeLatest, put, select, call, take } from 'redux-saga/effects'
 import { getData as getDeployments } from 'modules/deployment/selectors'
 import { getCurrentProject, getData as getProjects } from 'modules/project/selectors'
@@ -13,7 +13,7 @@ import {
   deployToPoolFailure,
   deployToPoolSuccess,
   setProgress,
-  DEPLOY_TO_LAND_REQUEST,
+  DEPLOY_TO_SPACE_REQUEST,
   deployToLandFailure,
   DeployToLandRequestAction,
   DeployToPoolRequestAction,
@@ -44,10 +44,10 @@ import { getIdentity } from 'modules/identity/utils'
 import { isLoggedIn } from 'modules/identity/selectors'
 import { getName } from 'modules/profile/selectors'
 import { getEmptyDeployment, getThumbnail, UNPUBLISHED_PROJECT_ID } from './utils'
-import { FETCH_LANDS_SUCCESS, FetchLandsSuccessAction } from 'modules/land/actions'
+import { FETCH_SPACES_SUCCESS, FetchLandsSuccessAction } from 'modules/land/actions'
 import { LandType } from 'modules/land/types'
 import { coordsToId, idToCoords } from 'modules/land/utils'
-import { getCoordsByEstateId } from 'modules/land/selectors'
+import { getCoordsBySectorId } from 'modules/land/selectors'
 
 type UnwrapPromise<T> = T extends PromiseLike<infer U> ? U : T
 
@@ -59,10 +59,10 @@ const handleProgress = (type: ProgressStage) => (args: { loaded: number; total: 
 
 export function* deploymentSaga() {
   yield takeLatest(DEPLOY_TO_POOL_REQUEST, handleDeployToPoolRequest)
-  yield takeLatest(DEPLOY_TO_LAND_REQUEST, handleDeployToLandRequest)
+  yield takeLatest(DEPLOY_TO_SPACE_REQUEST, handleDeployToLandRequest)
   yield takeLatest(CLEAR_DEPLOYMENT_REQUEST, handleClearDeploymentRequest)
   yield takeLatest(FETCH_DEPLOYMENTS_REQUEST, handleFetchDeploymentsRequest)
-  yield takeLatest(FETCH_LANDS_SUCCESS, handleFetchLandsSuccess)
+  yield takeLatest(FETCH_SPACES_SUCCESS, handleFetchLandsSuccess)
 }
 
 function* handleDeployToPoolRequest(action: DeployToPoolRequestAction) {
@@ -241,9 +241,9 @@ function* handleFetchLandsSuccess(action: FetchLandsSuccessAction) {
         break
       }
       case LandType.ESTATE: {
-        const coordsByEstateId = yield select(getCoordsByEstateId)
-        if (land.id in coordsByEstateId) {
-          for (const coord of coordsByEstateId[land.id]) {
+        const coordsBySectorId = yield select(getCoordsBySectorId)
+        if (land.id in coordsBySectorId) {
+          for (const coord of coordsBySectorId[land.id]) {
             coords.push(coord)
           }
         }

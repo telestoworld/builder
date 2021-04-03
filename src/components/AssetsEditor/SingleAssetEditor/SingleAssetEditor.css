@@ -44,20 +44,20 @@
   padding: 0px;
 }
 
-.SingleAssetEditor .dcl.field {
+.SingleAssetEditor .tw.field {
   margin-bottom: 10px;
 }
 
-.SingleAssetEditor .dcl.tag-field {
+.SingleAssetEditor .tw.tag-field {
   height: 120px;
 }
 
-.SingleAssetEditor .dcl.tag-field .container {
+.SingleAssetEditor .tw.tag-field .container {
   overflow-x: auto;
   width: 415px;
 }
 
-.SingleAssetEditor .dcl.tag-field .ui.dropdown {
+.SingleAssetEditor .tw.tag-field .ui.dropdown {
   width: max-content;
   min-width: 100%;
 }
@@ -85,6 +85,6 @@
   height: 20px;
 }
 
-.SingleAssetEditor .dcl.select-field .ui.dropdown .text {
+.SingleAssetEditor .tw.select-field .ui.dropdown .text {
   text-transform: capitalize;
 }

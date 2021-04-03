@@ -5,7 +5,7 @@ import { Asset } from 'modules/asset/types'
 import { Project } from 'modules/project/types'
 import { AvatarAnimation, Gizmo, OpenEditorOptions, PreviewType } from './types'
 import { Item, WearableBodyShape } from 'modules/item/types'
-import { Wearable } from 'decentraland-ecs'
+import { Wearable } from 'telestoworld-ecs'
 
 // Bind keyboard shortcuts
 

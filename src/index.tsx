@@ -5,9 +5,9 @@ import { ConnectedRouter } from 'connected-react-router'
 import { DragDropContextProvider } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
 
-import TranslationProvider from 'decentraland-dapps/dist/providers/TranslationProvider'
-import ModalProvider from 'decentraland-dapps/dist/providers/ModalProvider'
-import WalletProvider from 'decentraland-dapps/dist/providers/WalletProvider'
+import TranslationProvider from 'telestoworld-dapps/dist/providers/TranslationProvider'
+import ModalProvider from 'telestoworld-dapps/dist/providers/ModalProvider'
+import WalletProvider from 'telestoworld-dapps/dist/providers/WalletProvider'
 
 import { store, history } from 'modules/common/store'
 import * as modals from 'components/Modals'

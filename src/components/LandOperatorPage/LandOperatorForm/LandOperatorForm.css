@@ -1,4 +1,4 @@
-.LandOperatorForm.ui.form .dcl.field .ui.input.revoked input {
+.LandOperatorForm.ui.form .tw.field .ui.input.revoked input {
   text-decoration: line-through;
   color: var(--secondary-text);
 }
@@ -7,12 +7,12 @@
   margin-right: 16px;
 }
 
-.LandOperatorForm.ui.form .dcl.field .ui.input input {
+.LandOperatorForm.ui.form .tw.field .ui.input input {
   font-size: 16px;
   line-height: 20px;
   text-overflow: ellipsis;
 }
 
-.LandOperatorForm.ui.form .dcl.field .ui.input.is-revokable input {
+.LandOperatorForm.ui.form .tw.field .ui.input.is-revokable input {
   padding-right: 86px;
 }

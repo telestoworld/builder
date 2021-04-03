@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { ProviderType } from 'decentraland-connect'
-import LoginModal from 'decentraland-dapps/dist/containers/LoginModal'
+import { ProviderType } from 'telestoworld-connect'
+import LoginModal from 'telestoworld-dapps/dist/containers/LoginModal'
 import { Props } from './WalletLoginModal.types'
 
 export default class WalletLoginModal extends React.PureComponent<Props> {

@@ -1,12 +1,12 @@
 import { createSelector } from 'reselect'
-import { getData } from 'decentraland-dapps/dist/modules/transaction/selectors'
-import { isPending } from 'decentraland-dapps/dist/modules/transaction/utils'
-import { Transaction } from 'decentraland-dapps/dist/modules/transaction/types'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { getData } from 'telestoworld-dapps/dist/modules/transaction/selectors'
+import { isPending } from 'telestoworld-dapps/dist/modules/transaction/utils'
+import { Transaction } from 'telestoworld-dapps/dist/modules/transaction/types'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { RootState } from 'modules/common/types'
 import { isEqual } from 'lib/address'
 
-export * from 'decentraland-dapps/dist/modules/transaction/selectors'
+export * from 'telestoworld-dapps/dist/modules/transaction/selectors'
 
 export const getTransactionsByType = (state: RootState, address: string, type: string): Transaction[] =>
   getData(state).filter(tx => isEqual(tx.from, address) && tx.actionType === type)

@@ -2,7 +2,7 @@ import { takeLatest, put, call, fork } from 'redux-saga/effects'
 import { builder } from 'lib/api/builder'
 import { LOAD_POOL_GROUPS_REQUEST, LoadPoolGroupsRequestAction, loadPoolGroupsFailure, loadPoolGroupsSuccess, loadPoolGroupsRequest } from './actions'
 import { PoolGroup } from './types'
-import { ModelById } from 'decentraland-dapps/dist/lib/types'
+import { ModelById } from 'telestoworld-dapps/dist/lib/types'
 
 export function* poolGroupSaga() {
   yield fork(handlePoolGroups)

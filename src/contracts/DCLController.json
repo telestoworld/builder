@@ -2,7 +2,7 @@
   {
     "inputs": [
       { "internalType": "contract IERC20Token", "name": "_acceptedToken", "type": "address" },
-      { "internalType": "contract IDCLRegistrar", "name": "_registrar", "type": "address" }
+      { "internalType": "contract ITWRegistrar", "name": "_registrar", "type": "address" }
     ],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -98,7 +98,7 @@
     "constant": true,
     "inputs": [],
     "name": "registrar",
-    "outputs": [{ "internalType": "contract IDCLRegistrar", "name": "", "type": "address" }],
+    "outputs": [{ "internalType": "contract ITWRegistrar", "name": "", "type": "address" }],
     "payable": false,
     "stateMutability": "view",
     "type": "function"

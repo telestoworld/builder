@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Layer, Dropdown, Button, Icon } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Layer, Dropdown, Button, Icon } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { idToCoords, coordsToId, hoverStrokeByRole, hoverFillByRole } from 'modules/land/utils'
 import { locations } from 'routing/locations'
 import { getStatus } from 'modules/deployment/utils'

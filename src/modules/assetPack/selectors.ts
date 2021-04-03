@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
-import { env } from 'decentraland-commons'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
+import { env } from 'telestoworld-commons'
 import { RootState } from 'modules/common/types'
 import { COLLECTIBLE_ASSET_PACK_ID } from 'modules/ui/sidebar/utils'
 import { AssetPackState } from './reducer'

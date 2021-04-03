@@ -63,17 +63,17 @@
   text-align: center;
 }
 
-.MobilePage .dcl.hero.secondary-hero {
+.MobilePage .tw.hero.secondary-hero {
   padding: 64px 24px;
 }
 
-.MobilePage .dcl.hero.secondary-hero .primary {
+.MobilePage .tw.hero.secondary-hero .primary {
   width: 275px;
   padding-left: 16px;
   padding-right: 16px;
 }
 
-.MobilePage .dcl.hero.secondary-hero .background {
+.MobilePage .tw.hero.secondary-hero .background {
   height: 100%;
   background-image: var(--metaverse-gradient);
 }
@@ -140,7 +140,7 @@
     margin-right: 12px;
   }
 
-  .MobilePage .dcl.hero {
+  .MobilePage .tw.hero {
     padding: 100px 100px 232px 100px;
   }
 

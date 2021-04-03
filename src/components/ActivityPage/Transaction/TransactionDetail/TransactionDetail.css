@@ -29,7 +29,7 @@
   flex: none;
 }
 
-.TransactionDetail .left .image .dcl.mana {
+.TransactionDetail .left .image .tw.telo {
   font-size: 48px;
   height: 48px;
   padding-top: 10px;
@@ -50,7 +50,7 @@
   text-overflow: ellipsis;
 }
 
-.TransactionDetail .left .description .dcl.blockie {
+.TransactionDetail .left .description .tw.blockie {
   margin-left: 3px;
 }
 
@@ -100,7 +100,7 @@
   display: none;
 }
 
-.TransactionDetail .left .image .Profile.blockie.huge .dcl.blockie {
+.TransactionDetail .left .image .Profile.blockie.huge .tw.blockie {
   margin: 0px;
 }
 

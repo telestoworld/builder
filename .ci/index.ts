@@ -1,9 +1,9 @@
-import { env, envTLD } from 'dcl-ops-lib/domain'
-import { buildStatic } from 'dcl-ops-lib/buildStatic'
+import { env, envTLD } from 'tw-ops-lib/domain'
+import { buildStatic } from 'tw-ops-lib/buildStatic'
 
 async function main() {
   const builder = buildStatic({
-    domain: `builder.decentraland.${env === 'prd' ? 'org' : envTLD}`,
+    domain: `builder.telestoworld.${env === 'prd' ? 'org' : envTLD}`,
     defaultPath: 'index.html',
   })
 

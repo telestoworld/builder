@@ -1,15 +1,15 @@
 import { Coord } from 'react-tile-map'
-import { Color } from 'decentraland-ui'
+import { Color } from 'telestoworld-ui'
 import { Eth } from 'web3x-es/eth'
 import { Address } from 'web3x-es/address'
 import { getEth } from 'modules/wallet/utils'
-import { LAND_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
-import { EstateRegistry } from 'contracts/EstateRegistry'
-import { LANDRegistry } from 'contracts/LANDRegistry'
+import { SPACE_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
+import { SectorRegistry } from 'contracts/SectorRegistry'
+import { SPACERegistry } from 'contracts/SPACERegistry'
 import { isZero } from 'lib/address'
 import { Land, LandTile, LandType, RoleType } from './types'
 
-export const LAND_POOL_ADDRESS = '0xDc13378daFca7Fe2306368A16BCFac38c80BfCAD'
+export const SPACE_POOL_ADDRESS = '0xDc13378daFca7Fe2306368A16BCFac38c80BfCAD'
 
 export const MAX_PARCELS_PER_TX = 20
 
@@ -66,7 +66,7 @@ export const getUpdateOperator = async (land: Land) => {
   try {
     switch (land.type) {
       case LandType.PARCEL: {
-        const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+        const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
         const tokenId = await landRegistry.methods.encodeTokenId(land.x!, land.y!).call()
         const updateOperator = await landRegistry.methods.updateOperator(tokenId).call()
         const address = updateOperator.toString()
@@ -74,7 +74,7 @@ export const getUpdateOperator = async (land: Land) => {
       }
 
       case LandType.ESTATE: {
-        const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+        const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
         const updateOperator = await estateRegistry.methods.updateOperator(land.id).call()
         const address = updateOperator.toString()
         return isZero(address) ? null : address

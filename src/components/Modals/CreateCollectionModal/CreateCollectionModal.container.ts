@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { RootState } from 'modules/common/types'
 import { getLoading, getError } from 'modules/collection/selectors'
 import { MapStateProps, MapDispatchProps, MapDispatch } from './CreateCollectionModal.types'

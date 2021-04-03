@@ -296,10 +296,10 @@ interface IScript<T extends {}> {
 }
 ```
 
-This interface exposes the two lifecycles of a smart item, and it can be imported from the `decentraland-builder-scripts` package:
+This interface exposes the two lifecycles of a smart item, and it can be imported from the `telestoworld-builder-scripts` package:
 
 ```ts
-import { IScript } from 'decentraland-builder-scripts/types`
+import { IScript } from 'telestoworld-builder-scripts/types`
 
 type Props = {
   // some configuration properties for my item
@@ -318,10 +318,10 @@ export default class MySmartItem extends IScript<Props> {
 
 ### init
 
-The `init` method of a script is called only once, no matter how many instances of the smart item are present in the scene, and should be called as soon as the scene is loaded, providing the required arguments, which consist of an object with an `inventory` instance inside. In order to create an `inventory` instance you can import the implementation from the `decentraland-builder-scripts` package as follows:
+The `init` method of a script is called only once, no matter how many instances of the smart item are present in the scene, and should be called as soon as the scene is loaded, providing the required arguments, which consist of an object with an `inventory` instance inside. In order to create an `inventory` instance you can import the implementation from the `telestoworld-builder-scripts` package as follows:
 
 ```ts
-import { createInventory } from 'decentraland-builder-scripts/inventory'
+import { createInventory } from 'telestoworld-builder-scripts/inventory'
 
 const inventory = createInventory(UICanvas, UIContainerStack, UIImage) // UICanvas, UIContainerStack and UIImage are globally accesible classes from the SDK
 ```
@@ -337,7 +337,7 @@ The `spawn` method of a script is called once per instance of the smart item in 
 - `props`: these are the values for the [parameters](#parameters) configured by the user (ie, using the Builder UI). So for instance lets say our `Door` smart item has a parameter `isLocked` that is of type `boolean` and is used to determine if the door can be opened or not, and the user used the Builder UI to toggle this parameter on, then when we spawn that smart item from our scene we should provide the argument props as `{ isLocked: true }`.
 
 - `channel`: The channel is an abstraction that's used to orchestrate actions between smart items and across peers in the same scene. In order to spawn a smart item we always need to provide a channel instance (the next section explains how to use the `channel` from within a smart item).
-In order to instantiate a `channel` to be able to `spawn` a smart item, we can use the `createChannel` implementation from `decentraland-builder-scripts`. We will need the following arguments:  
+In order to instantiate a `channel` to be able to `spawn` a smart item, we can use the `createChannel` implementation from `telestoworld-builder-scripts`. We will need the following arguments:  
   - `peerId`: This is an `id` that should be that same for all the channels in the scene, but different between scenes running on different peers (browsers). We can just create a random id when the scene is started and use that one on all our channels for that scene.  
   - `host`: The `entity` that's used as host for the smart item instance.  
   - `bus`: a `MessageBus` instance, it should be the same for all the channels in a scene.
@@ -348,8 +348,8 @@ In order to instantiate a `channel` to be able to `spawn` a smart item, we can u
   /* src/game.ts */
 
   // import helpers
-  import { createInventory } from 'decentraland-builder-scripts/inventory'
-  import { createChannel } from 'decentraland-builder-scripts/channel'
+  import { createInventory } from 'telestoworld-builder-scripts/inventory'
+  import { createChannel } from 'telestoworld-builder-scripts/channel'
 
   // import smart item script
   import Door from './path/to/door/item.ts`
@@ -402,7 +402,7 @@ Then we need to code this actual behaviour into our `item.ts` script file, and w
 
 ```ts
 // item.ts
-import { IScript, Actions } from 'decentraland-builder-scripts/types'
+import { IScript, Actions } from 'telestoworld-builder-scripts/types'
 
 type Props = {
   onClick: Actions
@@ -532,12 +532,12 @@ define('item', [], () => {
 ```
 
 That file is then uploaded along with all the other scene assets to a Catalyst peer when the scene is deployed.
-If you create a scene with the CLI using `dcl init` and then create a `src/item.ts` file with a smart item in that scene, you can compile it by running `dcl pack` and that will generate an `item.zip` file with all the assets required to distribute that smart item, including the `.js` file in AMD format.
+If you create a scene with the CLI using `tw init` and then create a `src/item.ts` file with a smart item in that scene, you can compile it by running `tw pack` and that will generate an `item.zip` file with all the assets required to distribute that smart item, including the `.js` file in AMD format.
 
 ## Importing
 
 In order to import the smart item script in runtime we need to fetch it from the content server and the load it using an AMD loader. 
-We inject this [tiny AMD loader](https://github.com/decentraland/builder/blob/master/src/ecsScene/amd-loader.js.raw) at the begining of the scene file when we deploy it, and then this [remote loader](https://github.com/decentraland/builder/blob/master/src/ecsScene/remote-loader.js.raw) to do the fetching + loading of the module (on next section there's a full example that shows how to use this helper).
+We inject this [tiny AMD loader](https://github.com/telestoworld/builder/blob/master/src/ecsScene/amd-loader.js.raw) at the begining of the scene file when we deploy it, and then this [remote loader](https://github.com/telestoworld/builder/blob/master/src/ecsScene/remote-loader.js.raw) to do the fetching + loading of the module (on next section there's a full example that shows how to use this helper).
 
 ## Running
 
@@ -547,7 +547,7 @@ This is an example the one in the [channel](#channel) section where we spawn two
 ```js
 /* bin/game.js */
 
-/* At the beggining of the scene we inject: the SDK, the AMD loader, and the remote loader helper described in the previous section, and the createChannel and createInvetory helpers from the `decentraland-builder-scripts` package */
+/* At the beggining of the scene we inject: the SDK, the AMD loader, and the remote loader helper described in the previous section, and the createChannel and createInvetory helpers from the `telestoworld-builder-scripts` package */
 
 async function main() {
   // load the smart item script
@@ -580,12 +580,12 @@ main()
 
 # Development & Debugging
 
-In order to develop and debug a smart item, you should start creating an empty decentraland project.
+In order to develop and debug a smart item, you should start creating an empty telestoworld project.
 
 First, install/updated the Decentraland CLI if you haven't already:
 
 ```
-npm install -g decentraland
+npm install -g telestoworld
 ```
 
 Create an empty folder and initialize the project
@@ -593,13 +593,13 @@ Create an empty folder and initialize the project
 ```
 mkdir my-smart-item
 cd my-smart-item
-dcl init
+tw init
 ```
 
-Install the `decentraland-builder-scripts` package
+Install the `telestoworld-builder-scripts` package
 
 ```
-npm install decentraland-builder-scripts
+npm install telestoworld-builder-scripts
 ```
 
 Add the typings to the `tsconfig.json` file
@@ -612,9 +612,9 @@ Add the typings to the `tsconfig.json` file
   },
   "include": [
     "src/**/*.ts",
-    "./node_modules/decentraland-builder-scripts/types.d.ts"
+    "./node_modules/telestoworld-builder-scripts/types.d.ts"
   ],
-  "extends": "./node_modules/decentraland-ecs/types/tsconfig.json"
+  "extends": "./node_modules/telestoworld-ecs/types/tsconfig.json"
 }
 ```
 
@@ -681,7 +681,7 @@ Now in order to be able to debug our smart item, we can use the `Spawner` helper
 ```
 // src/game.ts
 
-import { Spawner } from '../node_modules/decentraland-builder-scripts/spawner'
+import { Spawner } from '../node_modules/telestoworld-builder-scripts/spawner'
 import Button, { Props } from './item'
 
 const button = new Button()
@@ -698,6 +698,6 @@ spawner.spawn(
 )
 ```
 
-Finally we can run `dcl start` and we should be taken to a browser with the Decentraland client running, and we should see our button in the middle of the scene. If we get close to it and hover it we should see the text `"Testing"` that we configured in out `game.ts` file!
+Finally we can run `tw start` and we should be taken to a browser with the Decentraland client running, and we should see our button in the middle of the scene. If we get close to it and hover it we should see the text `"Testing"` that we configured in out `game.ts` file!
 
-If you want to see real world examples of smart items you can always check the [smart items repo](https://github.com/decentraland/smart-items)
+If you want to see real world examples of smart items you can always check the [smart items repo](https://github.com/telestoworld/smart-items)

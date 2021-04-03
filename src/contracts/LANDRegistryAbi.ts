@@ -737,7 +737,7 @@ export default new ContractAbi([
         type: 'string'
       }
     ],
-    name: 'createEstateWithMetadata',
+    name: 'createSectorWithMetadata',
     outputs: [
       {
         name: '',
@@ -793,7 +793,7 @@ export default new ContractAbi([
         type: 'address'
       }
     ],
-    name: 'setEstateRegistry',
+    name: 'setSectorRegistry',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
@@ -933,7 +933,7 @@ export default new ContractAbi([
         type: 'address'
       }
     ],
-    name: 'createEstate',
+    name: 'createSector',
     outputs: [
       {
         name: '',
@@ -1074,7 +1074,7 @@ export default new ContractAbi([
         type: 'uint256'
       }
     ],
-    name: 'transferManyLandToEstate',
+    name: 'transferManyLandToSector',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
@@ -1096,7 +1096,7 @@ export default new ContractAbi([
         type: 'uint256'
       }
     ],
-    name: 'transferLandToEstate',
+    name: 'transferLandToSector',
     outputs: [],
     payable: false,
     stateMutability: 'nonpayable',
@@ -1125,7 +1125,7 @@ export default new ContractAbi([
         type: 'address'
       }
     ],
-    name: 'EstateRegistrySet',
+    name: 'SectorRegistrySet',
     type: 'event'
   },
   {

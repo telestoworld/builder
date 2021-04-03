@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Button, Header, Loader } from 'decentraland-ui'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { Button, Header, Loader } from 'telestoworld-ui'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 import { ShareModalType, ShareModalMetadata } from 'components/Modals/ShareModal/ShareModal.types'
 import Icon from 'components/Icon'
 

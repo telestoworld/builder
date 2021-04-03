@@ -10,7 +10,7 @@ export type ENS = {
 
   // We'll need to change `landId` eventually so it can handle different content types. We could use:
   //   contentId?: string
-  //   contentType?: ENSContent {LAND = 'land', (...)}
+  //   contentType?: ENSContent {SPACE = 'land', (...)}
   landId?: string
 }
 

@@ -1,4 +1,4 @@
-import { Omit } from 'decentraland-dapps/dist/lib/types'
+import { Omit } from 'telestoworld-dapps/dist/lib/types'
 
 import { ProjectLayout } from 'modules/project/types'
 import { Props as LayoutProps } from 'components/LayoutPicker/LayoutPicker.types'

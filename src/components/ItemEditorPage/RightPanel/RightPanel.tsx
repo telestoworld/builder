@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Loader, Dropdown, Button } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Loader, Dropdown, Button } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import ItemImage from 'components/ItemImage'
 import ItemProvider from 'components/ItemProvider'
 import ConfirmDelete from 'components/ConfirmDelete'

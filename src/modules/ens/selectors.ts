@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect'
-import { LoadingState } from 'decentraland-dapps/dist/modules/loading/reducer'
-import { Transaction } from 'decentraland-dapps/dist/modules/transaction/types'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { LoadingState } from 'telestoworld-dapps/dist/modules/loading/reducer'
+import { Transaction } from 'telestoworld-dapps/dist/modules/transaction/types'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { isEqual } from 'lib/address'
 import { RootState } from 'modules/common/types'
 import { getPendingTransactions } from 'modules/transaction/selectors'
@@ -11,7 +11,7 @@ import {
   SET_ENS_CONTENT_REQUEST,
   SET_ENS_CONTENT_SUCCESS,
   CLAIM_NAME_SUCCESS,
-  ALLOW_CLAIM_MANA_SUCCESS
+  ALLOW_CLAIM_TELO_SUCCESS
 } from './actions'
 import { Authorization, ENS } from './types'
 import { ENSState } from './reducer'
@@ -52,8 +52,8 @@ export const isWaitingTxClaimName = createSelector<RootState, Transaction[], boo
   transactions.some(transaction => CLAIM_NAME_SUCCESS === transaction.actionType)
 )
 
-export const isWaitingTxAllowMana = createSelector<RootState, Transaction[], boolean>(getPendingTransactions, transactions =>
-  transactions.some(transaction => ALLOW_CLAIM_MANA_SUCCESS === transaction.actionType)
+export const isWaitingTxAllowTelo = createSelector<RootState, Transaction[], boolean>(getPendingTransactions, transactions =>
+  transactions.some(transaction => ALLOW_CLAIM_TELO_SUCCESS === transaction.actionType)
 )
 
 export const isWaitingTxSetResolver = createSelector<RootState, Transaction[], boolean>(getPendingTransactions, transactions =>

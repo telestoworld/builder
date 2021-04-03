@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions'
-import { ChainId } from '@dcl/schemas'
-import { buildTransactionPayload } from 'decentraland-dapps/dist/modules/transaction/utils'
+import { ChainId } from 'tw-schemas'
+import { buildTransactionPayload } from 'telestoworld-dapps/dist/modules/transaction/utils'
 import { Land } from 'modules/land/types'
 import { Authorization, ENS, ENSError } from './types'
 
@@ -35,7 +35,7 @@ export type SetENSResolverSuccessAction = ReturnType<typeof setENSResolverSucces
 export type SetENSResolverFailureAction = ReturnType<typeof setENSResolverFailure>
 
 // Set the Content on the ENS resolver contract.
-// The Content is a IPFS hash refering a file. This file is an HTML file with a Redirection to a LAND url.
+// The Content is a IPFS hash refering a file. This file is an HTML file with a Redirection to a SPACE url.
 export const SET_ENS_CONTENT_REQUEST = '[Request] Set ENS Content'
 export const SET_ENS_CONTENT_SUCCESS = '[Success] Set ENS Content'
 export const SET_ENS_CONTENT_FAILURE = '[Failure] Set ENS Content'
@@ -120,18 +120,18 @@ export type FetchENSAuthorizationSuccessAction = ReturnType<typeof fetchENSAutho
 export type FetchENSAuthorizationFailureAction = ReturnType<typeof fetchENSAuthorizationFailure>
 
 // Allow MANA to claim names
-export const ALLOW_CLAIM_MANA_REQUEST = '[Request] Allow Claim MANA'
-export const ALLOW_CLAIM_MANA_SUCCESS = '[Success] Allow Claim MANA'
-export const ALLOW_CLAIM_MANA_FAILURE = '[Failure] Allow Claim MANA'
+export const ALLOW_CLAIM_TELO_REQUEST = '[Request] Allow Claim MANA'
+export const ALLOW_CLAIM_TELO_SUCCESS = '[Success] Allow Claim MANA'
+export const ALLOW_CLAIM_TELO_FAILURE = '[Failure] Allow Claim MANA'
 
-export const allowClaimManaRequest = (allowance: string) => action(ALLOW_CLAIM_MANA_REQUEST, { allowance })
+export const allowClaimManaRequest = (allowance: string) => action(ALLOW_CLAIM_TELO_REQUEST, { allowance })
 export const allowClaimManaSuccess = (allowance: string, address: string, chainId: ChainId, txHash: string) =>
-  action(ALLOW_CLAIM_MANA_SUCCESS, {
+  action(ALLOW_CLAIM_TELO_SUCCESS, {
     ...buildTransactionPayload(chainId, txHash, { allowance, address }),
     allowance,
     address
   })
-export const allowClaimManaFailure = (error: ENSError) => action(ALLOW_CLAIM_MANA_FAILURE, { error })
+export const allowClaimManaFailure = (error: ENSError) => action(ALLOW_CLAIM_TELO_FAILURE, { error })
 
 export type AllowClaimManaRequestAction = ReturnType<typeof allowClaimManaRequest>
 export type AllowClaimManaSuccessAction = ReturnType<typeof allowClaimManaSuccess>

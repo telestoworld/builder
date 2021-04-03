@@ -1,7 +1,7 @@
 import { LOCATION_CHANGE } from 'connected-react-router'
 import { takeLatest, select, fork, takeEvery } from 'redux-saga/effects'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
-import { ConnectWalletSuccessAction, CONNECT_WALLET_SUCCESS } from 'decentraland-dapps/dist/modules/wallet/actions'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
+import { ConnectWalletSuccessAction, CONNECT_WALLET_SUCCESS } from 'telestoworld-dapps/dist/modules/wallet/actions'
 
 import { OPEN_EDITOR, OpenEditorAction, TOGGLE_SNAP_TO_GRID, ToggleSnapToGridAction } from 'modules/editor/actions'
 import { getCurrentProject } from 'modules/project/selectors'
@@ -20,7 +20,7 @@ import {
 import {
   DeployToPoolSuccessAction,
   DEPLOY_TO_POOL_SUCCESS,
-  DEPLOY_TO_LAND_SUCCESS,
+  DEPLOY_TO_SPACE_SUCCESS,
   CLEAR_DEPLOYMENT_SUCCESS,
   DeployToLandSuccessAction,
   ClearDeploymentSuccessAction
@@ -43,7 +43,7 @@ import {
   DeleteAssetPackFailureAction
 } from 'modules/assetPack/actions'
 import { LOGIN_SUCCESS, LoginSuccessAction } from 'modules/identity/actions'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 
 export function* analyticsSaga() {
   yield fork(handleDelighted)
@@ -56,7 +56,7 @@ export function* analyticsSaga() {
   yield takeLatest(UPDATE_TRANSFORM, handleUpdateTransfrom)
   yield takeLatest(CONNECT_WALLET_SUCCESS, handleConnectWallet)
   yield takeLatest(DEPLOY_TO_POOL_SUCCESS, handleDeployToPoolSuccess)
-  yield takeLatest(DEPLOY_TO_LAND_SUCCESS, handleDeployToLandSuccess)
+  yield takeLatest(DEPLOY_TO_SPACE_SUCCESS, handleDeployToLandSuccess)
   yield takeLatest(CLEAR_DEPLOYMENT_SUCCESS, handleClearDeploymentSuccess)
   yield takeLatest(SEARCH_ASSETS, handleSearchAssets)
   yield takeLatest(SYNC, handleSync)
@@ -143,7 +143,7 @@ function* handleDeployToPoolSuccess(_: DeployToPoolSuccessAction) {
   if (!project) return
   const ethAddress = yield select(getAddress)
   // Do not change this event name format
-  track('[Success] Deploy to LAND pool', { project_id: project.id, eth_address: ethAddress })
+  track('[Success] Deploy to SPACE pool', { project_id: project.id, eth_address: ethAddress })
 }
 
 function* handleDeployToLandSuccess(_: DeployToLandSuccessAction) {
@@ -151,7 +151,7 @@ function* handleDeployToLandSuccess(_: DeployToLandSuccessAction) {
   if (!project) return
   const ethAddress = yield select(getAddress)
   // Do not change this event name format
-  track('[Success] Deploy to LAND', { project_id: project.id, eth_address: ethAddress })
+  track('[Success] Deploy to SPACE', { project_id: project.id, eth_address: ethAddress })
 }
 
 function* handleClearDeploymentSuccess(_: ClearDeploymentSuccessAction) {

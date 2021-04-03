@@ -28,12 +28,12 @@
   border-radius: 4px;
 }
 
-.EntityField .dcl.select-field .header {
+.EntityField .tw.select-field .header {
   margin: 0px !important;
   padding: 0px 10px !important;
 }
 
-.EntityField .dcl.select-field .header .ui.input input {
+.EntityField .tw.select-field .header .ui.input input {
   font-size: 14px !important;
   width: 228px;
 }
@@ -73,17 +73,17 @@
   flex: unset;
 }
 
-.EntityField .dcl.select-field {
+.EntityField .tw.select-field {
   min-width: 0px;
   min-height: 0px;
   width: 100%;
 }
 
-.EntityField .dcl.select-field .message {
+.EntityField .tw.select-field .message {
   display: none;
 }
 
-.EntityField .dcl.select-field .ui.dropdown .dropdown.icon {
+.EntityField .tw.select-field .ui.dropdown .dropdown.icon {
   position: relative;
   padding: 0px;
   margin: 0px;
@@ -92,7 +92,7 @@
   padding: 8px;
 }
 
-.EntityField .dcl.select-field .ui.dropdown {
+.EntityField .tw.select-field .ui.dropdown {
   border: 0px;
   padding: 0px;
   min-height: 0px;
@@ -103,11 +103,11 @@
   justify-content: space-between;
 }
 
-.EntityField .dcl.select-field .ui.dropdown .menu {
+.EntityField .tw.select-field .ui.dropdown .menu {
   width: 250px;
 }
 
-.EntityField .dcl.select-field .ui.dropdown .menu > .item {
+.EntityField .tw.select-field .ui.dropdown .menu > .item {
   width: 100%;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -117,12 +117,12 @@
   align-items: center;
 }
 
-.EntityField .dcl.select-field .ui.selection.active.dropdown,
-.EntityField .dcl.select-field .ui.selection.active.dropdown:hover {
+.EntityField .tw.select-field .ui.selection.active.dropdown,
+.EntityField .tw.select-field .ui.selection.active.dropdown:hover {
   border-bottom: 0px;
 }
 
-.EntityField .dcl.select-field .ui.dropdown > div.text {
+.EntityField .tw.select-field .ui.dropdown > div.text {
   font-size: var(--parameter-font-size);
   font-weight: normal;
 }

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Dropdown, DropdownProps, Popup } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Dropdown, DropdownProps, Popup } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import ViewPort from 'components/ViewPort'
 import { AvatarAnimation, PreviewType } from 'modules/editor/types'
 import { WearableBodyShape } from 'modules/item/types'

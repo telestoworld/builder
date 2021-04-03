@@ -1,4 +1,4 @@
-import { BodyShapeRespresentation, Wearable } from 'decentraland-ecs'
+import { BodyShapeRespresentation, Wearable } from 'telestoworld-ecs'
 import { EditorScene, UnityKeyboardEvent } from 'modules/editor/types'
 import { Project } from 'modules/project/types'
 import { getSceneDefinition } from 'modules/project/export'
@@ -33,11 +33,11 @@ export function getNewEditorScene(project: Project): EditorScene {
     owner: 'Decentraland',
     contact: {
       name: 'Decentraland',
-      email: 'support@decentraland.org'
+      email: 'support@telesto.world'
     },
     communications: {
       type: 'webrtc',
-      signalling: 'https://rendezvous.decentraland.org'
+      signalling: 'https://rendezvous.telesto.world'
     },
     policy: {
       fly: true,
@@ -181,12 +181,12 @@ export function createAvatarScene(): Scene {
 export function toWearable(item: Item) {
   // @TODO: remove replaces when unity build accepts urn
   return {
-    id: item.id.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/') + '/' + item.updatedAt, // we add the updatedAt suffix to bust the cache
+    id: item.id.replace('urn:telestoworld:off-chain:base-avatars:', 'tw://base-avatars/') + '/' + item.updatedAt, // we add the updatedAt suffix to bust the cache
     type: 'wearable',
     category: item.data.category!,
     baseUrl: getContentsStorageUrl(),
     representations: item.data.representations.map<BodyShapeRespresentation>(representation => ({
-      bodyShapes: representation.bodyShapes.map(shape => shape.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/')),
+      bodyShapes: representation.bodyShapes.map(shape => shape.replace('urn:telestoworld:off-chain:base-avatars:', 'tw://base-avatars/')),
       mainFile: representation.mainFile,
       contents: Object.values(representation.contents).map(path => ({
         file: path,

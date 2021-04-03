@@ -1,12 +1,12 @@
 import * as React from 'react'
-import { Row, Column, Section, Narrow, InputOnChangeData, Header, Form, Field, Button, Mana, Radio, Popup } from 'decentraland-ui'
-import { T, t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getTokenAmountToApprove } from 'decentraland-dapps/dist/modules/authorization/utils'
-import { TransactionLink } from 'decentraland-dapps/dist/containers'
+import { Row, Column, Section, Narrow, InputOnChangeData, Header, Form, Field, Button, Mana, Radio, Popup } from 'telestoworld-ui'
+import { T, t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getTokenAmountToApprove } from 'telestoworld-dapps/dist/modules/authorization/utils'
+import { TransactionLink } from 'telestoworld-dapps/dist/containers'
 import Back from 'components/Back'
 import LoggedInDetailPage from 'components/LoggedInDetailPage'
 import { locations } from 'routing/locations'
-import { MAX_NAME_SIZE, PRICE, isNameValid, isNameAvailable, hasNameMinLength, isEnoughClaimMana } from 'modules/ens/utils'
+import { MAX_NAME_SIZE, PRICE, isNameValid, isNameAvailable, hasNameMinLength, isEnoughClaimTelo } from 'modules/ens/utils'
 import { CONTROLLER_ADDRESS } from 'modules/common/contracts'
 import { Props, State } from './ClaimENSPage.types'
 
@@ -20,21 +20,21 @@ export default class ClaimENSPage extends React.PureComponent<Props, State> {
     isError: false
   }
 
-  handleManaApprove = async () => {
-    const { allowance, onAllowMana } = this.props
-    const manaToAllow = isEnoughClaimMana(allowance) ? 0 : getTokenAmountToApprove()
-    onAllowMana(manaToAllow.toString())
+  handleTeloApprove = async () => {
+    const { allowance, onAllowTelo } = this.props
+    const manaToAllow = isEnoughClaimTelo(allowance) ? 0 : getTokenAmountToApprove()
+    onAllowTelo(manaToAllow.toString())
   }
 
   handleClaim = async () => {
-    const { wallet, mana, allowance, onOpenModal } = this.props
+    const { wallet, telo, allowance, onOpenModal } = this.props
     const { name } = this.state
 
     const isValid = isNameValid(name)
-    const isEnoughMana = wallet && isEnoughClaimMana(mana.toString())
-    const isManaAllowed = isEnoughClaimMana(allowance)
+    const isEnoughTelo = wallet && isEnoughClaimTelo(telo.toString())
+    const isTeloAllowed = isEnoughClaimTelo(allowance)
 
-    if (!isValid || !isEnoughMana || !isManaAllowed) return
+    if (!isValid || !isEnoughTelo || !isTeloAllowed) return
 
     this.setState({ isLoading: true })
     try {
@@ -70,16 +70,16 @@ export default class ClaimENSPage extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { wallet, mana, allowance, onBack } = this.props
+    const { wallet, telo, allowance, onBack } = this.props
     const { name, isError, isAvailable } = this.state
 
     const isLoading = this.props.isLoading || this.state.isLoading
 
     const isValid = isNameValid(name)
-    const isEnoughMana = wallet && isEnoughClaimMana(mana.toString())
-    const isManaAllowed = isEnoughClaimMana(allowance)
+    const isEnoughTelo = wallet && isEnoughClaimTelo(telo.toString())
+    const isTeloAllowed = isEnoughClaimTelo(allowance)
 
-    const isDisabled = !isValid || !isAvailable || !isEnoughMana || !isManaAllowed
+    const isDisabled = !isValid || !isAvailable || !isEnoughTelo || !isTeloAllowed
 
     let message: string = ''
     if (isError) {
@@ -111,15 +111,15 @@ export default class ClaimENSPage extends React.PureComponent<Props, State> {
                   <T
                     id="claim_ens_page.subtitle"
                     values={{
-                      exampleLink: <i>https://name.dcl.eth.link</i>,
+                      exampleLink: <i>https://name.tw.eth.link</i>,
                       br: (
                         <>
                           <br />
                           <br />
                         </>
                       ),
-                      dclWorldLink: (
-                        <a href="http://play.decentraland.org" rel="noopener noreferrer" target="_blank">
+                      twWorldLink: (
+                        <a href="http://play.telesto.world" rel="noopener noreferrer" target="_blank">
                           {t('claim_ens_page.world')}
                         </a>
                       )
@@ -142,14 +142,14 @@ export default class ClaimENSPage extends React.PureComponent<Props, State> {
                 </Section>
                 <Section className="field">
                   <Header sub={true}>MANA Approved</Header>
-                  <Radio toggle disabled={isLoading} checked={isManaAllowed} onChange={this.handleManaApprove} />
+                  <Radio toggle disabled={isLoading} checked={isTeloAllowed} onChange={this.handleTeloApprove} />
                   <p className="message">
                     <T
                       id="claim_ens_page.need_mana_message"
                       values={{
                         contract_link: (
                           <TransactionLink address={CONTROLLER_ADDRESS} txHash="">
-                            DCLController
+                            TWController
                           </TransactionLink>
                         )
                       }}
@@ -160,11 +160,11 @@ export default class ClaimENSPage extends React.PureComponent<Props, State> {
                   <Button className="cancel" onClick={onBack} type="button">
                     {t('global.cancel')}
                   </Button>
-                  {!isLoading && (!isEnoughMana || !isManaAllowed) ? (
+                  {!isLoading && (!isEnoughTelo || !isTeloAllowed) ? (
                     <Popup
                       className="modal-tooltip"
                       content={
-                        !isEnoughMana ? t('claim_ens_page.not_enough_mana') : !isManaAllowed ? t('claim_ens_page.mana_not_allowed') : ''
+                        !isEnoughTelo ? t('claim_ens_page.not_enough_mana') : !isTeloAllowed ? t('claim_ens_page.mana_not_allowed') : ''
                       }
                       position="top center"
                       trigger={

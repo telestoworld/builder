@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { Wearable } from 'decentraland-ecs'
+import { Wearable } from 'telestoworld-ecs'
 import { Vector3 } from 'modules/common/types'
 import {
   UpdateEditorAction,
@@ -19,7 +19,7 @@ declare type Gizmo = any
 
 export type Editor = {
   initEngine: (container: HTMLElement, buildConfigPath: string) => Promise<void>
-  getDCLCanvas: () => Promise<HTMLCanvasElement>
+  getTWCanvas: () => Promise<HTMLCanvasElement>
   on: (event: string, listener: (...args: any[]) => void) => void
   off: (event: string, listener: (...args: any[]) => void) => void
   handleMessage: (msg: { type: 'update'; payload: any }) => void
@@ -55,7 +55,7 @@ export type Editor = {
 }
 
 export type EditorWindow = typeof window & {
-  initDCL: () => void
+  initTW: () => void
   editor: Editor
 }
 

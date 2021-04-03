@@ -1,14 +1,14 @@
 // @ts-ignore
-import Dockerfile from '!raw-loader!decentraland/samples/ecs/Dockerfile'
+import Dockerfile from '!raw-loader!telestoworld/samples/ecs/Dockerfile'
 // @ts-ignore
-import builderChannelRaw from 'raw-loader!decentraland-builder-scripts/lib/channel'
+import builderChannelRaw from 'raw-loader!telestoworld-builder-scripts/lib/channel'
 // @ts-ignore
-import builderInventoryRaw from 'raw-loader!decentraland-builder-scripts/lib/inventory'
-import * as ECS from 'decentraland-ecs'
-import { SceneWriter, LightweightWriter } from 'dcl-scene-writer'
-import packageJson from 'decentraland/samples/ecs/package.json'
-import sceneJson from 'decentraland/samples/ecs/scene.json'
-import tsconfig from 'decentraland/samples/ecs/tsconfig.json'
+import builderInventoryRaw from 'raw-loader!telestoworld-builder-scripts/lib/inventory'
+import * as ECS from 'telestoworld-ecs'
+import { SceneWriter, LightweightWriter } from 'tw-scene-writer'
+import packageJson from 'telestoworld/samples/ecs/package.json'
+import sceneJson from 'telestoworld/samples/ecs/scene.json'
+import tsconfig from 'telestoworld/samples/ecs/tsconfig.json'
 import { Rotation, Coordinate, SceneDefinition } from 'modules/deployment/types'
 import { Project, Manifest } from 'modules/project/types'
 import { Scene, ComponentType, ComponentDefinition } from 'modules/scene/types'
@@ -26,7 +26,7 @@ export enum EXPORT_PATH {
   SCENE_FILE = 'scene.json',
   PACKAGE_FILE = 'package.json',
   DOCKER_FILE = 'Dockerfile',
-  DCLIGNORE_FILE = '.dclignore',
+  TWIGNORE_FILE = '.twignore',
   TSCONFIG_FILE = 'tsconfig.json',
   MODELS_FOLDER = 'models',
   BUNDLED_GAME_FILE = 'bin/game.js',
@@ -76,7 +76,7 @@ export async function createGameFile(args: { project: Project; scene: Scene; rot
   const { scene, project, rotation } = args
   const useLightweight = isDeploy && !hasScripts(scene)
   const Writer = useLightweight ? LightweightWriter : SceneWriter
-  const writer = new Writer(ECS, require('decentraland-ecs/types/dcl/decentraland-ecs.api'))
+  const writer = new Writer(ECS, require('telestoworld-ecs/types/tw/telestoworld-ecs.api'))
   const { cols, rows } = project.layout
   const sceneEntity = new ECS.Entity()
 
@@ -241,8 +241,8 @@ export async function createGameFile(args: { project: Project; scene: Scene; rot
     } else {
       // import all the scripts
       let importScripts = ''
-      importScripts += `import { createChannel } from '../node_modules/decentraland-builder-scripts/channel'\n`
-      importScripts += `import { createInventory } from '../node_modules/decentraland-builder-scripts/inventory'\n`
+      importScripts += `import { createChannel } from '../node_modules/telestoworld-builder-scripts/channel'\n`
+      importScripts += `import { createInventory } from '../node_modules/telestoworld-builder-scripts/inventory'\n`
       let currentImport = 1
       const assetIdToConstructorName = new Map<string, string>()
       for (const [assetId] of Array.from(scripts)) {
@@ -303,7 +303,7 @@ ${gameFile}`
 export function createStaticFiles() {
   return {
     [EXPORT_PATH.DOCKER_FILE]: Dockerfile,
-    [EXPORT_PATH.DCLIGNORE_FILE]: [
+    [EXPORT_PATH.TWIGNORE_FILE]: [
       '.*',
       'package.json',
       'package-lock.json',
@@ -427,7 +427,7 @@ export function createDynamicFiles(args: {
         name: project.id,
         dependencies: {
           ...packageJson.devDependencies,
-          'decentraland-builder-scripts': 'latest'
+          'telestoworld-builder-scripts': 'latest'
         }
       },
       null,
@@ -437,7 +437,7 @@ export function createDynamicFiles(args: {
     [EXPORT_PATH.TSCONFIG_FILE]: JSON.stringify(
       {
         ...tsconfig,
-        include: tsconfig.include.concat(['./node_modules/decentraland-builder-scripts/types.d.ts'])
+        include: tsconfig.include.concat(['./node_modules/telestoworld-builder-scripts/types.d.ts'])
       },
       null,
       2

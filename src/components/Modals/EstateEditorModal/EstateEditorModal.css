@@ -1,12 +1,12 @@
-.EstateEditorModal .map {
+.SectorEditorModal .map {
   height: 300px;
 }
 
-.EstateEditorModal .messages-container {
+.SectorEditorModal .messages-container {
   position: relative;
 }
 
-.EstateEditorModal .messages {
+.SectorEditorModal .messages {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -16,7 +16,7 @@
   width: 100%;
 }
 
-.EstateEditorModal .messages-container .message {
+.SectorEditorModal .messages-container .message {
   display: flex;
   background: rgba(var(--void-raw), 0.88);
   font-size: 13px;
@@ -25,7 +25,7 @@
   border-radius: 16px;
 }
 
-.EstateEditorModal .icon {
+.SectorEditorModal .icon {
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
@@ -34,24 +34,24 @@
   margin-right: 8px;
 }
 
-.EstateEditorModal .message.warning .icon {
+.SectorEditorModal .message.warning .icon {
   background-image: url(../../../images/save-error.svg);
 }
 
-.EstateEditorModal .message.info .icon {
+.SectorEditorModal .message.info .icon {
   background-image: url(../../../images/info.svg);
   background-size: contain;
   background-position: center;
 }
 
-.EstateEditorModal .dcl.modal-navigation {
+.SectorEditorModal .tw.modal-navigation {
   margin-bottom: 20px;
 }
 
-.EstateEditorModal .form {
+.SectorEditorModal .form {
   padding: 0px 32px;
 }
 
-.EstateEditorModal.ui.modal .actions .ui.button + .ui.button {
+.SectorEditorModal.ui.modal .actions .ui.button + .ui.button {
   margin-left: 20px;
 }

@@ -1,9 +1,9 @@
 import * as React from 'react'
 import { Switch, Route, Redirect } from 'react-router-dom'
-import { Center, Page, Responsive } from 'decentraland-ui'
-import { env } from 'decentraland-commons'
-import Intercom from 'decentraland-dapps/dist/components/Intercom'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Center, Page, Responsive } from 'telestoworld-ui'
+import { env } from 'telestoworld-commons'
+import Intercom from 'telestoworld-dapps/dist/components/Intercom'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { locations } from 'routing/locations'
 

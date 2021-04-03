@@ -1,5 +1,5 @@
 import { action } from 'typesafe-actions'
-import { AtlasTile } from 'decentraland-ui'
+import { AtlasTile } from 'telestoworld-ui'
 
 export const FETCH_TILES_REQUEST = '[Request] Fetch Tiles'
 export const FETCH_TILES_SUCCESS = '[Success] Fetch Tiles'

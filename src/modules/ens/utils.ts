@@ -1,7 +1,7 @@
 import { Address } from 'web3x-es/address'
 import { fromWei } from 'web3x-es/utils'
 import { PEER_URL } from 'lib/api/peer'
-import { DCLRegistrar } from 'contracts/DCLRegistrar'
+import { TWRegistrar } from 'contracts/TWRegistrar'
 import { Land } from 'modules/land/types'
 import { REGISTRAR_ADDRESS } from 'modules/common/contracts'
 import { ENS } from './types'
@@ -41,8 +41,8 @@ export async function isNameAvailable(name: string): Promise<boolean> {
     return false
   }
   const eth = await getEth()
-  const contractDCLRegistrar = new DCLRegistrar(eth!, Address.fromString(REGISTRAR_ADDRESS))
-  return contractDCLRegistrar.methods.available(name).call()
+  const contractTWRegistrar = new TWRegistrar(eth!, Address.fromString(REGISTRAR_ADDRESS))
+  return contractTWRegistrar.methods.available(name).call()
 }
 
 export function hasNameMinLength(name: string): boolean {
@@ -74,10 +74,10 @@ export function isEqualContent(ens: ENS, land: Land) {
 }
 
 export function getDomainFromName(name: string): string {
-  return `${name.toLowerCase()}.dcl.eth`
+  return `${name.toLowerCase()}.tw.eth`
 }
 
-export function isEnoughClaimMana(mana: string) {
+export function isEnoughClaimTelo(mana: string) {
   // 100 is the minimum amount of MANA the user needs to claim a new Name
   // We're checking against this instead of 0 when checking the allowance too because
   // we do not yet support the double transaction needed to set the user's allowance to 0 first and then bump it up to wichever number

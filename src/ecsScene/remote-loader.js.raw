@@ -5,14 +5,14 @@ const contentServer = initContext()
 
 function initContext() {
   return new Promise(resolve => {
-    define('node_modules/decentraland-builder-scripts/channel', [], () => {
+    define('node_modules/telestoworld-builder-scripts/channel', [], () => {
       /* */
     })
-    define('node_modules/decentraland-builder-scripts/inventory', [], () => {
+    define('node_modules/telestoworld-builder-scripts/inventory', [], () => {
       /* */
     })
 
-    define('🍉', ['require', 'exports', '@decentraland/EnvironmentAPI'], (require, exports, EnvironmentAPI) => {
+    define('🍉', ['require', 'exports', '@telestoworld/EnvironmentAPI'], (require, exports, EnvironmentAPI) => {
       // Object.defineProperty(exports, '__esModule', { value: true })
       EnvironmentAPI.getBootstrapData().then(({ baseUrl }) => {
         resolve(baseUrl)

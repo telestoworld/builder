@@ -123,7 +123,7 @@ export default new ContractAbi([
         "type": "uint256"
       }
     ],
-    "name": "landIdEstate",
+    "name": "landIdSector",
     "outputs": [
       {
         "name": "",
@@ -462,7 +462,7 @@ export default new ContractAbi([
         "type": "address"
       }
     ],
-    "name": "setLANDRegistry",
+    "name": "setSPACERegistry",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -823,7 +823,7 @@ export default new ContractAbi([
         "type": "uint256"
       }
     ],
-    "name": "getLandEstateId",
+    "name": "getLandSectorId",
     "outputs": [
       {
         "name": "",
@@ -1006,7 +1006,7 @@ export default new ContractAbi([
         "type": "uint256"
       }
     ],
-    "name": "getEstateSize",
+    "name": "getSectorSize",
     "outputs": [
       {
         "name": "",
@@ -1119,7 +1119,7 @@ export default new ContractAbi([
         "type": "string"
       }
     ],
-    "name": "CreateEstate",
+    "name": "CreateSector",
     "type": "event"
   },
   {
@@ -1241,7 +1241,7 @@ export default new ContractAbi([
         "type": "address"
       }
     ],
-    "name": "SetLANDRegistry",
+    "name": "SetSPACERegistry",
     "type": "event"
   },
   {

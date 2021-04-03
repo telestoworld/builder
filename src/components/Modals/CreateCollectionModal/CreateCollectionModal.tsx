@@ -1,8 +1,8 @@
 import * as React from 'react'
 import uuid from 'uuid'
-import { ModalNavigation, Button, Form, Field, ModalContent, ModalActions } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
+import { ModalNavigation, Button, Form, Field, ModalContent, ModalActions } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
 import { Collection, COLLECTION_NAME_MAX_LENGTH } from 'modules/collection/types'
 import { Props, State } from './CreateCollectionModal.types'
 

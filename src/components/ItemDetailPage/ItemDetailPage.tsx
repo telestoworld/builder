@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Section, Row, Narrow, Column, Header, Button, Dropdown, Icon } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Section, Row, Narrow, Column, Header, Button, Dropdown, Icon } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Link } from 'react-router-dom'
 import { fromWei } from 'web3x-es/utils'
 
@@ -16,7 +16,7 @@ import Back from 'components/Back'
 import { Props } from './ItemDetailPage.types'
 import './ItemDetailPage.css'
 
-const STORAGE_KEY = 'dcl-item-notice'
+const STORAGE_KEY = 'tw-item-notice'
 
 export default class ItemDetailPage extends React.PureComponent<Props> {
   handleEditItem = () => {

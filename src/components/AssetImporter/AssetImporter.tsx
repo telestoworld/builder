@@ -3,9 +3,9 @@ import { basename } from 'path'
 import * as crypto from 'crypto'
 import uuidv4 from 'uuid/v4'
 import JSZip from 'jszip'
-import { Button, Loader } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { Button, Loader } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 
 import FileImport from 'components/FileImport'
 import AssetThumbnail from 'components/AssetThumbnail'
@@ -329,7 +329,7 @@ export default class AssetImporter<T extends MixedAssetPack = RawAssetPack> exte
   }
 
   handleOpenDocs = () => {
-    window.open('https://docs.decentraland.org/3d-modeling/3d-models/', '_blank')
+    window.open('https://docs.telesto.world/3d-modeling/3d-models/', '_blank')
   }
 
   render() {

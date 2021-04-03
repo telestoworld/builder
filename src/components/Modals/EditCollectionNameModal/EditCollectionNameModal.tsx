@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ModalNavigation, ModalContent, ModalActions, Button, Field, InputOnChangeData } from 'decentraland-ui'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { ModalNavigation, ModalContent, ModalActions, Button, Field, InputOnChangeData } from 'telestoworld-ui'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { COLLECTION_NAME_MAX_LENGTH } from 'modules/collection/types'
 import { Props, State, EditCollectionNameModalMetadata } from './EditCollectionNameModal.types'
 

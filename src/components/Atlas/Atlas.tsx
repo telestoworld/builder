@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo, useState, useEffect, useRef } from 'react'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { Atlas as AtlasComponent, Layer } from 'decentraland-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { Atlas as AtlasComponent, Layer } from 'telestoworld-ui'
 import { coordsToId, isCoords, idToCoords, getCenter, selectionBorderColorByRole } from 'modules/land/utils'
 import { RoleType, Land, LandTile } from 'modules/land/types'
 import { locations } from 'routing/locations'
@@ -36,14 +36,14 @@ const Atlas: React.FC<Props> = props => {
   const [zoom, setZoom] = useState<number>(props.zoom || 1)
   const timeout = useRef<NodeJS.Timer | null>(null)
 
-  let isEstate = false
+  let isSector = false
   if (landId) {
     if (!isCoords(landId)) {
-      isEstate = true
+      isSector = true
     } else if (landId in landTiles) {
       const tile = landTiles[landId]
       if (!isCoords(tile.land.id)) {
-        isEstate = true
+        isSector = true
       }
     }
   }
@@ -51,7 +51,7 @@ const Atlas: React.FC<Props> = props => {
   const selection = useMemo(() => {
     if (!landId) {
       return new Set<string>()
-    } else if (!isEstate) {
+    } else if (!isSector) {
       return new Set([landId])
     } else {
       return Object.keys(landTiles).reduce((set, coords) => {
@@ -62,12 +62,12 @@ const Atlas: React.FC<Props> = props => {
         return set
       }, new Set<string>())
     }
-  }, [landTiles, landId, isEstate])
+  }, [landTiles, landId, isSector])
 
   const [landX, landY] = useMemo(
     () =>
       landId
-        ? !isEstate
+        ? !isSector
           ? idToCoords(landId)
           : getCenter(
               Array.from(selection).map(id => {
@@ -76,7 +76,7 @@ const Atlas: React.FC<Props> = props => {
               })
             )
         : [props.x, props.y],
-    [landId, isEstate, selection]
+    [landId, isSector, selection]
   )
 
   const shouldShowLayer = (tile?: LandTile, showOwner?: boolean, showOperator?: boolean) => {
@@ -233,7 +233,7 @@ const Atlas: React.FC<Props> = props => {
       />
       {hoveredLand ? <Popup x={x} y={y} visible={showPopup} land={hoveredLand} /> : null}
       {showControls ? (
-        <div className="dcl atlas-control-container">
+        <div className="tw atlas-control-container">
           <Control content={t('atlas.locate_land')} icon="locate-land" onClick={handleLocateLand} />
           <div className="control-group">
             <Control content={t('atlas.zoom_out')} icon="atlas-zoom-out" onClick={handleZoomOut} />

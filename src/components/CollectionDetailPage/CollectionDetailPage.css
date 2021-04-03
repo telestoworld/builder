@@ -50,7 +50,7 @@
   color: var(--secondary-text) !important;
 }
 
-.CollectionDetailPage .dcl.row.actions > .ui.button.action-button {
+.CollectionDetailPage .tw.row.actions > .ui.button.action-button {
   margin-left: 24px;
   border: 1px solid var(--gray);
   padding: 8px;
@@ -91,7 +91,7 @@
   margin-bottom: 32px;
 }
 
-.CollectionDetailPage .dcl.narrow > .empty {
+.CollectionDetailPage .tw.narrow > .empty {
   padding: 200px 0;
   width: 100%;
   border-radius: 8px;

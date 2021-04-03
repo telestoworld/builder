@@ -1,2 +1,2 @@
-import EstateEditorModal from './EstateEditorModal.container'
-export default EstateEditorModal
+import SectorEditorModal from './SectorEditorModal.container'
+export default SectorEditorModal

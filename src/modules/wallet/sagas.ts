@@ -1,8 +1,8 @@
 import { all, takeEvery, put } from 'redux-saga/effects'
-import { ChainId } from '@dcl/schemas'
-import { ContractName, getContract } from 'decentraland-transactions'
-import { env } from 'decentraland-commons'
-import { createWalletSaga } from 'decentraland-dapps/dist/modules/wallet/sagas'
+import { ChainId } from 'tw-schemas'
+import { ContractName, getContract } from 'telestoworld-transactions'
+import { env } from 'telestoworld-commons'
+import { createWalletSaga } from 'telestoworld-dapps/dist/modules/wallet/sagas'
 import {
   CHANGE_ACCOUNT,
   CHANGE_NETWORK,
@@ -10,13 +10,13 @@ import {
   ChangeAccountAction,
   ChangeNetworkAction,
   ConnectWalletSuccessAction
-} from 'decentraland-dapps/dist/modules/wallet/actions'
-import { fetchAuthorizationsRequest } from 'decentraland-dapps/dist/modules/authorization/actions'
-import { Authorization, AuthorizationType } from 'decentraland-dapps/dist/modules/authorization/types'
-import { MANA_ADDRESS } from 'modules/common/contracts'
+} from 'telestoworld-dapps/dist/modules/wallet/actions'
+import { fetchAuthorizationsRequest } from 'telestoworld-dapps/dist/modules/authorization/actions'
+import { Authorization, AuthorizationType } from 'telestoworld-dapps/dist/modules/authorization/types'
+import { TELO_ADDRESS } from 'modules/common/contracts'
 
 const baseWalletSaga = createWalletSaga({
-  MANA_ADDRESS,
+  TELO_ADDRESS,
   CHAIN_ID: env.get('REACT_APP_CHAIN_ID') || ChainId.ETHEREUM_MAINNET
 })
 

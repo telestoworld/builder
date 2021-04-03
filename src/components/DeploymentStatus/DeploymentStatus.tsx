@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Popup } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Popup } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { DeploymentStatus as Status } from 'modules/deployment/types'
 import { getDeployment, getStatus } from 'modules/deployment/utils'
 import { coordsToId } from 'modules/land/utils'
@@ -41,7 +41,7 @@ export default class DeploymentStatus extends React.PureComponent<Props> {
         position="bottom left"
         content={tooltip}
         trigger={
-          <a className={classes} href={`https://play.decentraland.org?position=${x},${y}`} target="_blank" rel="no:opener no:referrer" />
+          <a className={classes} href={`https://play.telesto.world?position=${x},${y}`} target="_blank" rel="no:opener no:referrer" />
         }
         on="hover"
         inverted

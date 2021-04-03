@@ -1,10 +1,10 @@
 [
   {
-    "id": "urn:decentraland:off-chain:base-avatars:BaseFemale",
+    "id": "urn:telestoworld:off-chain:base-avatars:BaseFemale",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "BaseFemale.glb",
         "overrideReplaces": [],
@@ -41,7 +41,7 @@
       "female",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -57,11 +57,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:f_eyebrows_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:f_eyebrows_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_Eyebrows_00.png",
         "overrideReplaces": [],
@@ -83,7 +83,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -99,11 +99,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:f_eyes_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:f_eyes_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_Eyes_00.png",
         "overrideReplaces": [],
@@ -125,7 +125,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -141,11 +141,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:bun_shoes",
+    "id": "urn:telestoworld:off-chain:base-avatars:bun_shoes",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_BunShoes_01.glb",
         "overrideReplaces": [],
@@ -174,7 +174,7 @@
       "women",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -190,11 +190,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:standard_hair",
+    "id": "urn:telestoworld:off-chain:base-avatars:standard_hair",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_Hair_Standard.glb",
         "overrideReplaces": [],
@@ -219,7 +219,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -236,11 +236,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:f_jeans",
+    "id": "urn:telestoworld:off-chain:base-avatars:f_jeans",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_lBody_Jeans_01.glb",
         "overrideReplaces": [],
@@ -265,7 +265,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -281,11 +281,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:f_mouth_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:f_mouth_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_Mouth_00.png",
         "overrideReplaces": [],
@@ -307,7 +307,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -323,11 +323,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:f_sweater",
+    "id": "urn:telestoworld:off-chain:base-avatars:f_sweater",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "F_uBody_Sweater_01.glb",
         "overrideReplaces": [],
@@ -356,7 +356,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",

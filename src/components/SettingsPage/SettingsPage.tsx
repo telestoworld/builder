@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import {
   Grid,
@@ -14,9 +14,9 @@ import {
   Section,
   DropdownProps,
   Header
-} from 'decentraland-ui'
-import { isMobile } from 'decentraland-dapps/dist/lib/utils'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
+} from 'telestoworld-ui'
+import { isMobile } from 'telestoworld-dapps/dist/lib/utils'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import Profile from 'components/Profile'
 import LoggedInDetailPage from 'components/LoggedInDetailPage'
@@ -26,7 +26,7 @@ import { LandType } from 'modules/land/types'
 import { Props, State } from './SettingsPage.types'
 import './SettingsPage.css'
 
-const BUY_MANA_URL = env.get('REACT_APP_BUY_MANA_URL', '')
+const BUY_TELO_URL = env.get('REACT_APP_BUY_TELO_URL', '')
 
 export default class SettingsPage extends React.PureComponent<Props, State> {
   timeoutId: NodeJS.Timer | null = null
@@ -63,7 +63,7 @@ export default class SettingsPage extends React.PureComponent<Props, State> {
   }
 
   renderPage() {
-    const { authorizations, mana, address, onSetUpdateManager } = this.props
+    const { authorizations, telo, address, onSetUpdateManager } = this.props
     const { hasCopiedText, managerAddress, type } = this.state
 
     const isValidAddress = isValid(managerAddress)
@@ -96,9 +96,9 @@ export default class SettingsPage extends React.PureComponent<Props, State> {
           </Grid.Column>
           <Grid.Column computer={12} mobile={16}>
             <div className="balance">
-              <Mana inline>{parseInt(mana!.toFixed(0), 10).toLocaleString()}</Mana>
-              {BUY_MANA_URL ? (
-                <a className="buy-more" href={BUY_MANA_URL} target="_blank" rel="noopener noreferrer">
+              <Telo inline>{parseInt(mana!.toFixed(0), 10).toLocaleString()}</Mana>
+              {BUY_TELO_URL ? (
+                <a className="buy-more" href={BUY_TELO_URL} target="_blank" rel="noopener noreferrer">
                   {t('settings_page.buy_more_mana')}
                 </a>
               ) : null}
@@ -134,7 +134,7 @@ export default class SettingsPage extends React.PureComponent<Props, State> {
                           value: LandType.PARCEL
                         },
                         {
-                          text: 'Estates',
+                          text: 'Sectors',
                           value: LandType.ESTATE
                         }
                       ]}

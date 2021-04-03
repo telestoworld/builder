@@ -1,11 +1,11 @@
-import { LoadingState, loadingReducer } from 'decentraland-dapps/dist/modules/loading/reducer'
+import { LoadingState, loadingReducer } from 'telestoworld-dapps/dist/modules/loading/reducer'
 import {
   FetchLandsRequestAction,
   FetchLandsSuccessAction,
   FetchLandsFailureAction,
-  FETCH_LANDS_REQUEST,
-  FETCH_LANDS_SUCCESS,
-  FETCH_LANDS_FAILURE
+  FETCH_SPACES_REQUEST,
+  FETCH_SPACES_SUCCESS,
+  FETCH_SPACES_FAILURE
 } from './actions'
 import { Land, Authorization } from './types'
 
@@ -27,14 +27,14 @@ export type LandReducerAction = FetchLandsRequestAction | FetchLandsSuccessActio
 
 export function landReducer(state: LandState = INITIAL_STATE, action: LandReducerAction) {
   switch (action.type) {
-    case FETCH_LANDS_REQUEST: {
+    case FETCH_SPACES_REQUEST: {
       return {
         ...state,
         authorizations: [],
         loading: loadingReducer(state.loading, action)
       }
     }
-    case FETCH_LANDS_SUCCESS: {
+    case FETCH_SPACES_SUCCESS: {
       const { address, lands, authorizations } = action.payload
       return {
         data: {
@@ -46,7 +46,7 @@ export function landReducer(state: LandState = INITIAL_STATE, action: LandReduce
         error: null
       }
     }
-    case FETCH_LANDS_FAILURE: {
+    case FETCH_SPACES_FAILURE: {
       const { error } = action.payload
       return {
         ...state,

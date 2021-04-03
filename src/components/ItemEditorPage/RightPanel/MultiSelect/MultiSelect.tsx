@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Dropdown, DropdownProps } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Dropdown, DropdownProps } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Props, State } from './MultiSelect.types'
 import './MultiSelect.css'
 

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { RootState } from 'modules/common/types'
 import { getItemId } from 'modules/location/selectors'
 import { getCollection } from 'modules/collection/selectors'

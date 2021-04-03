@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { Navbar as BaseNavbar } from 'decentraland-dapps/dist/containers'
+import { Navbar as BaseNavbar } from 'telestoworld-dapps/dist/containers'
 import UserMenu from 'components/UserMenu'
 import { Props } from './Navbar.types'
 

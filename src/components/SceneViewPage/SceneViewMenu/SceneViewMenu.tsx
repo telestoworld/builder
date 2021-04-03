@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Button, Responsive } from 'decentraland-ui'
+import { Button, Responsive } from 'telestoworld-ui'
 
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import UserMenu from 'components/UserMenu'
 import { Props, State } from './SceneViewMenu.types'
 

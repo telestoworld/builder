@@ -1,6 +1,6 @@
 {
   "atlas": {
-    "locate_land": "Localiza la siguente LAND",
+    "locate_land": "Localiza la siguente SPACE",
     "zoom_in": "Acercarse",
     "zoom_out": "Alejarse"
   },
@@ -152,7 +152,7 @@
   },
   "claim_ens_page": {
     "title": "Reclamar un nombre único",
-    "subtitle": "Se pueden asignar nombres únicos a su avatar para usarlos como un alias, o se pueden asignar a parcelas y propiedades. {br} Asignar un nombre a una parcela o propiedad le permite crear una URL única, como {exampleLink}, por lo que fácilmente podrá enviar personas a su LAND. Cuando alguien siga su nueva URL, será redirigido a su LAND en {dclWorldLink}",
+    "subtitle": "Se pueden asignar nombres únicos a su avatar para usarlos como un alias, o se pueden asignar a parcelas y propiedades. {br} Asignar un nombre a una parcela o propiedad le permite crear una URL única, como {exampleLink}, por lo que fácilmente podrá enviar personas a su SPACE. Cuando alguien siga su nueva URL, será redirigido a su SPACE en {twWorldLink}",
     "world": "Decentraland!",
     "name_label": "Nombre",
     "name_message": "Los nombres no pueden exceder los 15 caracteres, contener espacios o incluir caracteres no alfanuméricos.",
@@ -217,15 +217,15 @@
       },
       "success": {
         "continue": "OK",
-        "description": "¡La LAND ya esta despejada y lista para publicar una nueva Escena!",
+        "description": "¡La SPACE ya esta despejada y lista para publicar una nueva Escena!",
         "title": "¡Todo listo!"
       }
     },
-    "description": "Sube to Escena a tu LAND o aplica por un permiso para que dueños de LAND lo hagan por tí.",
+    "description": "Sube to Escena a tu SPACE o aplica por un permiso para que dueños de SPACE lo hagan por tí.",
     "land": {
       "confirmation": {
         "action": "Publicar",
-        "description": "Estas publicando la siguiente Escena en tu LAND:",
+        "description": "Estas publicando la siguiente Escena en tu SPACE:",
         "location_label": "Publicada en",
         "size_label": "Tamaño",
         "title_label": "Título"
@@ -237,11 +237,11 @@
       "map": {
         "continue": "Continuar",
         "no_land_action": "Sube tu Escena al Pool",
-        "no_land_warning": "Parece que no posees LAND",
-        "occupied_tooltip": "Libera espacio de tu LAND{br}Despublica la Escena desde el dashboard",
+        "no_land_warning": "Parece que no posees SPACE",
+        "occupied_tooltip": "Libera espacio de tu SPACE{br}Despublica la Escena desde el dashboard",
         "occupied_warning": "Al menos una Escena ya está publicada en esta ubicación",
-        "placement_active": "Colocando una Escena de {count} LAND en {x},{y}",
-        "placement_default": "Selecciona las LANDs donde publicarás tu Escena",
+        "placement_active": "Colocando una Escena de {count} SPACE en {x},{y}",
+        "placement_default": "Selecciona las SPACEs donde publicarás tu Escena",
         "reset": "Restablecer",
         "title": "Publica la Escena"
       },
@@ -272,13 +272,13 @@
       "title": "Publicar Escena"
     },
     "option_land": {
-      "action": "Publicar a LAND",
-      "description": "Publica tu Escena en tu LAND o Estate.",
-      "title": "Mi LAND"
+      "action": "Publicar a SPACE",
+      "description": "Publica tu Escena en tu SPACE o Sector.",
+      "title": "Mi SPACE"
     },
     "option_pool": {
       "action": "Aplicar",
-      "description": "Aplica para que tu Escena sea publicada en una LAND que pertenece a otros.",
+      "description": "Aplica para que tu Escena sea publicada en una SPACE que pertenece a otros.",
       "title": "Pool de Escenas"
     },
     "pool": {
@@ -333,9 +333,9 @@
     }
   },
   "dissolve_modal": {
-    "title": "Disolver Estate",
+    "title": "Disolver Sector",
     "confirm": "Estás por disolver a {name}. Deseas continuar?",
-    "too_big": "Este Estate es muy grane para ser disuelto en una transacción. Por favor remueve parcelas hasta que tenga como máximo un tamaño de {max} parcelas."
+    "too_big": "Este Sector es muy grane para ser disuelto en una transacción. Por favor remueve parcelas hasta que tenga como máximo un tamaño de {max} parcelas."
   },
   "edit_project_modal": {
     "custom_layout_label": "Dimensiones",
@@ -349,7 +349,7 @@
       "assigned_to": "Asignado a"
     },
     "assigned_to_land": "Tierra ({landId})",
-    "assigned_to_estate": "Estate ({landId})",
+    "assigned_to_estate": "Sector ({landId})",
     "button": {
       "assign": "Usar como link",
       "edit": "Editar link",
@@ -367,13 +367,13 @@
     "title": "Oops"
   },
   "estate_editor": {
-    "title_edit": "Editar Estate",
+    "title_edit": "Editar Sector",
     "subtitle_edit": "Haz click para agregar o remover parcelaas",
-    "title_create": "Construir Estate",
-    "subtitle_create": "Haz click en parcelas adjacentes para construir to Estate",
-    "subtitle_form": "Escribe un nombre y descripción para tu Estate",
+    "title_create": "Construir Sector",
+    "subtitle_create": "Haz click en parcelas adjacentes para construir to Sector",
+    "subtitle_form": "Escribe un nombre y descripción para tu Sector",
     "name_label": "Nombre",
-    "name_placeholder": "Mi Estate...",
+    "name_placeholder": "Mi Sector...",
     "description_label": "Descripción",
     "description_placeholder": "Alguna descripción...",
     "add_limit_reached": "Puedes agregar un máximo de {max} parcelas a la vez",
@@ -531,7 +531,7 @@
     "gallery_title": "Esto es lo que se está costruyendo",
     "learn_more": "Aprende más acerca del Builder",
     "message": "El Builder aún no funciona en dispositivos móviles. Suscribete para recibir actualizaciones y pruebalo en tu PC.",
-    "reminder_body": "¡Ey!\n\n¡Al parecer has intentado utilizar el Builder desde un dispositivo movil!\nEl Builder solo funciona en computadoras de escritorio y notebooks. Cuando estes listo ingresa a https://builder.decentraland.org\n\n¡Que lo disfrutes!\n\nEl equipo de Decentraland",
+    "reminder_body": "¡Ey!\n\n¡Al parecer has intentado utilizar el Builder desde un dispositivo movil!\nEl Builder solo funciona en computadoras de escritorio y notebooks. Cuando estes listo ingresa a https://builder.telesto.world\n\n¡Que lo disfrutes!\n\nEl equipo de Decentraland",
     "reminder_subject": "Recordatorio: Probar el Builder de Decentraland",
     "secondary_hero": {
       "action": "Enviar recordatorio",
@@ -555,9 +555,9 @@
     "transfer": "Transferir",
     "set_operator": "Configurar Operador",
     "assign_name": "Configurar link",
-    "build_estate": "Construir Estate",
+    "build_estate": "Construir Sector",
     "add_or_remove_parcels": "Añadir o Quitar Parcelas",
-    "dissolve_estate": "Disolver Estate",
+    "dissolve_estate": "Disolver Sector",
     "online_scenes": "Escenas Online",
     "none": "Ninguna",
     "add_scene": "Agregar Escena",
@@ -571,11 +571,11 @@
   "land_assign_ens_page": {
     "title": "Asignar {name}",
     "subtitle": "Asigna un nombre a {land}",
-    "set_name_message": "Antes de poder asignar este nombre a su parcela, debe enviar 2 transacciones: la primera transacción le permite usar su nombre como enlace y la segunda transacción vincula su nombre a su LAND.",
+    "set_name_message": "Antes de poder asignar este nombre a su parcela, debe enviar 2 transacciones: la primera transacción le permite usar su nombre como enlace y la segunda transacción vincula su nombre a su SPACE.",
     "set_resolver": "Establecer Resolver",
     "set_resolver_explanation": "Esto permite que su nombre esté vinculado a una parcela",
     "set_content": "Establecer Contenido",
-    "set_content_explanation": "Esto resuelve su nombre con un enlace a su LAND en Decentraland"
+    "set_content_explanation": "Esto resuelve su nombre con un enlace a su SPACE en Decentraland"
   },
   "ens_select_land_page": {
     "title": "Asignar {name}",
@@ -586,7 +586,7 @@
   "land_select_ens_page": {
     "title": "Asigna un Nombre",
     "subtitle": "Asigna un nombre a {land}",
-    "empty_options_message": "No tienes nombres disponibles. Para asignar un nuevo nombre a tu LAND, necesitas reclamar uno",
+    "empty_options_message": "No tienes nombres disponibles. Para asignar un nuevo nombre a tu SPACE, necesitas reclamar uno",
     "claim_new_name": "Reclamar un nuevo nombre",
     "select_name_title": "Mis nombres",
     "select_name_placeholder": "Selecciona un nombre",
@@ -1044,7 +1044,7 @@
     "sessions": "Sesiones Semanales",
     "median_session_time": "Tiempo de Sesion",
     "max_concurrent_users": "Usuarios Concurrentes",
-    "notice": "*Las metricas se calculan una vez por semana cada Lunes"
+    "notice": "*Las metricas se calculan una vez por setelo cada Lunes"
   },
   "maintainance": {
     "notice": "Estamos en mantenimiento, volveremos pronto!"

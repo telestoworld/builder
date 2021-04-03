@@ -66,8 +66,8 @@ section.ActionField.ParameterField {
   padding: 4px 8px 4px 8px;
 }
 
-.ActionField .signature > .EntityField .dcl.select-field,
-.ActionField .signature > .OptionsField .dcl.select-field {
+.ActionField .signature > .EntityField .tw.select-field,
+.ActionField .signature > .OptionsField .tw.select-field {
   width: 100%;
 }
 
@@ -75,7 +75,7 @@ section.ActionField.ParameterField {
   height: 30px;
 }
 
-.ActionField .signature > .OptionsField .dcl.select-field .ui.dropdown .dropdown.icon {
+.ActionField .signature > .OptionsField .tw.select-field .ui.dropdown .dropdown.icon {
   padding: 12px;
 }
 
@@ -103,6 +103,6 @@ section.ActionField.ParameterField {
   margin-bottom: 24px;
 }
 
-.ActionField aside .dcl.dcl.select-field {
+.ActionField aside .tw.tw.select-field {
   width: 100%;
 }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { RootState } from 'modules/common/types'
 import { getItem } from 'modules/item/selectors'
 import { deleteItemRequest, saveItemRequest, savePublishedItemRequest, setCollection } from 'modules/item/actions'

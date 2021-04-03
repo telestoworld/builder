@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Form, Field, Button } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Form, Field, Button } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { isValid } from 'lib/address'
 import { Props, State } from './EmptyManager.types'

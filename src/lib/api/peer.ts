@@ -1,5 +1,5 @@
-import { env } from 'decentraland-commons'
-import { BaseAPI } from 'decentraland-dapps/dist/lib/api'
+import { env } from 'telestoworld-commons'
+import { BaseAPI } from 'telestoworld-dapps/dist/lib/api'
 import { ContentServiceScene } from 'modules/deployment/types'
 
 export const PEER_URL = env.get('REACT_APP_PEER_URL', '')

@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { Button, Loader, ModalNavigation, Input, InputOnChangeData } from 'decentraland-ui'
+import { Button, Loader, ModalNavigation, Input, InputOnChangeData } from 'telestoworld-ui'
 
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 
 import WalletLoginModal from '../WalletLoginModal'
 import { ShareModalType, ShareModalMetadata } from '../ShareModal/ShareModal.types'
@@ -13,7 +13,7 @@ import { Props, State } from './ContestModal.types'
 import './ContestModal.css'
 
 const ETH_ADDRESS = /^0x[a-fA-F0-9]{40}$/gi
-const ETH_ADDRESS_KEY = 'dcl-buillder-eth-address'
+const ETH_ADDRESS_KEY = 'tw-buillder-eth-address'
 
 export default class ContestModal extends React.PureComponent<Props, State> {
   state: State = {

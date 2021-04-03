@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Loader, Row, Column, Section, Header, Button, Narrow } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Loader, Row, Column, Section, Header, Button, Narrow } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import LoggedInDetailPage from 'components/LoggedInDetailPage'
 import { locations } from 'routing/locations'
 import { Land } from 'modules/land/types'

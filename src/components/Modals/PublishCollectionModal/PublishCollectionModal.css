@@ -2,7 +2,7 @@
 .PublishCollectionModal .content {
   text-align: center;
 }
-.PublishCollectionModal.ui.modal > .dcl.modal-navigation {
+.PublishCollectionModal.ui.modal > .tw.modal-navigation {
   padding-top: 48px;
 }
 

@@ -1,4 +1,4 @@
-import { ModalProps } from 'decentraland-dapps/dist/providers/ModalProvider/ModalProvider.types'
+import { ModalProps } from 'telestoworld-dapps/dist/providers/ModalProvider/ModalProvider.types'
 import { setCollection, SetCollectionAction } from 'modules/item/actions'
 import { Item } from 'modules/item/types'
 import { Dispatch } from 'redux'

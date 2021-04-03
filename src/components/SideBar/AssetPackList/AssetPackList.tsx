@@ -1,7 +1,7 @@
 import React from 'react'
-import { env } from 'decentraland-commons'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { env } from 'telestoworld-commons'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 
 import { NEW_ASSET_PACKS, isSameAssetPack } from 'modules/ui/sidebar/utils'
 import Icon from 'components/Icon'

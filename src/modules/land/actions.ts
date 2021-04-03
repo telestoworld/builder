@@ -1,30 +1,30 @@
 import { action } from 'typesafe-actions'
-import { ChainId } from '@dcl/schemas'
-import { buildTransactionPayload } from 'decentraland-dapps/dist/modules/transaction/utils'
-import { Coord } from 'decentraland-ui'
+import { ChainId } from 'tw-schemas'
+import { buildTransactionPayload } from 'telestoworld-dapps/dist/modules/transaction/utils'
+import { Coord } from 'telestoworld-ui'
 import { Land, LandType, Authorization } from './types'
 import { getSelection } from './utils'
 
-export const FETCH_LANDS_REQUEST = '[Request] Fetch Lands'
-export const FETCH_LANDS_SUCCESS = '[Success] Fetch Lands'
-export const FETCH_LANDS_FAILURE = '[Failure] Fetch Lands'
+export const FETCH_SPACES_REQUEST = '[Request] Fetch Lands'
+export const FETCH_SPACES_SUCCESS = '[Success] Fetch Lands'
+export const FETCH_SPACES_FAILURE = '[Failure] Fetch Lands'
 
-export const fetchLandsRequest = (address: string) => action(FETCH_LANDS_REQUEST, { address })
+export const fetchLandsRequest = (address: string) => action(FETCH_SPACES_REQUEST, { address })
 export const fetchLandsSuccess = (address: string, lands: Land[], authorizations: Authorization[]) =>
-  action(FETCH_LANDS_SUCCESS, { address, lands, authorizations })
-export const fetchLandsFailure = (address: string, error: string) => action(FETCH_LANDS_FAILURE, { address, error })
+  action(FETCH_SPACES_SUCCESS, { address, lands, authorizations })
+export const fetchLandsFailure = (address: string, error: string) => action(FETCH_SPACES_FAILURE, { address, error })
 
 export type FetchLandsRequestAction = ReturnType<typeof fetchLandsRequest>
 export type FetchLandsSuccessAction = ReturnType<typeof fetchLandsSuccess>
 export type FetchLandsFailureAction = ReturnType<typeof fetchLandsFailure>
 
-export const TRANSFER_LAND_REQUEST = '[Request] Transfer Land'
-export const TRANSFER_LAND_SUCCESS = '[Success] Transfer Land'
-export const TRANSFER_LAND_FAILURE = '[Failure] Transfer Land'
+export const TRANSFER_SPACE_REQUEST = '[Request] Transfer Land'
+export const TRANSFER_SPACE_SUCCESS = '[Success] Transfer Land'
+export const TRANSFER_SPACE_FAILURE = '[Failure] Transfer Land'
 
-export const transferLandRequest = (land: Land, address: string) => action(TRANSFER_LAND_REQUEST, { land, address })
+export const transferLandRequest = (land: Land, address: string) => action(TRANSFER_SPACE_REQUEST, { land, address })
 export const transferLandSuccess = (land: Land, address: string, chainId: ChainId, txHash: string) =>
-  action(TRANSFER_LAND_SUCCESS, {
+  action(TRANSFER_SPACE_SUCCESS, {
     land,
     address,
     ...buildTransactionPayload(chainId, txHash, {
@@ -34,19 +34,19 @@ export const transferLandSuccess = (land: Land, address: string, chainId: ChainI
       selection: getSelection(land)
     })
   })
-export const transferLandFailure = (land: Land, address: string, error: string) => action(TRANSFER_LAND_FAILURE, { land, address, error })
+export const transferLandFailure = (land: Land, address: string, error: string) => action(TRANSFER_SPACE_FAILURE, { land, address, error })
 
 export type TransferLandRequestAction = ReturnType<typeof transferLandRequest>
 export type TransferLandSuccessAction = ReturnType<typeof transferLandSuccess>
 export type TransferLandFailureAction = ReturnType<typeof transferLandFailure>
 
-export const EDIT_LAND_REQUEST = '[Request] Edit Land'
-export const EDIT_LAND_SUCCESS = '[Success] Edit Land'
-export const EDIT_LAND_FAILURE = '[Failure] Edit Land'
+export const EDIT_SPACE_REQUEST = '[Request] Edit Land'
+export const EDIT_SPACE_SUCCESS = '[Success] Edit Land'
+export const EDIT_SPACE_FAILURE = '[Failure] Edit Land'
 
-export const editLandRequest = (land: Land, name: string, description: string) => action(EDIT_LAND_REQUEST, { land, name, description })
+export const editLandRequest = (land: Land, name: string, description: string) => action(EDIT_SPACE_REQUEST, { land, name, description })
 export const editLandSuccess = (land: Land, name: string, description: string, chainId: ChainId, txHash: string) =>
-  action(EDIT_LAND_SUCCESS, {
+  action(EDIT_SPACE_SUCCESS, {
     land,
     name,
     description,
@@ -58,7 +58,7 @@ export const editLandSuccess = (land: Land, name: string, description: string, c
     })
   })
 export const editLandFailure = (land: Land, name: string, description: string, error: string) =>
-  action(EDIT_LAND_FAILURE, { land, name, description, error })
+  action(EDIT_SPACE_FAILURE, { land, name, description, error })
 
 export type EditLandRequestAction = ReturnType<typeof editLandRequest>
 export type EditLandSuccessAction = ReturnType<typeof editLandSuccess>
@@ -87,13 +87,13 @@ export type SetOperatorRequestAction = ReturnType<typeof setOperatorRequest>
 export type SetOperatorSuccessAction = ReturnType<typeof setOperatorSuccess>
 export type SetOperatorFailureAction = ReturnType<typeof setOperatorFailure>
 
-export const CREATE_ESTATE_REQUEST = '[Request] Create Estate'
-export const CREATE_ESTATE_SUCCESS = '[Success] Create Estate'
-export const CREATE_ESTATE_FAILURE = '[Failure] Create Estate'
+export const CREATE_ESTATE_REQUEST = '[Request] Create Sector'
+export const CREATE_ESTATE_SUCCESS = '[Success] Create Sector'
+export const CREATE_ESTATE_FAILURE = '[Failure] Create Sector'
 
-export const createEstateRequest = (name: string, description: string, coords: Coord[]) =>
+export const createSectorRequest = (name: string, description: string, coords: Coord[]) =>
   action(CREATE_ESTATE_REQUEST, { name, description, coords })
-export const createEstateSuccess = (name: string, description: string, coords: Coord[], chainId: ChainId, txHash: string) =>
+export const createSectorSuccess = (name: string, description: string, coords: Coord[], chainId: ChainId, txHash: string) =>
   action(CREATE_ESTATE_SUCCESS, {
     name,
     description,
@@ -105,19 +105,19 @@ export const createEstateSuccess = (name: string, description: string, coords: C
       selection: coords
     })
   })
-export const createEstateFailure = (name: string, description: string, coords: Coord[], error: string) =>
+export const createSectorFailure = (name: string, description: string, coords: Coord[], error: string) =>
   action(CREATE_ESTATE_FAILURE, { name, description, coords, error })
 
-export type CreateEstateRequestAction = ReturnType<typeof createEstateRequest>
-export type CreateEstateSuccessAction = ReturnType<typeof createEstateSuccess>
-export type CreateEstateFailureAction = ReturnType<typeof createEstateFailure>
+export type CreateSectorRequestAction = ReturnType<typeof createSectorRequest>
+export type CreateSectorSuccessAction = ReturnType<typeof createSectorSuccess>
+export type CreateSectorFailureAction = ReturnType<typeof createSectorFailure>
 
-export const EDIT_ESTATE_REQUEST = '[Request] Edit Estate'
-export const EDIT_ESTATE_SUCCESS = '[Success] Edit Estate'
-export const EDIT_ESTATE_FAILURE = '[Failure] Edit Estate'
+export const EDIT_ESTATE_REQUEST = '[Request] Edit Sector'
+export const EDIT_ESTATE_SUCCESS = '[Success] Edit Sector'
+export const EDIT_ESTATE_FAILURE = '[Failure] Edit Sector'
 
-export const editEstateRequest = (land: Land, toAdd: Coord[], toRemove: Coord[]) => action(EDIT_ESTATE_REQUEST, { land, toAdd, toRemove })
-export const editEstateSuccess = (land: Land, coords: Coord[], type: 'add' | 'remove', chainId: ChainId, txHash: string) =>
+export const editSectorRequest = (land: Land, toAdd: Coord[], toRemove: Coord[]) => action(EDIT_ESTATE_REQUEST, { land, toAdd, toRemove })
+export const editSectorSuccess = (land: Land, coords: Coord[], type: 'add' | 'remove', chainId: ChainId, txHash: string) =>
   action(EDIT_ESTATE_SUCCESS, {
     land,
     coords,
@@ -130,19 +130,19 @@ export const editEstateSuccess = (land: Land, coords: Coord[], type: 'add' | 're
       selection: getSelection(land)
     })
   })
-export const editEstateFailure = (land: Land, toAdd: Coord[], toRemove: Coord[], error: string) =>
+export const editSectorFailure = (land: Land, toAdd: Coord[], toRemove: Coord[], error: string) =>
   action(EDIT_ESTATE_FAILURE, { land, toAdd, toRemove, error })
 
-export type EditEstateRequestAction = ReturnType<typeof editEstateRequest>
-export type EditEstateSuccessAction = ReturnType<typeof editEstateSuccess>
-export type EditEstateFailureAction = ReturnType<typeof editEstateFailure>
+export type EditSectorRequestAction = ReturnType<typeof editSectorRequest>
+export type EditSectorSuccessAction = ReturnType<typeof editSectorSuccess>
+export type EditSectorFailureAction = ReturnType<typeof editSectorFailure>
 
-export const DISSOLVE_ESTATE_REQUEST = '[Request] Dissolve Estate'
-export const DISSOLVE_ESTATE_SUCCESS = '[Success] Dissolve Estate'
-export const DISSOLVE_ESTATE_FAILURE = '[Failure] Dissolve Estate'
+export const DISSOLVE_ESTATE_REQUEST = '[Request] Dissolve Sector'
+export const DISSOLVE_ESTATE_SUCCESS = '[Success] Dissolve Sector'
+export const DISSOLVE_ESTATE_FAILURE = '[Failure] Dissolve Sector'
 
-export const dissolveEstateRequest = (land: Land) => action(DISSOLVE_ESTATE_REQUEST, { land })
-export const dissolveEstateSuccess = (land: Land, chainId: ChainId, txHash: string) =>
+export const dissolveSectorRequest = (land: Land) => action(DISSOLVE_ESTATE_REQUEST, { land })
+export const dissolveSectorSuccess = (land: Land, chainId: ChainId, txHash: string) =>
   action(DISSOLVE_ESTATE_SUCCESS, {
     land,
     ...buildTransactionPayload(chainId, txHash, {
@@ -151,11 +151,11 @@ export const dissolveEstateSuccess = (land: Land, chainId: ChainId, txHash: stri
       selection: getSelection(land)
     })
   })
-export const dissolveEstateFailure = (land: Land, error: string) => action(DISSOLVE_ESTATE_FAILURE, { land, error })
+export const dissolveSectorFailure = (land: Land, error: string) => action(DISSOLVE_ESTATE_FAILURE, { land, error })
 
-export type DissolveEstateRequestAction = ReturnType<typeof dissolveEstateRequest>
-export type DissolveEstateSuccessAction = ReturnType<typeof dissolveEstateSuccess>
-export type DissolveEstateFailureAction = ReturnType<typeof dissolveEstateFailure>
+export type DissolveSectorRequestAction = ReturnType<typeof dissolveSectorRequest>
+export type DissolveSectorSuccessAction = ReturnType<typeof dissolveSectorSuccess>
+export type DissolveSectorFailureAction = ReturnType<typeof dissolveSectorFailure>
 
 export const SET_UPDATE_MANAGER_REQUEST = '[Request] Set Update Manager'
 export const SET_UPDATE_MANAGER_SUCCESS = '[Success] Set Update Manager'

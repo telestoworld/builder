@@ -1,4 +1,4 @@
-import { ModalProps } from 'decentraland-dapps/dist/providers/ModalProvider/ModalProvider.types'
+import { ModalProps } from 'telestoworld-dapps/dist/providers/ModalProvider/ModalProvider.types'
 
 export type Props = ModalProps & {
   isLoggedIn: boolean

@@ -1,5 +1,5 @@
 {
-  "extends": ["dcl-tslint-config-standard", "tslint-plugin-prettier"],
+  "extends": ["tw-tslint-config-standard", "tslint-plugin-prettier"],
   "rules": {
     "quotemark": false,
     "no-commented-out-code": false,

@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Button, Popup } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Button, Popup } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { getExceededMetrics } from 'modules/scene/utils'
 import { DeploymentStatus } from 'modules/deployment/types'
 import { DeployModalView, DeployModalMetadata } from 'components/Modals/DeployModal/DeployModal.types'
@@ -25,7 +25,7 @@ export default class DeployButton extends React.PureComponent<Props> {
     const canUpdate = this.isUpdate()
 
     onOpenModal('DeployModal', {
-      view: canUpdate ? DeployModalView.DEPLOY_TO_LAND : DeployModalView.NONE,
+      view: canUpdate ? DeployModalView.DEPLOY_TO_SPACE : DeployModalView.NONE,
       projectId: project.id
     } as DeployModalMetadata)
   }

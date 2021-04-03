@@ -1,6 +1,6 @@
 {
   "atlas": {
-    "locate_land": "Locate next LAND",
+    "locate_land": "Locate next SPACE",
     "zoom_in": "Zoom in",
     "zoom_out": "Zoom out"
   },
@@ -149,7 +149,7 @@
   },
   "claim_ens_page": {
     "title": "Claim a unique Name",
-    "subtitle": "Unique names can be assigned to your avatar for use as an alias, or they can be assigned to parcels.{br} Assigning a name to a parcel or estate allows you to create a unique URL, like {exampleLink}, making it easy to send people to your LAND. When someone follows your new URL, they will be redirected to your LAND in {dclWorldLink}",
+    "subtitle": "Unique names can be assigned to your avatar for use as an alias, or they can be assigned to parcels.{br} Assigning a name to a parcel or estate allows you to create a unique URL, like {exampleLink}, making it easy to send people to your SPACE. When someone follows your new URL, they will be redirected to your SPACE in {twWorldLink}",
     "world": "Decentraland!",
     "name_label": "Name",
     "name_message": "Names may not exceed 15 characters, contain spaces, or include any non-alphanumeric characters.",
@@ -218,11 +218,11 @@
         "title": "All clear!"
       }
     },
-    "description": "Deploy your Scene to your LAND or apply for a permit from landowners.",
+    "description": "Deploy your Scene to your SPACE or apply for a permit from landowners.",
     "land": {
       "confirmation": {
         "action": "Publish",
-        "description": "You are publishing the following Scene to your LANDs:",
+        "description": "You are publishing the following Scene to your SPACEs:",
         "location_label": "Published at",
         "size_label": "Size",
         "title_label": "Title"
@@ -234,11 +234,11 @@
       "map": {
         "continue": "Continue",
         "no_land_action": "Submit to Scene pool",
-        "no_land_warning": "It seems that you don't own any LAND",
+        "no_land_warning": "It seems that you don't own any SPACE",
         "occupied_tooltip": "You can't publish here{br}It's overlapping with the scene \"{name}\"",
         "occupied_warning": "This location is overlapping with the scene \"{name}\"",
-        "placement_active": "Placing a {count} LAND Scene at {x},{y}",
-        "placement_default": "Select the LANDs that will host your Scene",
+        "placement_active": "Placing a {count} SPACE Scene at {x},{y}",
+        "placement_default": "Select the SPACEs that will host your Scene",
         "reset": "Reset",
         "title": "Publish Scene"
       },
@@ -269,13 +269,13 @@
       "title": "Publish Scene"
     },
     "option_land": {
-      "action": "Publish to LAND",
-      "description": "Deploy your Scene to your LAND or Estate.",
-      "title": "My LAND"
+      "action": "Publish to SPACE",
+      "description": "Deploy your Scene to your SPACE or Sector.",
+      "title": "My SPACE"
     },
     "option_pool": {
       "action": "Apply",
-      "description": "Apply with your Scene to be deployed on LAND that belongs to others.",
+      "description": "Apply with your Scene to be deployed on SPACE that belongs to others.",
       "title": "Scene Pool"
     },
     "pool": {
@@ -326,9 +326,9 @@
     }
   },
   "dissolve_modal": {
-    "title": "Dissolve Estate",
+    "title": "Dissolve Sector",
     "confirm": "You are about to dissolve {name}. Do you want to proceed?",
-    "too_big": "This Estate is too big to be dissolved in one transaction. Please remove parcels until its size is at most {max} parcels."
+    "too_big": "This Sector is too big to be dissolved in one transaction. Please remove parcels until its size is at most {max} parcels."
   },
   "edit_project_modal": {
     "custom_layout_label": "Layout",
@@ -346,7 +346,7 @@
       "assigned_to": "Assigned To"
     },
     "assigned_to_land": "Land ({landId})",
-    "assigned_to_estate": "Estate ({landId})",
+    "assigned_to_estate": "Sector ({landId})",
     "button": {
       "assign": "Use as Link",
       "edit": "Edit Link",
@@ -364,13 +364,13 @@
     "title": "Oops!"
   },
   "estate_editor": {
-    "title_edit": "Edit Estate",
+    "title_edit": "Edit Sector",
     "subtitle_edit": "Click to add or remove parcels",
-    "title_create": "Build Estate",
-    "subtitle_create": "Click on adjacent parcels to build your Estate",
-    "subtitle_form": "Write a name and description for your Estate",
+    "title_create": "Build Sector",
+    "subtitle_create": "Click on adjacent parcels to build your Sector",
+    "subtitle_form": "Write a name and description for your Sector",
     "name_label": "Name",
-    "name_placeholder": "My Estate...",
+    "name_placeholder": "My Sector...",
     "description_label": "Description",
     "description_placeholder": "Some description...",
     "add_limit_reached": "You can add a maximum of {max} parcels at once",
@@ -523,7 +523,7 @@
     "gallery_title": "Check out work from Builder users!",
     "learn_more": "Learn more about the Builder",
     "message": "The Builder is only available on desktop right now. Sign up to receive updates and check it out on your computer.",
-    "reminder_body": "Hey there!\n\nWhoops! It looks like you tried to use the Builder from a mobile device!\nThe Builder only runs on desktop and laptop computers. Grab your nearest computer, and try again at https://builder.decentraland.org\n\nHappy building!\n\nThe Decentraland Team",
+    "reminder_body": "Hey there!\n\nWhoops! It looks like you tried to use the Builder from a mobile device!\nThe Builder only runs on desktop and laptop computers. Grab your nearest computer, and try again at https://builder.telesto.world\n\nHappy building!\n\nThe Decentraland Team",
     "reminder_subject": "Reminder: Try out Decentraland's Builder",
     "secondary_hero": {
       "action": "Send yourself a reminder",
@@ -577,9 +577,9 @@
     "transfer": "Transfer",
     "set_operator": "Set Operator",
     "assign_name": "Set link",
-    "build_estate": "Build Estate",
+    "build_estate": "Build Sector",
     "add_or_remove_parcels": "Add Or Remove Parcels",
-    "dissolve_estate": "Dissolve Estate",
+    "dissolve_estate": "Dissolve Sector",
     "online_scenes": "Online Scenes",
     "none": "None",
     "add_scene": "Add Scene",
@@ -593,7 +593,7 @@
   "land_assign_ens_page": {
     "title": "Use {name} as link",
     "subtitle": "This link will take you to {land}",
-    "set_name_message": "Before you can assign this name to your land, you need to submit 2 transactions: The first transaction allows you to use your name as a link and the second transaction links your name to your LAND.",
+    "set_name_message": "Before you can assign this name to your land, you need to submit 2 transactions: The first transaction allows you to use your name as a link and the second transaction links your name to your SPACE.",
     "set_resolver": "Set Resolver",
     "set_resolver_explanation": "This allows your name to be linked to a land",
     "set_content": "Set Content",
@@ -608,7 +608,7 @@
   "land_select_ens_page": {
     "title": "Select a Name",
     "subtitle": "It will be used as a link to {land}",
-    "empty_options_message": "You don't have any available names. To assign a name to your LAND, you first need to claim it.",
+    "empty_options_message": "You don't have any available names. To assign a name to your SPACE, you first need to claim it.",
     "claim_new_name": "Claim a new name",
     "select_name_title": "My names",
     "select_name_placeholder": "Choose a name...",

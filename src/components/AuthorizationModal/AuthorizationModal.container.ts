@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
 import { RootState } from 'modules/common/types'
-import { Authorization } from 'decentraland-dapps/dist/modules/authorization/types'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
-import { getData, getTransactions, getLoading } from 'decentraland-dapps/dist/modules/authorization/selectors'
+import { Authorization } from 'telestoworld-dapps/dist/modules/authorization/types'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
+import { getData, getTransactions, getLoading } from 'telestoworld-dapps/dist/modules/authorization/selectors'
 import {
   grantTokenRequest,
   GRANT_TOKEN_REQUEST,
   revokeTokenRequest,
   REVOKE_TOKEN_REQUEST
-} from 'decentraland-dapps/dist/modules/authorization/actions'
-import { isPending } from 'decentraland-dapps/dist/modules/transaction/utils'
-import { areEqual } from 'decentraland-dapps/dist/modules/authorization/utils'
+} from 'telestoworld-dapps/dist/modules/authorization/actions'
+import { isPending } from 'telestoworld-dapps/dist/modules/transaction/utils'
+import { areEqual } from 'telestoworld-dapps/dist/modules/authorization/utils'
 import { MapStateProps, MapDispatchProps, MapDispatch, OwnProps } from './AuthorizationModal.types'
 import AuthorizationModal from './AuthorizationModal'
 

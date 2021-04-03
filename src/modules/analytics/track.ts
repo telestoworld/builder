@@ -1,5 +1,5 @@
 import { AnyAction } from 'redux'
-import { add } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { add } from 'telestoworld-dapps/dist/modules/analytics/utils'
 import { DROP_ITEM, RESET_ITEM, DUPLICATE_ITEM, SET_GROUND, AddItemAction, DropItemAction, SetGroundAction } from 'modules/scene/actions'
 import {
   EDITOR_UNDO,
@@ -19,18 +19,18 @@ import { SHARE_SCENE } from 'modules/ui/share/actions'
 import { LIKE_POOL_REQUEST } from 'modules/pool/actions'
 import { LOGIN_REQUEST, LOGOUT } from 'modules/identity/actions'
 import {
-  TRANSFER_LAND_SUCCESS,
+  TRANSFER_SPACE_SUCCESS,
   TransferLandSuccessAction,
-  EDIT_LAND_SUCCESS,
+  EDIT_SPACE_SUCCESS,
   EditLandSuccessAction,
   SetOperatorSuccessAction,
   SET_OPERATOR_SUCCESS,
   CREATE_ESTATE_SUCCESS,
-  CreateEstateSuccessAction,
-  EditEstateSuccessAction,
+  CreateSectorSuccessAction,
+  EditSectorSuccessAction,
   EDIT_ESTATE_SUCCESS,
   DISSOLVE_ESTATE_SUCCESS,
-  DissolveEstateSuccessAction,
+  DissolveSectorSuccessAction,
   SET_UPDATE_MANAGER_SUCCESS,
   SetUpdateManagerSuccessAction
 } from 'modules/land/actions'
@@ -81,13 +81,13 @@ import {
 import {
   AllowClaimManaSuccessAction,
   SetAliasSuccessAction,
-  ALLOW_CLAIM_MANA_SUCCESS,
+  ALLOW_CLAIM_TELO_SUCCESS,
   SET_ALIAS_SUCCESS,
   CLAIM_NAME_SUCCESS,
   SET_ENS_CONTENT_SUCCESS,
   SET_ENS_RESOLVER_SUCCESS
 } from 'modules/ens/actions'
-import { FetchTransactionSuccessAction } from 'decentraland-dapps/dist/modules/transaction/actions'
+import { FetchTransactionSuccessAction } from 'telestoworld-dapps/dist/modules/transaction/actions'
 
 function addPayload(actionType: string, eventName: string, getPayload = (action: any) => action.payload) {
   add(actionType, eventName, getPayload)
@@ -163,7 +163,7 @@ addPayload(SHARE_SCENE, 'Share scene')
 addPayload(LIKE_POOL_REQUEST, 'Like pool')
 
 // Transfer Land
-add(TRANSFER_LAND_SUCCESS, 'Transfer land', action => {
+add(TRANSFER_SPACE_SUCCESS, 'Transfer land', action => {
   const { payload } = action as TransferLandSuccessAction
   return {
     id: payload.land.id,
@@ -174,7 +174,7 @@ add(TRANSFER_LAND_SUCCESS, 'Transfer land', action => {
 })
 
 // Edit Land
-add(EDIT_LAND_SUCCESS, 'Edit land', action => {
+add(EDIT_SPACE_SUCCESS, 'Edit land', action => {
   const { payload } = action as EditLandSuccessAction
   return {
     id: payload.land.id,
@@ -198,18 +198,18 @@ add(
   }
 )
 
-// Create Estate
+// Create Sector
 add(CREATE_ESTATE_SUCCESS, 'Create estate', action => {
-  const { payload } = action as CreateEstateSuccessAction
+  const { payload } = action as CreateSectorSuccessAction
   return payload
 })
 
-// Edit Estate
+// Edit Sector
 add(
   EDIT_ESTATE_SUCCESS,
   action => (action.payload.type === 'add' ? 'Add parcels' : 'Remove parcels'),
   action => {
-    const { payload } = action as EditEstateSuccessAction
+    const { payload } = action as EditSectorSuccessAction
     return {
       id: payload.land.id,
       type: payload.land.type,
@@ -219,9 +219,9 @@ add(
   }
 )
 
-// Dissolve Estate
+// Dissolve Sector
 add(DISSOLVE_ESTATE_SUCCESS, 'Dissolve estate', action => {
-  const { payload } = action as DissolveEstateSuccessAction
+  const { payload } = action as DissolveSectorSuccessAction
   return {
     id: payload.land.id,
     type: payload.land.type
@@ -430,7 +430,7 @@ add(SET_ALIAS_SUCCESS, 'Use as Alias', action => {
   }
 })
 
-add(ALLOW_CLAIM_MANA_SUCCESS, 'Allow Claim Mana', action => {
+add(ALLOW_CLAIM_TELO_SUCCESS, 'Allow Claim Mana', action => {
   const { payload } = action as AllowClaimManaSuccessAction
   const { allowance, address } = payload
   return {

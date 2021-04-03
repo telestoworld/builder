@@ -3,7 +3,7 @@ import { Address } from 'web3x-es/address'
 import { EventLog, TransactionReceipt } from 'web3x-es/formatters'
 import { Contract, ContractOptions, TxCall, TxSend, EventSubscriptionFactory } from 'web3x-es/contract'
 import { Eth } from 'web3x-es/eth'
-import abi from './DCLRegistrarAbi'
+import abi from './TWRegistrarAbi'
 export type ApprovalEvent = {
   owner: Address
   approved: Address
@@ -75,7 +75,7 @@ export interface OwnershipTransferredEventLog extends EventLog<OwnershipTransfer
 export interface ReclaimedEventLog extends EventLog<ReclaimedEvent, 'Reclaimed'> {}
 export interface RegistryUpdatedEventLog extends EventLog<RegistryUpdatedEvent, 'RegistryUpdated'> {}
 export interface TransferEventLog extends EventLog<TransferEvent, 'Transfer'> {}
-interface DCLRegistrarEvents {
+interface TWRegistrarEvents {
   Approval: EventSubscriptionFactory<ApprovalEventLog>
   ApprovalForAll: EventSubscriptionFactory<ApprovalForAllEventLog>
   BaseURI: EventSubscriptionFactory<BaseURIEventLog>
@@ -91,7 +91,7 @@ interface DCLRegistrarEvents {
   RegistryUpdated: EventSubscriptionFactory<RegistryUpdatedEventLog>
   Transfer: EventSubscriptionFactory<TransferEventLog>
 }
-interface DCLRegistrarEventLogs {
+interface TWRegistrarEventLogs {
   Approval: ApprovalEventLog
   ApprovalForAll: ApprovalForAllEventLog
   BaseURI: BaseURIEventLog
@@ -107,7 +107,7 @@ interface DCLRegistrarEventLogs {
   RegistryUpdated: RegistryUpdatedEventLog
   Transfer: TransferEventLog
 }
-interface DCLRegistrarTxEventLogs {
+interface TWRegistrarTxEventLogs {
   Approval: ApprovalEventLog[]
   ApprovalForAll: ApprovalForAllEventLog[]
   BaseURI: BaseURIEventLog[]
@@ -123,11 +123,11 @@ interface DCLRegistrarTxEventLogs {
   RegistryUpdated: RegistryUpdatedEventLog[]
   Transfer: TransferEventLog[]
 }
-export interface DCLRegistrarTransactionReceipt extends TransactionReceipt<DCLRegistrarTxEventLogs> {}
-interface DCLRegistrarMethods {
+export interface TWRegistrarTransactionReceipt extends TransactionReceipt<TWRegistrarTxEventLogs> {}
+interface TWRegistrarMethods {
   ERC721_RECEIVED(): TxCall<string>
-  addController(controller: Address): TxSend<DCLRegistrarTransactionReceipt>
-  approve(to: Address, tokenId: number | string | BN): TxSend<DCLRegistrarTransactionReceipt>
+  addController(controller: Address): TxSend<TWRegistrarTransactionReceipt>
+  approve(to: Address, tokenId: number | string | BN): TxSend<TWRegistrarTransactionReceipt>
   available(_subdomain: string): TxCall<boolean>
   balanceOf(owner: Address): TxCall<string>
   base(): TxCall<Address>
@@ -140,22 +140,22 @@ interface DCLRegistrarMethods {
   getTokenId(_subdomain: string): TxCall<string>
   isApprovedForAll(owner: Address, operator: Address): TxCall<boolean>
   isOwner(): TxCall<boolean>
-  migrateNames(_names: string[], _beneficiaries: Address[], _createdDates: (number | string | BN)[]): TxSend<DCLRegistrarTransactionReceipt>
+  migrateNames(_names: string[], _beneficiaries: Address[], _createdDates: (number | string | BN)[]): TxSend<TWRegistrarTransactionReceipt>
   migrated(): TxCall<boolean>
-  migrationFinished(): TxSend<DCLRegistrarTransactionReceipt>
+  migrationFinished(): TxSend<TWRegistrarTransactionReceipt>
   name(): TxCall<string>
-  onERC721Received(a0: Address, a1: Address, _tokenId: number | string | BN, a3: string): TxSend<DCLRegistrarTransactionReceipt>
+  onERC721Received(a0: Address, a1: Address, _tokenId: number | string | BN, a3: string): TxSend<TWRegistrarTransactionReceipt>
   owner(): TxCall<Address>
   ownerOf(tokenId: number | string | BN): TxCall<Address>
-  reclaim(_tokenId: number | string | BN, _owner: Address): TxSend<DCLRegistrarTransactionReceipt>
-  reclaimDomain(_tokenId: number | string | BN): TxSend<DCLRegistrarTransactionReceipt>
-  register(_subdomain: string, _beneficiary: Address): TxSend<DCLRegistrarTransactionReceipt>
+  reclaim(_tokenId: number | string | BN, _owner: Address): TxSend<TWRegistrarTransactionReceipt>
+  reclaimDomain(_tokenId: number | string | BN): TxSend<TWRegistrarTransactionReceipt>
+  register(_subdomain: string, _beneficiary: Address): TxSend<TWRegistrarTransactionReceipt>
   registry(): TxCall<Address>
-  removeController(controller: Address): TxSend<DCLRegistrarTransactionReceipt>
-  renounceOwnership(): TxSend<DCLRegistrarTransactionReceipt>
-  safeTransferFrom(from: Address, to: Address, tokenId: number | string | BN): TxSend<DCLRegistrarTransactionReceipt>
-  safeTransferFrom(from: Address, to: Address, tokenId: number | string | BN, _data: string): TxSend<DCLRegistrarTransactionReceipt>
-  setApprovalForAll(to: Address, approved: boolean): TxSend<DCLRegistrarTransactionReceipt>
+  removeController(controller: Address): TxSend<TWRegistrarTransactionReceipt>
+  renounceOwnership(): TxSend<TWRegistrarTransactionReceipt>
+  safeTransferFrom(from: Address, to: Address, tokenId: number | string | BN): TxSend<TWRegistrarTransactionReceipt>
+  safeTransferFrom(from: Address, to: Address, tokenId: number | string | BN, _data: string): TxSend<TWRegistrarTransactionReceipt>
+  setApprovalForAll(to: Address, approved: boolean): TxSend<TWRegistrarTransactionReceipt>
   subdomains(a0: string): TxCall<string>
   supportsInterface(interfaceId: string): TxCall<boolean>
   symbol(): TxCall<string>
@@ -165,21 +165,21 @@ interface DCLRegistrarMethods {
   topdomain(): TxCall<string>
   topdomainNameHash(): TxCall<string>
   totalSupply(): TxCall<string>
-  transferDomainOwnership(_owner: Address, _tokenId: number | string | BN): TxSend<DCLRegistrarTransactionReceipt>
-  transferFrom(from: Address, to: Address, tokenId: number | string | BN): TxSend<DCLRegistrarTransactionReceipt>
-  transferOwnership(newOwner: Address): TxSend<DCLRegistrarTransactionReceipt>
-  updateBase(_base: Address): TxSend<DCLRegistrarTransactionReceipt>
-  updateBaseURI(_baseURI: string): TxSend<DCLRegistrarTransactionReceipt>
-  updateRegistry(_registry: Address): TxSend<DCLRegistrarTransactionReceipt>
+  transferDomainOwnership(_owner: Address, _tokenId: number | string | BN): TxSend<TWRegistrarTransactionReceipt>
+  transferFrom(from: Address, to: Address, tokenId: number | string | BN): TxSend<TWRegistrarTransactionReceipt>
+  transferOwnership(newOwner: Address): TxSend<TWRegistrarTransactionReceipt>
+  updateBase(_base: Address): TxSend<TWRegistrarTransactionReceipt>
+  updateBaseURI(_baseURI: string): TxSend<TWRegistrarTransactionReceipt>
+  updateRegistry(_registry: Address): TxSend<TWRegistrarTransactionReceipt>
 }
-export interface DCLRegistrarDefinition {
-  methods: DCLRegistrarMethods
-  events: DCLRegistrarEvents
-  eventLogs: DCLRegistrarEventLogs
+export interface TWRegistrarDefinition {
+  methods: TWRegistrarMethods
+  events: TWRegistrarEvents
+  eventLogs: TWRegistrarEventLogs
 }
-export class DCLRegistrar extends Contract<DCLRegistrarDefinition> {
+export class TWRegistrar extends Contract<TWRegistrarDefinition> {
   constructor(eth: Eth, address?: Address, options?: ContractOptions) {
     super(eth, abi, address, options)
   }
 }
-export var DCLRegistrarAbi = abi
+export var TWRegistrarAbi = abi

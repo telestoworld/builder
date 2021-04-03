@@ -1,14 +1,14 @@
-.TableRow .dcl.atlas {
+.TableRow .tw.atlas {
   margin-top: -22px;
   border-radius: 8px;
   overflow: hidden;
 }
 
-.TableRow .dcl.atlas .react-tile-map-canvas {
+.TableRow .tw.atlas .react-tile-map-canvas {
   cursor: pointer;
 }
 
-.TableRow .dcl.column.name {
+.TableRow .tw.column.name {
   justify-content: flex-start;
 }
 

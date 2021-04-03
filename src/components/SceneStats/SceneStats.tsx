@@ -1,9 +1,9 @@
 import * as React from 'react'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { formatTime } from 'lib/date'
 import Stats from './Stats'
 import { Props } from './SceneStats.types'
-import { Loader } from 'decentraland-ui'
+import { Loader } from 'telestoworld-ui'
 
 export default class SceneStats extends React.PureComponent<Props> {
   componentWillMount() {

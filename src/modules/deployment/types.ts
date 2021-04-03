@@ -14,9 +14,9 @@ export type ContentServiceFile = {
 
 export enum ProgressStage {
   NONE,
-  UPLOAD_RECORDING, // Client images/video are uploaded to LAND pool
+  UPLOAD_RECORDING, // Client images/video are uploaded to SPACE pool
   CREATE_FILES, // Creates scene files
-  UPLOAD_SCENE_ASSETS // Scene assets are uploaded to the content server (LAND deployment)
+  UPLOAD_SCENE_ASSETS // Scene assets are uploaded to the content server (SPACE deployment)
 }
 
 export type ContentManifest = Record<string, ContentIdentifier>

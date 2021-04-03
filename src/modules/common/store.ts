@@ -4,17 +4,17 @@ import createSagasMiddleware from 'redux-saga'
 import { createLogger } from 'redux-logger'
 import { createBrowserHistory } from 'history'
 
-import { env } from 'decentraland-commons'
-import { DataByKey } from 'decentraland-dapps/dist/lib/types'
-import { createTransactionMiddleware } from 'decentraland-dapps/dist/modules/transaction/middleware'
-import { createStorageMiddleware } from 'decentraland-dapps/dist/modules/storage/middleware'
-import { createAnalyticsMiddleware } from 'decentraland-dapps/dist/modules/analytics/middleware'
-import { configure as configureAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
-import { getOpenModals } from 'decentraland-dapps/dist/modules/modal/selectors'
-import { openModal } from 'decentraland-dapps/dist/modules/modal/actions'
+import { env } from 'telestoworld-commons'
+import { DataByKey } from 'telestoworld-dapps/dist/lib/types'
+import { createTransactionMiddleware } from 'telestoworld-dapps/dist/modules/transaction/middleware'
+import { createStorageMiddleware } from 'telestoworld-dapps/dist/modules/storage/middleware'
+import { createAnalyticsMiddleware } from 'telestoworld-dapps/dist/modules/analytics/middleware'
+import { configure as configureAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
+import { getOpenModals } from 'telestoworld-dapps/dist/modules/modal/selectors'
+import { openModal } from 'telestoworld-dapps/dist/modules/modal/actions'
 
 import { PROVISION_SCENE, CREATE_SCENE } from 'modules/scene/actions'
-import { DEPLOY_TO_LAND_SUCCESS, CLEAR_DEPLOYMENT_SUCCESS } from 'modules/deployment/actions'
+import { DEPLOY_TO_SPACE_SUCCESS, CLEAR_DEPLOYMENT_SUCCESS } from 'modules/deployment/actions'
 import { SET_PROJECT, DELETE_PROJECT, CREATE_PROJECT, EDIT_PROJECT_THUMBNAIL } from 'modules/project/actions'
 import { SAVE_PROJECT_SUCCESS } from 'modules/sync/actions'
 import { EDITOR_UNDO, EDITOR_REDO } from 'modules/editor/actions'
@@ -76,7 +76,7 @@ const { storageMiddleware, loadStorageMiddleware } = createStorageMiddleware({
     EDITOR_UNDO,
     EDITOR_REDO,
     DELETE_PROJECT,
-    DEPLOY_TO_LAND_SUCCESS,
+    DEPLOY_TO_SPACE_SUCCESS,
     CLEAR_DEPLOYMENT_SUCCESS,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,

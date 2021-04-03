@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Badge, Row, Section, Header } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Badge, Row, Section, Header } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { LandType } from 'modules/land/types'
 import Profile from 'components/Profile'
 import { Props } from './Popup.types'

@@ -1,5 +1,5 @@
 import { LandPageView } from './types'
-import { SetLandPageViewAction, SET_LAND_PAGE_VIEW } from './actions'
+import { SetLandPageViewAction, SET_SPACE_PAGE_VIEW } from './actions'
 
 export type LandState = {
   view: LandPageView
@@ -13,7 +13,7 @@ type LandReducerAction = SetLandPageViewAction
 
 export function landReducer(state = INITIAL_STATE, action: LandReducerAction) {
   switch (action.type) {
-    case SET_LAND_PAGE_VIEW: {
+    case SET_SPACE_PAGE_VIEW: {
       return {
         ...state,
         view: action.payload.view

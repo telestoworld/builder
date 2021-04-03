@@ -19,7 +19,7 @@
   font-weight: 600;
 }
 
-.Popup .dcl.badge {
+.Popup .tw.badge {
   font-size: 12px;
   line-height: 13px;
   padding: 3px 5px;
@@ -29,7 +29,7 @@
   flex: none;
 }
 
-.Popup .dcl.section.online-scenes {
+.Popup .tw.section.online-scenes {
   margin-bottom: 0px;
 }
 

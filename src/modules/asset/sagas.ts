@@ -8,8 +8,8 @@ import {
 } from './actions'
 import { Asset, OpenSeaAsset } from './types'
 import { COLLECTIBLE_ASSET_PACK_ID } from 'modules/ui/sidebar/utils'
-import { CONNECT_WALLET_SUCCESS } from 'decentraland-dapps/dist/modules/wallet/actions'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { CONNECT_WALLET_SUCCESS } from 'telestoworld-dapps/dist/modules/wallet/actions'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { opensea } from 'lib/api/opensea'
 import { TRANSPARENT_PIXEL } from 'lib/getModelData'
 

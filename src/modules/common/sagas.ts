@@ -1,8 +1,8 @@
 import { all } from 'redux-saga/effects'
 
-import { authorizationSaga } from 'decentraland-dapps/dist/modules/authorization/sagas'
-import { transactionSaga } from 'decentraland-dapps/dist/modules/transaction/sagas'
-import { createProfileSaga } from 'decentraland-dapps/dist/modules/profile/sagas'
+import { authorizationSaga } from 'telestoworld-dapps/dist/modules/authorization/sagas'
+import { transactionSaga } from 'telestoworld-dapps/dist/modules/transaction/sagas'
+import { createProfileSaga } from 'telestoworld-dapps/dist/modules/profile/sagas'
 
 import { walletSaga } from 'modules/wallet/sagas'
 import { translationSaga } from 'modules/translation/sagas'

@@ -1,7 +1,7 @@
 import { action } from 'typesafe-actions'
-import { AuthIdentity } from 'dcl-crypto'
-import { ProviderType } from 'decentraland-connect'
-import { Wallet } from 'decentraland-dapps/dist/modules/wallet/types'
+import { AuthIdentity } from 'tw-crypto'
+import { ProviderType } from 'telestoworld-connect'
+import { Wallet } from 'telestoworld-dapps/dist/modules/wallet/types'
 
 // Login
 

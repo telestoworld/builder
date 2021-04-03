@@ -1,7 +1,7 @@
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 
-export const MANA_ADDRESS = env.get('REACT_APP_MANA_TOKEN_CONTRACT_ADDRESS', '')
-export const LAND_REGISTRY_ADDRESS = env.get('REACT_APP_LAND_REGISTRY_CONTRACT_ADDRESS', '')
+export const TELO_ADDRESS = env.get('REACT_APP_TELO_TOKEN_CONTRACT_ADDRESS', '')
+export const SPACE_REGISTRY_ADDRESS = env.get('REACT_APP_SPACE_REGISTRY_CONTRACT_ADDRESS', '')
 export const ESTATE_REGISTRY_ADDRESS = env.get('REACT_APP_ESTATE_REGISTRY_CONTRACT_ADDRESS', '')
 export const ERC721_COLLECTION_ADDRESS = env.get('REACT_APP_ERC721_COLLECTION_CONTRACT_ADDRESS', '')
 export const COLLECTION_STORE_ADDRESS = env.get('REACT_APP_COLLECTION_STORE_CONTRACT_ADDRESS', '')

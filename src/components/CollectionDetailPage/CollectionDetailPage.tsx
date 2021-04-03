@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { env } from 'decentraland-commons'
-import { Section, Row, Dropdown, Narrow, Column, Header, Button, Icon, Popup, Radio, CheckboxProps } from 'decentraland-ui'
-import { ContractName, getContract } from 'decentraland-transactions'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { Authorization, AuthorizationType } from 'decentraland-dapps/dist/modules/authorization/types'
-import { hasAuthorization } from 'decentraland-dapps/dist/modules/authorization/utils'
+import { env } from 'telestoworld-commons'
+import { Section, Row, Dropdown, Narrow, Column, Header, Button, Icon, Popup, Radio, CheckboxProps } from 'telestoworld-ui'
+import { ContractName, getContract } from 'telestoworld-transactions'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { Authorization, AuthorizationType } from 'telestoworld-dapps/dist/modules/authorization/types'
+import { hasAuthorization } from 'telestoworld-dapps/dist/modules/authorization/utils'
 import { locations } from 'routing/locations'
 import { canMintCollectionItems, isOnSale, isOwner } from 'modules/collection/utils'
 import { isComplete } from 'modules/item/utils'
@@ -20,7 +20,7 @@ import CollectionItem from './CollectionItem'
 import { Props, State } from './CollectionDetailPage.types'
 import './CollectionDetailPage.css'
 
-const STORAGE_KEY = 'dcl-collection-notice'
+const STORAGE_KEY = 'tw-collection-notice'
 
 export default class CollectionDetailPage extends React.PureComponent<Props, State> {
   state = { isAuthorizationModalOpen: false }

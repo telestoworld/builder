@@ -5,12 +5,12 @@
   background-color: #16141a;
 }
 
-.EmptyManager.ui.form .dcl.field {
+.EmptyManager.ui.form .tw.field {
   flex: 1 1 auto;
   margin: 0;
 }
 
-.EmptyManager .dcl.field .ui.input.rounded > input {
+.EmptyManager .tw.field .ui.input.rounded > input {
   border: none;
 }
 

@@ -5,9 +5,9 @@ import { Address } from 'web3x-es/address'
 import { bufferToHex } from 'web3x-es/utils'
 import { Account } from 'web3x-es/account'
 import { replace, getLocation } from 'connected-react-router'
-import { Authenticator } from 'dcl-crypto'
-import { env } from 'decentraland-commons'
-import { getData as getWallet, isConnected, getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { Authenticator } from 'tw-crypto'
+import { env } from 'telestoworld-commons'
+import { getData as getWallet, isConnected, getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import {
   CONNECT_WALLET_SUCCESS,
   CONNECT_WALLET_FAILURE,
@@ -20,7 +20,7 @@ import {
   disconnectWallet,
   CHANGE_ACCOUNT,
   ChangeAccountAction
-} from 'decentraland-dapps/dist/modules/wallet/actions'
+} from 'telestoworld-dapps/dist/modules/wallet/actions'
 import { locations } from 'routing/locations'
 import { clearAssetPacks } from 'modules/assetPack/actions'
 import { closeModal } from 'modules/modal/actions'

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { FooterProps } from 'decentraland-ui'
-import { Footer as DappsFooter } from 'decentraland-dapps/dist/containers'
+import { FooterProps } from 'telestoworld-ui'
+import { Footer as DappsFooter } from 'telestoworld-dapps/dist/containers'
 
 import { locales } from 'modules/translation/utils'
 

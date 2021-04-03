@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Dropdown, DropdownItemProps, DropdownProps, Row } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Dropdown, DropdownItemProps, DropdownProps, Row } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { getContentsStorageUrl } from 'lib/api/builder'
 import { Props } from './ItemDropdown.types'
 import './ItemDropdown.css'

@@ -1,5 +1,5 @@
-import { LoadingState, loadingReducer } from 'decentraland-dapps/dist/modules/loading/reducer'
-import { FetchTransactionSuccessAction, FETCH_TRANSACTION_SUCCESS } from 'decentraland-dapps/dist/modules/transaction/actions'
+import { LoadingState, loadingReducer } from 'telestoworld-dapps/dist/modules/loading/reducer'
+import { FetchTransactionSuccessAction, FETCH_TRANSACTION_SUCCESS } from 'telestoworld-dapps/dist/modules/transaction/actions'
 import {
   FetchENSListRequestAction,
   FetchENSListSuccessAction,
@@ -43,9 +43,9 @@ import {
   ClaimNameSuccessAction,
   CLAIM_NAME_FAILURE,
   CLAIM_NAME_SUCCESS,
-  ALLOW_CLAIM_MANA_REQUEST,
-  ALLOW_CLAIM_MANA_FAILURE,
-  ALLOW_CLAIM_MANA_SUCCESS,
+  ALLOW_CLAIM_TELO_REQUEST,
+  ALLOW_CLAIM_TELO_FAILURE,
+  ALLOW_CLAIM_TELO_SUCCESS,
   AllowClaimManaRequestAction,
   AllowClaimManaSuccessAction,
   AllowClaimManaFailureAction
@@ -105,8 +105,8 @@ export function ensReducer(state: ENSState = INITIAL_STATE, action: ENSReducerAc
     case SET_ENS_RESOLVER_REQUEST:
     case SET_ENS_CONTENT_SUCCESS:
     case SET_ENS_RESOLVER_SUCCESS:
-    case ALLOW_CLAIM_MANA_REQUEST:
-    case ALLOW_CLAIM_MANA_SUCCESS: {
+    case ALLOW_CLAIM_TELO_REQUEST:
+    case ALLOW_CLAIM_TELO_SUCCESS: {
       return {
         ...state,
         error: null,
@@ -176,7 +176,7 @@ export function ensReducer(state: ENSState = INITIAL_STATE, action: ENSReducerAc
     case FETCH_ENS_FAILURE:
     case FETCH_ENS_LIST_FAILURE:
     case FETCH_ENS_AUTHORIZATION_FAILURE:
-    case ALLOW_CLAIM_MANA_FAILURE: {
+    case ALLOW_CLAIM_TELO_FAILURE: {
       return {
         ...state,
         loading: loadingReducer(state.loading, action),
@@ -218,7 +218,7 @@ export function ensReducer(state: ENSState = INITIAL_STATE, action: ENSReducerAc
             }
           }
         }
-        case ALLOW_CLAIM_MANA_SUCCESS: {
+        case ALLOW_CLAIM_TELO_SUCCESS: {
           const { allowance, address } = transaction.payload
           return {
             ...state,

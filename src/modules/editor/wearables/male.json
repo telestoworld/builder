@@ -1,10 +1,10 @@
 [
   {
-    "id": "urn:decentraland:off-chain:base-avatars:BaseMale",
+    "id": "urn:telestoworld:off-chain:base-avatars:BaseMale",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "BaseMale.glb",
         "overrideReplaces": [],
@@ -41,7 +41,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -57,11 +57,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:eyebrows_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:eyebrows_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_EyeBrows_00.png",
         "overrideReplaces": [],
@@ -83,7 +83,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -99,11 +99,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:eyes_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:eyes_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_Eyes_00.png",
         "overrideReplaces": [],
@@ -125,7 +125,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -141,11 +141,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:beard",
+    "id": "urn:telestoworld:off-chain:base-avatars:beard",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "Beard_01.glb",
         "overrideReplaces": [],
@@ -170,7 +170,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -186,11 +186,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:sneakers",
+    "id": "urn:telestoworld:off-chain:base-avatars:sneakers",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "Sneakers_01.glb",
         "overrideReplaces": [],
@@ -212,7 +212,7 @@
       },
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseFemale"
+          "urn:telestoworld:off-chain:base-avatars:BaseFemale"
         ],
         "mainFile": "Sneakers_01.glb",
         "overrideReplaces": [],
@@ -243,7 +243,7 @@
       "woman",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -259,11 +259,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:casual_hair_01",
+    "id": "urn:telestoworld:off-chain:base-avatars:casual_hair_01",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_Hair_Standard_01.glb",
         "overrideReplaces": [],
@@ -288,7 +288,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -305,11 +305,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:brown_pants",
+    "id": "urn:telestoworld:off-chain:base-avatars:brown_pants",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_lBody_LongPants_01.glb",
         "overrideReplaces": [],
@@ -338,7 +338,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -354,11 +354,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:mouth_00",
+    "id": "urn:telestoworld:off-chain:base-avatars:mouth_00",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_Mouth_00.png",
         "overrideReplaces": [],
@@ -380,7 +380,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",
@@ -396,11 +396,11 @@
     "rarity": ""
   },
   {
-    "id": "urn:decentraland:off-chain:base-avatars:green_hoodie",
+    "id": "urn:telestoworld:off-chain:base-avatars:green_hoodie",
     "representations": [
       {
         "bodyShapes": [
-          "urn:decentraland:off-chain:base-avatars:BaseMale"
+          "urn:telestoworld:off-chain:base-avatars:BaseMale"
         ],
         "mainFile": "M_uBody_Hoodie_01.glb",
         "overrideReplaces": [],
@@ -429,7 +429,7 @@
       "man",
       "base-wearable"
     ],
-    "baseUrl": "https://content.decentraland.org/contents/",
+    "baseUrl": "https://content.telesto.world/contents/",
     "i18n": [
       {
         "code": "en",

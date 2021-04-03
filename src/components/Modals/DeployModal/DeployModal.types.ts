@@ -1,4 +1,4 @@
-import { ModalProps } from 'decentraland-dapps/dist/providers/ModalProvider/ModalProvider.types'
+import { ModalProps } from 'telestoworld-dapps/dist/providers/ModalProvider/ModalProvider.types'
 import { Deployment } from 'modules/deployment/types'
 import { PoolGroup } from 'modules/poolGroup/types'
 
@@ -25,7 +25,7 @@ export type MapDispatchProps = {}
 export enum DeployModalView {
   NONE = 'NONE',
   CLEAR_DEPLOYMENT = 'CLEAR_DEPLOYMENT',
-  DEPLOY_TO_LAND = 'DEPLOY_TO_LAND',
+  DEPLOY_TO_SPACE = 'DEPLOY_TO_SPACE',
   DEPLOY_TO_POOL = 'DEPLOY_TO_POOL'
 }
 

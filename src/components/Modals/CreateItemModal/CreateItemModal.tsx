@@ -15,9 +15,9 @@ import {
   InputOnChangeData,
   SelectField,
   DropdownProps
-} from 'decentraland-ui'
-import { T, t } from 'decentraland-dapps/dist/modules/translation/utils'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
+} from 'telestoworld-ui'
+import { T, t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
 import { cleanAssetName } from 'modules/asset/utils'
 import { blobToDataURL, dataURLToBlob } from 'modules/media/utils'
 import {
@@ -416,7 +416,7 @@ export default class CreateItemModal extends React.PureComponent<Props, State> {
   }
 
   handleOpenDocs = () => {
-    window.open('https://docs.decentraland.org/3d-modeling/3d-models/', '_blank')
+    window.open('https://docs.telesto.world/3d-modeling/3d-models/', '_blank')
   }
 
   handleNameChange = (_event: React.ChangeEvent<HTMLInputElement>, props: InputOnChangeData) => {

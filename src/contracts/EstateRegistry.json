@@ -66,7 +66,7 @@
   {
     "constant": true,
     "inputs": [{ "name": "", "type": "uint256" }],
-    "name": "landIdEstate",
+    "name": "landIdSector",
     "outputs": [{ "name": "", "type": "uint256" }],
     "payable": false,
     "stateMutability": "view",
@@ -252,7 +252,7 @@
   {
     "constant": false,
     "inputs": [{ "name": "_registry", "type": "address" }],
-    "name": "setLANDRegistry",
+    "name": "setSPACERegistry",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -458,7 +458,7 @@
   {
     "constant": true,
     "inputs": [{ "name": "landId", "type": "uint256" }],
-    "name": "getLandEstateId",
+    "name": "getLandSectorId",
     "outputs": [{ "name": "", "type": "uint256" }],
     "payable": false,
     "stateMutability": "view",
@@ -557,7 +557,7 @@
   {
     "constant": true,
     "inputs": [{ "name": "estateId", "type": "uint256" }],
-    "name": "getEstateSize",
+    "name": "getSectorSize",
     "outputs": [{ "name": "", "type": "uint256" }],
     "payable": false,
     "stateMutability": "view",
@@ -609,7 +609,7 @@
       { "indexed": true, "name": "_estateId", "type": "uint256" },
       { "indexed": false, "name": "_data", "type": "string" }
     ],
-    "name": "CreateEstate",
+    "name": "CreateSector",
     "type": "event"
   },
   {
@@ -665,7 +665,7 @@
   {
     "anonymous": false,
     "inputs": [{ "indexed": true, "name": "_registry", "type": "address" }],
-    "name": "SetLANDRegistry",
+    "name": "SetSPACERegistry",
     "type": "event"
   },
   {

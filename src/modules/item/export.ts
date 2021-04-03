@@ -1,4 +1,4 @@
-import { AuthIdentity } from 'dcl-crypto'
+import { AuthIdentity } from 'tw-crypto'
 import { getContentsStorageUrl } from 'lib/api/builder'
 import { PEER_URL } from 'lib/api/peer'
 import { saveUnpublishedItem } from 'modules/item/sagas'

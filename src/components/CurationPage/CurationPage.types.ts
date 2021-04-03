@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { Wallet } from 'decentraland-dapps/dist/modules/wallet/types'
+import { Wallet } from 'telestoworld-dapps/dist/modules/wallet/types'
 import { Collection } from 'modules/collection/types'
 import { fetchCollectionsRequest, FetchCollectionsRequestAction } from 'modules/collection/actions'
 import { fetchItemsRequest, FetchItemsRequestAction } from 'modules/item/actions'

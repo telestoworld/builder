@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import { Dropdown, Confirm, Button } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Dropdown, Confirm, Button } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { locations } from 'routing/locations'
 import { preventDefault } from 'lib/preventDefault'

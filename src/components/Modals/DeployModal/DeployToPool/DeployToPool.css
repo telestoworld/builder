@@ -6,13 +6,13 @@
   align-items: center;
 }
 
-.DeployToPool .ui.form .dcl.field {
+.DeployToPool .ui.form .tw.field {
   width: 100%;
   text-align: center;
   margin-bottom: 1.5em;
 }
 
-.DeployToPool .dcl.field input {
+.DeployToPool .tw.field input {
   text-align: center;
 }
 

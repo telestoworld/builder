@@ -28,7 +28,7 @@
   position: relative;
 }
 
-.Preview > canvas.dcl-canvas {
+.Preview > canvas.tw-canvas {
   display: block;
   outline: none;
 }

@@ -1,4 +1,4 @@
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 
 let _rollbarConfig = {
   accessToken: env.get('REACT_APP_ROLLBAR_ACCESS_TOKEN', ''),

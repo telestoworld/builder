@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { Layer, Button, Popup, Icon as DCLIcon } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { Layer, Button, Popup, Icon as TWIcon } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 
 import { Atlas } from 'components/Atlas'
 import Icon from 'components/Icon'
@@ -124,7 +124,7 @@ export default class LandAtlas extends React.PureComponent<Props, State> {
     const newRotation =
       (((ROTATION_ORDER.indexOf(rotation) + direction) % ROTATION_ORDER.length) + ROTATION_ORDER.length) % ROTATION_ORDER.length
 
-    this.analytics.track('Publish to LAND atlas rotate', { direction })
+    this.analytics.track('Publish to SPACE atlas rotate', { direction })
 
     this.setState({ rotation: ROTATION_ORDER[newRotation] })
   }
@@ -134,7 +134,7 @@ export default class LandAtlas extends React.PureComponent<Props, State> {
     const { currentLandId } = this.state
     const nextLand = locateNextLand(landTiles, currentLandId || '')
 
-    this.analytics.track('Publish to LAND atlas locate')
+    this.analytics.track('Publish to SPACE atlas locate')
 
     this.setState({
       currentLandId: nextLand.id
@@ -220,7 +220,7 @@ export default class LandAtlas extends React.PureComponent<Props, State> {
         )}
         {conflictingDeployment && (
           <div className="notice">
-            <DCLIcon name="warning sign" />
+            <TWIcon name="warning sign" />
             {t('deployment_modal.land.map.occupied_warning', { name: conflictingDeployment.name })}
           </div>
         )}

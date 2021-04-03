@@ -14,14 +14,14 @@
   flex: 1;
 }
 
-.Banner .dcl.close {
+.Banner .tw.close {
   justify-self: flex-end;
   margin-right: 24px;
   transform: scale(1.4);
 }
 
 @media (max-width: 1024px) {
-  .Banner .dcl.close {
+  .Banner .tw.close {
     display: block;
     position: absolute;
     right: 24px;

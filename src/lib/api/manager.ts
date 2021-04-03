@@ -1,27 +1,27 @@
 import { gql } from 'apollo-boost'
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 import { createClient } from './graph'
-import { parcelFields, estateFields, ParcelFields, Land, LandType, RoleType, EstateFields, Authorization } from 'modules/land/types'
+import { parcelFields, estateFields, ParcelFields, Land, LandType, RoleType, SectorFields, Authorization } from 'modules/land/types'
 import { coordsToId } from 'modules/land/utils'
 import { isZero } from 'lib/address'
-import { LAND_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
+import { SPACE_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
 
-export const LAND_MANAGER_URL = env.get('REACT_APP_LAND_MANAGER_URL', '')
+export const SPACE_MANAGER_URL = env.get('REACT_APP_SPACE_MANAGER_URL', '')
 
-const auth = createClient(LAND_MANAGER_URL)
+const auth = createClient(SPACE_MANAGER_URL)
 
 const getLandQuery = () => gql`
   query Land($address: Bytes) {
     ownerParcels: parcels(first: 1000, where: { estate: null, owner: $address }) {
       ...parcelFields
     }
-    ownerEstates: estates(first: 1000, where: { owner: $address }) {
+    ownerSectors: estates(first: 1000, where: { owner: $address }) {
       ...estateFields
     }
     updateOperatorParcels: parcels(first: 1000, where: { updateOperator: $address }) {
       ...parcelFields
     }
-    updateOperatorEstates: estates(first: 1000, where: { updateOperator: $address }) {
+    updateOperatorSectors: estates(first: 1000, where: { updateOperator: $address }) {
       ...estateFields
     }
     ownerAuthorizations: authorizations(first: 1000, where: { owner: $address, type: "UpdateManager" }) {
@@ -49,12 +49,12 @@ const getLandQuery = () => gql`
 
 type LandQueryResult = {
   ownerParcels: ParcelFields[]
-  ownerEstates: EstateFields[]
+  ownerSectors: SectorFields[]
   updateOperatorParcels: ParcelFields[]
-  updateOperatorEstates: EstateFields[]
+  updateOperatorSectors: SectorFields[]
   ownerAuthorizations: { operator: string; isApproved: boolean; tokenAddress: string }[]
   operatorAuthorizations: {
-    owner: { address: string; parcels: ParcelFields[]; estates: EstateFields[] }
+    owner: { address: string; parcels: ParcelFields[]; estates: SectorFields[] }
     isApproved: boolean
     tokenAddress: string
   }[]
@@ -82,12 +82,12 @@ const fromParcel = (parcel: ParcelFields, role: RoleType) => {
   return result
 }
 
-const fromEstate = (estate: EstateFields, role: RoleType) => {
+const fromSector = (estate: SectorFields, role: RoleType) => {
   const id = estate.id
 
   const result: Land = {
     id,
-    name: (estate.data && estate.data.name) || `Estate ${id}`,
+    name: (estate.data && estate.data.name) || `Sector ${id}`,
     type: LandType.ESTATE,
     role,
     description: (estate.data && estate.data.description) || null,
@@ -126,23 +126,23 @@ export class ManagerAPI {
     for (const parcel of data.ownerParcels) {
       lands.push(fromParcel(parcel, RoleType.OWNER))
     }
-    for (const estate of data.ownerEstates) {
-      lands.push(fromEstate(estate, RoleType.OWNER))
+    for (const estate of data.ownerSectors) {
+      lands.push(fromSector(estate, RoleType.OWNER))
     }
 
     // parcels and estats that I operate
     for (const parcel of data.updateOperatorParcels) {
       lands.push(fromParcel(parcel, RoleType.OPERATOR))
     }
-    for (const estate of data.updateOperatorEstates) {
-      lands.push(fromEstate(estate, RoleType.OPERATOR))
+    for (const estate of data.updateOperatorSectors) {
+      lands.push(fromSector(estate, RoleType.OPERATOR))
     }
 
     // addresses I gave UpdateManager permission are operators of all my lands
     for (const authorization of data.ownerAuthorizations) {
       const { operator, isApproved, tokenAddress } = authorization
       switch (tokenAddress) {
-        case LAND_REGISTRY_ADDRESS: {
+        case SPACE_REGISTRY_ADDRESS: {
           if (isApproved) {
             landUpdateManagers.add(operator)
           } else {
@@ -174,7 +174,7 @@ export class ManagerAPI {
       }
       for (const estate of owner.estates) {
         if (estate.parcels.length > 0) {
-          const land = fromEstate(estate, RoleType.OPERATOR)
+          const land = fromSector(estate, RoleType.OPERATOR)
           land.operators.push(address)
           // skip if already owned or operated
           if (!lands.some(_land => _land.id === land.id)) {

@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ModalNavigation, ModalActions, Button } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
+import { ModalNavigation, ModalActions, Button } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
 
 import { isValid } from 'lib/address'
 import { Access } from 'modules/collection/types'

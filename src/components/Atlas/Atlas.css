@@ -1,12 +1,12 @@
-.dcl.atlas .react-tile-map-canvas:not(.draggable) {
+.tw.atlas .react-tile-map-canvas:not(.draggable) {
   cursor: default;
 }
 
-.dcl.atlas.clickable .react-tile-map-canvas {
+.tw.atlas.clickable .react-tile-map-canvas {
   cursor: pointer;
 }
 
-.dcl.atlas-control-container {
+.tw.atlas-control-container {
   position: absolute;
   z-index: 9999;
   bottom: 20px;
@@ -16,8 +16,8 @@
   justify-content: center;
 }
 
-.dcl.atlas-control-container .control,
-.dcl.atlas-control-container .control-group {
+.tw.atlas-control-container .control,
+.tw.atlas-control-container .control-group {
   background: rgba(0, 0, 0, 0.8);
   padding: 6px 16px;
   border-radius: 4px;
@@ -28,17 +28,17 @@
   cursor: pointer;
 }
 
-.dcl.atlas-control-container .control-group .control {
+.tw.atlas-control-container .control-group .control {
   background: transparent;
   padding: unset;
   border-radius: unset;
   cursor: pointer;
 }
 
-.dcl.atlas-control-container .control.locate-land {
+.tw.atlas-control-container .control.locate-land {
   margin-right: 8px;
 }
 
-.dcl.atlas-control-container .control-group:last-child .control:first-child {
+.tw.atlas-control-container .control-group:last-child .control:first-child {
   margin-right: 20px;
 }

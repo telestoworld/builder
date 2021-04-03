@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getSearch, push } from 'connected-react-router'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { getCollections } from 'modules/collection/selectors'
 import { Collection } from 'modules/collection/types'
 import { RootState } from 'modules/common/types'

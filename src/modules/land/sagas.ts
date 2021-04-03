@@ -5,20 +5,20 @@ import {
   CHANGE_ACCOUNT,
   ConnectWalletSuccessAction,
   ChangeAccountAction
-} from 'decentraland-dapps/dist/modules/wallet/actions'
-import { Wallet } from 'decentraland-dapps/dist/modules/wallet/types'
+} from 'telestoworld-dapps/dist/modules/wallet/actions'
+import { Wallet } from 'telestoworld-dapps/dist/modules/wallet/types'
 import { takeLatest, call, put, takeEvery, all } from 'redux-saga/effects'
 import {
-  FETCH_LANDS_REQUEST,
+  FETCH_SPACES_REQUEST,
   FetchLandsRequestAction,
   fetchLandsFailure,
   fetchLandsSuccess,
   fetchLandsRequest,
-  TRANSFER_LAND_REQUEST,
+  TRANSFER_SPACE_REQUEST,
   TransferLandRequestAction,
   transferLandSuccess,
   transferLandFailure,
-  EDIT_LAND_REQUEST,
+  EDIT_SPACE_REQUEST,
   EditLandRequestAction,
   editLandSuccess,
   editLandFailure,
@@ -27,26 +27,26 @@ import {
   setOperatorSuccess,
   setOperatorFailure,
   CREATE_ESTATE_REQUEST,
-  CreateEstateRequestAction,
-  createEstateSuccess,
-  createEstateFailure,
-  EditEstateRequestAction,
-  editEstateSuccess,
-  editEstateFailure,
+  CreateSectorRequestAction,
+  createSectorSuccess,
+  createSectorFailure,
+  EditSectorRequestAction,
+  editSectorSuccess,
+  editSectorFailure,
   EDIT_ESTATE_REQUEST,
   DISSOLVE_ESTATE_REQUEST,
-  DissolveEstateRequestAction,
-  dissolveEstateSuccess,
-  dissolveEstateFailure,
+  DissolveSectorRequestAction,
+  dissolveSectorSuccess,
+  dissolveSectorFailure,
   SET_UPDATE_MANAGER_REQUEST,
   SetUpdateManagerRequestAction,
   setUpdateManagerSuccess,
   setUpdateManagerFailure
 } from './actions'
 import { manager } from 'lib/api/manager'
-import { LANDRegistry } from 'contracts/LANDRegistry'
-import { LAND_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
-import { EstateRegistry } from 'contracts/EstateRegistry'
+import { SPACERegistry } from 'contracts/SPACERegistry'
+import { SPACE_REGISTRY_ADDRESS, ESTATE_REGISTRY_ADDRESS } from 'modules/common/contracts'
+import { SectorRegistry } from 'contracts/SectorRegistry'
 import { push } from 'connected-react-router'
 import { locations } from 'routing/locations'
 import { closeModal } from 'modules/modal/actions'
@@ -56,13 +56,13 @@ import { Land, LandType, Authorization } from './types'
 
 export function* landSaga() {
   yield takeEvery(SET_UPDATE_MANAGER_REQUEST, handleSetUpdateManagerRequest)
-  yield takeEvery(DISSOLVE_ESTATE_REQUEST, handleDissolveEstateRequest)
-  yield takeEvery(EDIT_ESTATE_REQUEST, handleEditEstateRequest)
-  yield takeEvery(CREATE_ESTATE_REQUEST, handleCreateEstateRequest)
+  yield takeEvery(DISSOLVE_ESTATE_REQUEST, handleDissolveSectorRequest)
+  yield takeEvery(EDIT_ESTATE_REQUEST, handleEditSectorRequest)
+  yield takeEvery(CREATE_ESTATE_REQUEST, handleCreateSectorRequest)
   yield takeEvery(SET_OPERATOR_REQUEST, handleSetOperatorRequest)
-  yield takeEvery(EDIT_LAND_REQUEST, handleEditLandRequest)
-  yield takeEvery(TRANSFER_LAND_REQUEST, handleTransferLandRequest)
-  yield takeEvery(FETCH_LANDS_REQUEST, handleFetchLandRequest)
+  yield takeEvery(EDIT_SPACE_REQUEST, handleEditLandRequest)
+  yield takeEvery(TRANSFER_SPACE_REQUEST, handleTransferLandRequest)
+  yield takeEvery(FETCH_SPACES_REQUEST, handleFetchLandRequest)
   yield takeLatest(CONNECT_WALLET_SUCCESS, handleWallet)
   yield takeLatest(CHANGE_ACCOUNT, handleWallet)
 }
@@ -75,7 +75,7 @@ function* handleSetUpdateManagerRequest(action: SetUpdateManagerRequestAction) {
     const manager = Address.fromString(address)
     switch (type) {
       case LandType.PARCEL: {
-        const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+        const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           landRegistry.methods
             .setUpdateManager(from, manager, isApproved)
@@ -86,7 +86,7 @@ function* handleSetUpdateManagerRequest(action: SetUpdateManagerRequestAction) {
         break
       }
       case LandType.ESTATE: {
-        const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+        const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           estateRegistry.methods
             .setUpdateManager(from, manager, isApproved)
@@ -103,7 +103,7 @@ function* handleSetUpdateManagerRequest(action: SetUpdateManagerRequestAction) {
   }
 }
 
-function* handleDissolveEstateRequest(action: DissolveEstateRequestAction) {
+function* handleDissolveSectorRequest(action: DissolveSectorRequestAction) {
   const { land } = action.payload
 
   try {
@@ -112,8 +112,8 @@ function* handleDissolveEstateRequest(action: DissolveEstateRequestAction) {
     }
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
-    const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
-    const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+    const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
+    const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
     const tokenIds = yield all(land.parcels!.map(parcel => landRegistry.methods.encodeTokenId(parcel.x, parcel.y).call()))
     const txHash = yield call(() =>
       estateRegistry.methods
@@ -121,57 +121,57 @@ function* handleDissolveEstateRequest(action: DissolveEstateRequestAction) {
         .send({ from })
         .getTxHash()
     )
-    yield put(dissolveEstateSuccess(land, wallet.chainId, txHash))
+    yield put(dissolveSectorSuccess(land, wallet.chainId, txHash))
     yield put(closeModal('DissolveModal'))
     yield put(push(locations.activity()))
   } catch (error) {
-    yield put(dissolveEstateFailure(land, error.message))
+    yield put(dissolveSectorFailure(land, error.message))
   }
 }
 
-function* handleCreateEstateRequest(action: CreateEstateRequestAction) {
+function* handleCreateSectorRequest(action: CreateSectorRequestAction) {
   const { name, description, coords } = action.payload
   try {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
     const [xs, ys] = splitCoords(coords)
-    const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+    const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
     const metadata = buildMetadata(name, description)
     const txHash = yield call(() =>
       landRegistry.methods
-        .createEstateWithMetadata(xs, ys, from, metadata)
+        .createSectorWithMetadata(xs, ys, from, metadata)
         .send({ from })
         .getTxHash()
     )
 
-    yield put(createEstateSuccess(name, description, coords, wallet.chainId, txHash))
-    yield put(closeModal('EstateEditorModal'))
+    yield put(createSectorSuccess(name, description, coords, wallet.chainId, txHash))
+    yield put(closeModal('SectorEditorModal'))
     yield put(push(locations.activity()))
   } catch (error) {
-    yield put(createEstateFailure(name, description, coords, error.message))
+    yield put(createSectorFailure(name, description, coords, error.message))
   }
 }
 
-function* handleEditEstateRequest(action: EditEstateRequestAction) {
+function* handleEditSectorRequest(action: EditSectorRequestAction) {
   const { land, toAdd, toRemove } = action.payload
   try {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
-    const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+    const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
 
     if (toAdd.length > 0) {
       const [xsToAdd, ysToAdd] = splitCoords(toAdd)
       const txHash = yield call(() =>
         landRegistry.methods
-          .transferManyLandToEstate(xsToAdd, ysToAdd, land.id)
+          .transferManyLandToSector(xsToAdd, ysToAdd, land.id)
           .send({ from })
           .getTxHash()
       )
-      yield put(editEstateSuccess(land, toAdd, 'add', wallet.chainId, txHash))
+      yield put(editSectorSuccess(land, toAdd, 'add', wallet.chainId, txHash))
     }
 
     if (toRemove.length > 0) {
-      const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+      const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
       const tokenIds = yield all(toRemove.map(({ x, y }) => landRegistry.methods.encodeTokenId(x, y).call()))
       const txHash = yield call(() =>
         estateRegistry.methods
@@ -179,12 +179,12 @@ function* handleEditEstateRequest(action: EditEstateRequestAction) {
           .send({ from })
           .getTxHash()
       )
-      yield put(editEstateSuccess(land, toRemove, 'remove', wallet.chainId, txHash))
+      yield put(editSectorSuccess(land, toRemove, 'remove', wallet.chainId, txHash))
     }
-    yield put(closeModal('EstateEditorModal'))
+    yield put(closeModal('SectorEditorModal'))
     yield put(push(locations.activity()))
   } catch (error) {
-    yield put(editEstateFailure(land, toAdd, toRemove, error.message))
+    yield put(editSectorFailure(land, toAdd, toRemove, error.message))
   }
 }
 
@@ -198,7 +198,7 @@ function* handleSetOperatorRequest(action: SetOperatorRequestAction) {
 
     switch (land.type) {
       case LandType.PARCEL: {
-        const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+        const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
         const tokenId = yield call(() => landRegistry.methods.encodeTokenId(land.x!, land.y!).call())
         const txHash = yield call(() =>
           landRegistry.methods
@@ -210,7 +210,7 @@ function* handleSetOperatorRequest(action: SetOperatorRequestAction) {
         break
       }
       case LandType.ESTATE: {
-        const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+        const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           estateRegistry.methods
             .setUpdateOperator(land.id, operator)
@@ -240,7 +240,7 @@ function* handleEditLandRequest(action: EditLandRequestAction) {
 
     switch (land.type) {
       case LandType.PARCEL: {
-        const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+        const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           landRegistry.methods
             .updateLandData(land.x!, land.y!, metadata)
@@ -251,7 +251,7 @@ function* handleEditLandRequest(action: EditLandRequestAction) {
         break
       }
       case LandType.ESTATE: {
-        const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+        const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           estateRegistry.methods
             .updateMetadata(land.id, metadata)
@@ -280,7 +280,7 @@ function* handleTransferLandRequest(action: TransferLandRequestAction) {
 
     switch (land.type) {
       case LandType.PARCEL: {
-        const landRegistry = new LANDRegistry(eth, Address.fromString(LAND_REGISTRY_ADDRESS))
+        const landRegistry = new SPACERegistry(eth, Address.fromString(SPACE_REGISTRY_ADDRESS))
         const id = yield call(() => landRegistry.methods.encodeTokenId(land.x!, land.y!).call())
         const txHash = yield call(() =>
           landRegistry.methods
@@ -292,7 +292,7 @@ function* handleTransferLandRequest(action: TransferLandRequestAction) {
         break
       }
       case LandType.ESTATE: {
-        const estateRegistry = new EstateRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
+        const estateRegistry = new SectorRegistry(eth, Address.fromString(ESTATE_REGISTRY_ADDRESS))
         const txHash = yield call(() =>
           estateRegistry.methods
             .transferFrom(from, to, land.id)

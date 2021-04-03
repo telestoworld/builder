@@ -1,8 +1,8 @@
 import * as React from 'react'
 import { DragSource } from 'react-dnd'
 import { Link } from 'react-router-dom'
-import { Card } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Card } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { locations } from 'routing/locations'
 import ItemImage from 'components/ItemImage'

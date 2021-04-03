@@ -6,24 +6,24 @@ import { namehash } from '@ethersproject/hash'
 import { push } from 'connected-react-router'
 import { call, put, select, takeEvery, takeLatest } from 'redux-saga/effects'
 import * as contentHash from 'content-hash'
-import { CatalystClient, DeploymentBuilder } from 'dcl-catalyst-client'
-import { Entity, EntityType } from 'dcl-catalyst-commons'
-import { Avatar } from 'decentraland-ui'
-import { Authenticator } from 'dcl-crypto'
-import { Profile } from 'decentraland-dapps/dist/modules/profile/types'
-import { changeProfile } from 'decentraland-dapps/dist/modules/profile/actions'
-import { Wallet } from 'decentraland-dapps/dist/modules/wallet/types'
+import { CatalystClient, DeploymentBuilder } from 'tw-catalyst-client'
+import { Entity, EntityType } from 'tw-catalyst-commons'
+import { Avatar } from 'telestoworld-ui'
+import { Authenticator } from 'tw-crypto'
+import { Profile } from 'telestoworld-dapps/dist/modules/profile/types'
+import { changeProfile } from 'telestoworld-dapps/dist/modules/profile/actions'
+import { Wallet } from 'telestoworld-dapps/dist/modules/wallet/types'
 
 import { ENS as ENSContract } from 'contracts/ENS'
 import { ENSResolver } from 'contracts/ENSResolver'
-import { ENS_ADDRESS, ENS_RESOLVER_ADDRESS, CONTROLLER_ADDRESS, MANA_ADDRESS } from 'modules/common/contracts'
-import { DCLController } from 'contracts/DCLController'
+import { ENS_ADDRESS, ENS_RESOLVER_ADDRESS, CONTROLLER_ADDRESS, TELO_ADDRESS } from 'modules/common/contracts'
+import { TWController } from 'contracts/TWController'
 import { ERC20 as MANAToken } from 'contracts/ERC20'
 import { getWallet, getEth } from 'modules/wallet/utils'
 import { marketplace } from 'lib/api/marketplace'
 import { ipfs } from 'lib/api/ipfs'
 import { getLands } from 'modules/land/selectors'
-import { FETCH_LANDS_SUCCESS } from 'modules/land/actions'
+import { FETCH_SPACES_SUCCESS } from 'modules/land/actions'
 import { PEER_URL } from 'lib/api/peer'
 import { locations } from 'routing/locations'
 import { Land } from 'modules/land/types'
@@ -59,7 +59,7 @@ import {
   ClaimNameRequestAction,
   claimNameSuccess,
   claimNameFailure,
-  ALLOW_CLAIM_MANA_REQUEST,
+  ALLOW_CLAIM_TELO_REQUEST,
   AllowClaimManaRequestAction,
   allowClaimManaSuccess,
   allowClaimManaFailure
@@ -69,14 +69,14 @@ import { getDefaultProfileEntity, getDomainFromName, setProfileFromEntity } from
 
 export function* ensSaga() {
   yield takeLatest(SET_ALIAS_REQUEST, handleSetAlias)
-  yield takeLatest(FETCH_LANDS_SUCCESS, handleConnectWallet)
+  yield takeLatest(FETCH_SPACES_SUCCESS, handleConnectWallet)
   yield takeEvery(FETCH_ENS_REQUEST, handleFetchENSRequest)
   yield takeEvery(SET_ENS_RESOLVER_REQUEST, handleSetENSResolverRequest)
   yield takeEvery(SET_ENS_CONTENT_REQUEST, handleSetENSContentRequest)
   yield takeEvery(FETCH_ENS_AUTHORIZATION_REQUEST, handleFetchAuthorizationRequest)
   yield takeEvery(FETCH_ENS_LIST_REQUEST, handleFetchENSListRequest)
   yield takeEvery(CLAIM_NAME_REQUEST, handleClaimNameRequest)
-  yield takeEvery(ALLOW_CLAIM_MANA_REQUEST, handleApproveClaimManaRequest)
+  yield takeEvery(ALLOW_CLAIM_TELO_REQUEST, handleApproveClaimManaRequest)
 }
 
 function* handleConnectWallet() {
@@ -141,7 +141,7 @@ function* handleSetAlias(action: SetAliasRequestAction) {
 
 function* handleFetchENSRequest(action: FetchENSRequestAction) {
   const { name, land } = action.payload
-  const subdomain = name.toLowerCase() + '.dcl.eth'
+  const subdomain = name.toLowerCase() + '.tw.eth'
   try {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const address = wallet.address
@@ -268,7 +268,7 @@ function* handleFetchAuthorizationRequest(_action: FetchENSAuthorizationRequestA
   try {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
-    const manaContract = new MANAToken(eth, Address.fromString(MANA_ADDRESS))
+    const manaContract = new MANAToken(eth, Address.fromString(TELO_ADDRESS))
     const allowance: string = yield call(() => manaContract.methods.allowance(from, Address.fromString(CONTROLLER_ADDRESS)).call())
     const authorization: Authorization = { allowance }
 
@@ -298,7 +298,7 @@ function* handleFetchENSListRequest(_action: FetchENSListRequestAction) {
       Promise.all(
         domains.map(async data => {
           const name = data
-          const subdomain = `${data.toLowerCase()}.dcl.eth`
+          const subdomain = `${data.toLowerCase()}.tw.eth`
           let landId: string | undefined = undefined
           let content: string = ''
 
@@ -343,7 +343,7 @@ function* handleClaimNameRequest(action: ClaimNameRequestAction) {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
 
-    const controllerContract = new DCLController(eth, Address.fromString(CONTROLLER_ADDRESS))
+    const controllerContract = new TWController(eth, Address.fromString(CONTROLLER_ADDRESS))
     const tx: SendTx<TransactionReceipt> = yield call(() => controllerContract.methods.register(name, from).send({ from }))
     const txHash: string = yield call(() => tx.getTxHash())
 
@@ -368,7 +368,7 @@ function* handleApproveClaimManaRequest(action: AllowClaimManaRequestAction) {
   try {
     const [wallet, eth]: [Wallet, Eth] = yield getWallet()
     const from = Address.fromString(wallet.address)
-    const manaContract = new MANAToken(eth, Address.fromString(MANA_ADDRESS))
+    const manaContract = new MANAToken(eth, Address.fromString(TELO_ADDRESS))
 
     const txHash: string = yield call(() =>
       manaContract.methods

@@ -1,4 +1,4 @@
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 
 const HOTJAR_ID = parseInt(env.get('REACT_APP_HOTJAR_ID', ''), 10)
 

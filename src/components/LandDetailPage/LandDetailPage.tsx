@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Row, Badge, Section, Narrow, Column, Button, Dropdown, Icon, Header, Empty, Layer, Stats } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { env } from 'decentraland-commons'
+import { Row, Badge, Section, Narrow, Column, Button, Dropdown, Icon, Header, Empty, Layer, Stats } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { env } from 'telestoworld-commons'
 import { LandType, Land, RoleType } from 'modules/land/types'
 import { Deployment } from 'modules/deployment/types'
 import { getSelection, getCenter, coordsToId, hoverStrokeByRole, hoverFillByRole } from 'modules/land/utils'
@@ -88,12 +88,12 @@ export default class LandDetailPage extends React.PureComponent<Props, State> {
   }
 
   renderDetail(land: Land, deployments: Deployment[]) {
-    const { ensList, parcelsAvailableToBuildEstates, projects, onNavigate, onOpenModal } = this.props
+    const { ensList, parcelsAvailableToBuildSectors, projects, onNavigate, onOpenModal } = this.props
     const { hovered, mouseX, mouseY, showTooltip } = this.state
     const occupiedTotal = this.computeOccupiedLand(land, deployments)
     const selection = getSelection(land)
     const [x, y] = getCenter(selection)
-    const canBuildEstate = parcelsAvailableToBuildEstates[land.id]
+    const canBuildSector = parcelsAvailableToBuildSectors[land.id]
     const isAtlasClickable = showTooltip && hovered && hovered.projectId && hovered.projectId in projects
 
     return (
@@ -120,13 +120,13 @@ export default class LandDetailPage extends React.PureComponent<Props, State> {
                         </Badge>
                       </>
                     ) : (
-                      <Badge color="#37333D">{land.size!} LAND</Badge>
+                      <Badge color="#37333D">{land.size!} SPACE</Badge>
                     )}
                     <a
                       className="jump-in"
                       target="_blank"
                       rel="no:opener no:referrer"
-                      href={`https://play.decentraland.org?position=${coordsToId(x, y)}`}
+                      href={`https://play.telesto.world?position=${coordsToId(x, y)}`}
                     />
                   </Row>
                 </Column>
@@ -149,11 +149,11 @@ export default class LandDetailPage extends React.PureComponent<Props, State> {
                         direction="left"
                       >
                         <Dropdown.Menu>
-                          {canBuildEstate ? (
+                          {canBuildSector ? (
                             <>
                               <Dropdown.Item
                                 text={t('land_detail_page.build_estate')}
-                                onClick={() => onOpenModal('EstateEditorModal', { land })}
+                                onClick={() => onOpenModal('SectorEditorModal', { land })}
                               />
                               <Dropdown.Divider />
                             </>
@@ -162,7 +162,7 @@ export default class LandDetailPage extends React.PureComponent<Props, State> {
                             <>
                               <Dropdown.Item
                                 text={t('land_detail_page.add_or_remove_parcels')}
-                                onClick={() => onOpenModal('EstateEditorModal', { land })}
+                                onClick={() => onOpenModal('SectorEditorModal', { land })}
                               />
                               <Dropdown.Item
                                 text={t('land_detail_page.dissolve_estate')}

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Header } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Header } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import Icon from 'components/Icon'
 import { Props } from './SidebarCard.types'

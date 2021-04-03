@@ -1,8 +1,8 @@
 import * as React from 'react'
 import isMobile from 'ismobilejs'
-import { Hero, Button, Form, Field } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { env } from 'decentraland-commons'
+import { Hero, Button, Form, Field } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { env } from 'telestoworld-commons'
 
 import { Props } from './MobilePageHero.types'
 import './MobilePageHero.css'

@@ -2,9 +2,9 @@ import { Eth } from 'web3x-es/eth'
 import { Address } from 'web3x-es/address'
 import { replace } from 'connected-react-router'
 import { takeEvery, call, put, takeLatest, select, take, all, race } from 'redux-saga/effects'
-import { ContractName } from 'decentraland-transactions'
-import { closeModal } from 'decentraland-dapps/dist/modules/modal/actions'
-import { Wallet } from 'decentraland-dapps/dist/modules/wallet/types'
+import { ContractName } from 'telestoworld-transactions'
+import { closeModal } from 'telestoworld-dapps/dist/modules/modal/actions'
+import { Wallet } from 'telestoworld-dapps/dist/modules/wallet/types'
 import {
   FetchItemsRequestAction,
   fetchItemsRequest,

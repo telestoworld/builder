@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { Popup } from 'decentraland-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { Popup } from 'telestoworld-ui'
 
 import { Props } from './CollectionBadge.types'
 import './CollectionBadge.css'

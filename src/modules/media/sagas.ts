@@ -1,5 +1,5 @@
 import { select, delay, put, call, takeLatest } from 'redux-saga/effects'
-import { Omit } from 'decentraland-dapps/dist/lib/types'
+import { Omit } from 'telestoworld-dapps/dist/lib/types'
 import { getCurrentProject } from 'modules/project/selectors'
 import { dataURLToBlob } from 'modules/media/utils'
 import { PARCEL_SIZE } from 'modules/project/utils'
@@ -32,7 +32,7 @@ export function* handleTakePictures() {
 
   const side = Math.max(cols, rows)
   const zoom = (side - 1) * 32
-  const canvas: HTMLCanvasElement = yield call(() => editorWindow.editor.getDCLCanvas())
+  const canvas: HTMLCanvasElement = yield call(() => editorWindow.editor.getTWCanvas())
   const previewAngle = Math.PI / 1.5
   const shots: Omit<RawMedia, 'preview'> = {
     north: null,

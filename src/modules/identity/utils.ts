@@ -1,5 +1,5 @@
 import { select, put, race, take, delay } from 'redux-saga/effects'
-import { AuthIdentity } from 'dcl-crypto'
+import { AuthIdentity } from 'tw-crypto'
 import { getCurrentIdentity, isLoggedIn } from 'modules/identity/selectors'
 import { openModal } from 'modules/modal/actions'
 import { LOGIN_SUCCESS, LOGIN_FAILURE } from './actions'

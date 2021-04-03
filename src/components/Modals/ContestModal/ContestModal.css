@@ -3,7 +3,7 @@
   border-radius: 12px;
 }
 
-.ContestModal .dcl.modal-navigation-title {
+.ContestModal .tw.modal-navigation-title {
   font-size: 21px;
   margin-bottom: 8px;
   text-align: center;
@@ -11,7 +11,7 @@
   color: var(--text);
 }
 
-.ContestModal .dcl.modal-navigation-subtitle {
+.ContestModal .tw.modal-navigation-subtitle {
   font-size: 17px;
   font-weight: 100;
   text-align: center;

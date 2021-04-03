@@ -15,11 +15,11 @@
   text-transform: capitalize;
 }
 
-.SceneDetailPage .dcl.column.actions {
+.SceneDetailPage .tw.column.actions {
   margin-left: 20px;
 }
 
-.SceneDetailPage .dcl.section.medium.no-margin-bottom {
+.SceneDetailPage .tw.section.medium.no-margin-bottom {
   margin-bottom: 0px;
 }
 

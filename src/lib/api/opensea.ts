@@ -1,6 +1,6 @@
-import { env } from 'decentraland-commons'
-import { BaseAPI } from 'decentraland-dapps/dist/lib/api'
-import { sleep } from 'decentraland-commons/dist/utils'
+import { env } from 'telestoworld-commons'
+import { BaseAPI } from 'telestoworld-dapps/dist/lib/api'
+import { sleep } from 'telestoworld-commons/dist/utils'
 import { OpenSeaResponse, OpenSeaAsset } from 'modules/asset/types'
 
 export const OPENSEA_URL = env.get('REACT_APP_OPENSEA_URL', '')

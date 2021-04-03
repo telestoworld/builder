@@ -1,7 +1,7 @@
 import * as React from 'react'
 
-import { Button } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Button } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { ShareModalMetadata, ShareModalType } from 'components/Modals/ShareModal/ShareModal.types'
 

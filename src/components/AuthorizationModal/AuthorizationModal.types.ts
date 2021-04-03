@@ -1,11 +1,11 @@
 import { Dispatch } from 'redux'
-import { Authorization } from 'decentraland-dapps/dist/modules/authorization/types'
+import { Authorization } from 'telestoworld-dapps/dist/modules/authorization/types'
 import {
   grantTokenRequest,
   GrantTokenRequestAction,
   revokeTokenRequest,
   RevokeTokenRequestAction
-} from 'decentraland-dapps/dist/modules/authorization/actions'
+} from 'telestoworld-dapps/dist/modules/authorization/actions'
 
 export type Props = {
   open: boolean

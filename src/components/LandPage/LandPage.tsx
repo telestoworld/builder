@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Table, Row, Radio, Column, Header, Pagination, Section, Container, Popup } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Table, Row, Radio, Column, Header, Pagination, Section, Container, Popup } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import Chip from 'components/Chip'
 import { Atlas } from 'components/Atlas'
 import { NavigationTab } from 'components/Navigation/Navigation.types'
@@ -183,7 +183,7 @@ export default class LandPage extends React.PureComponent<Props, State> {
     return (
       <LoggedInDetailPage
         className={`LandPage ${view}-view`}
-        activeTab={NavigationTab.LAND}
+        activeTab={NavigationTab.SPACE}
         isLoading={isLoading}
         isPageFullscreen={true}
         isFooterFullscreen={view === LandPageView.ATLAS}

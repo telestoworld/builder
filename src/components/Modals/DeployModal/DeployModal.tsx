@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Button, Header } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
+import { Button, Header } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
 import Icon from 'components/Icon'
 import DeployToLand from './DeployToLand'
 import DeployToPool from './DeployToPool'
@@ -27,7 +27,7 @@ export default class DeployModal extends React.PureComponent<Props, State> {
 
   handleDeployToLand = () => {
     this.setState({
-      view: DeployModalView.DEPLOY_TO_LAND
+      view: DeployModalView.DEPLOY_TO_SPACE
     })
   }
 
@@ -100,7 +100,7 @@ export default class DeployModal extends React.PureComponent<Props, State> {
       return <ClearDeployment deploymentId={deploymentId} name={name} onClose={this.handleClose} />
     }
 
-    if (view === DeployModalView.DEPLOY_TO_LAND || currentPoolGroup) {
+    if (view === DeployModalView.DEPLOY_TO_SPACE || currentPoolGroup) {
       return <DeployToLand name={name} onDeployToPool={this.handleDeployToPool} onBack={this.handleBack} onClose={this.handleClose} />
     }
 

@@ -1,4 +1,4 @@
-import { Experiments, Experiment, Variant } from 'decentraland-experiments'
+import { Experiments, Experiment, Variant } from 'telestoworld-experiments'
 import { ADD_ITEM } from 'modules/scene/actions'
 
 export const EXPERIMENT_TUTORIAL_OPEN = 'experiment-tutorial-open'

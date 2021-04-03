@@ -1,11 +1,11 @@
 import { connect } from 'react-redux'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
-import { isConnecting } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
+import { isConnecting } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { RootState } from 'modules/common/types'
 import { getLandId } from 'modules/location/selectors'
 import { getLoading, getLands, getDeploymentsByLandId } from 'modules/land/selectors'
 import { isLoggingIn } from 'modules/identity/selectors'
-import { FETCH_LANDS_REQUEST } from 'modules/land/actions'
+import { FETCH_SPACES_REQUEST } from 'modules/land/actions'
 import { MapStateProps, MapDispatchProps, MapDispatch, OwnProps } from './LandProvider.types'
 import LandProvider from './LandProvider'
 
@@ -18,7 +18,7 @@ const mapState = (state: RootState, ownProps: OwnProps): MapStateProps => {
   return {
     id,
     land,
-    isLoading: isLoadingType(getLoading(state), FETCH_LANDS_REQUEST) || isLoggingIn(state) || isConnecting(state),
+    isLoading: isLoadingType(getLoading(state), FETCH_SPACES_REQUEST) || isLoggingIn(state) || isConnecting(state),
     deployments
   }
 }

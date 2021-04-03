@@ -36,11 +36,11 @@
   align-items: center;
 }
 
-.SceneViewPage.mini canvas.dcl-canvas {
+.SceneViewPage.mini canvas.tw-canvas {
   cursor: grab !important;
 }
 
-.SceneViewPage.mini canvas.dcl-canvas:active {
+.SceneViewPage.mini canvas.tw-canvas:active {
   cursor: grabbing !important;
 }
 
@@ -165,7 +165,7 @@
   position: relative;
 }
 
-.back-container .dcl.back {
+.back-container .tw.back {
   margin-top: 5px;
 }
 

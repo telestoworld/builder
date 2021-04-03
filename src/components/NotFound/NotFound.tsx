@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Center } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Center } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 export default class NotFound extends React.PureComponent {
   render() {

@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux'
 import { FullAssetPack, MixedAssetPack } from 'modules/assetPack/types'
-import { ModalProps } from 'decentraland-dapps/dist/providers/ModalProvider/ModalProvider.types'
+import { ModalProps } from 'telestoworld-dapps/dist/providers/ModalProvider/ModalProvider.types'
 import {
   saveAssetPackRequest,
   SaveAssetPackRequestAction,

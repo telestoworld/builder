@@ -8,7 +8,7 @@ export default new ContractAbi([
         type: 'address'
       },
       {
-        internalType: 'contract IDCLRegistrar',
+        internalType: 'contract ITWRegistrar',
         name: '_registrar',
         type: 'address'
       }
@@ -187,7 +187,7 @@ export default new ContractAbi([
     name: 'registrar',
     outputs: [
       {
-        internalType: 'contract IDCLRegistrar',
+        internalType: 'contract ITWRegistrar',
         name: '',
         type: 'address'
       }

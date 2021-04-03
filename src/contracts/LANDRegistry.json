@@ -402,7 +402,7 @@
       { "name": "beneficiary", "type": "address" },
       { "name": "metadata", "type": "string" }
     ],
-    "name": "createEstateWithMetadata",
+    "name": "createSectorWithMetadata",
     "outputs": [{ "name": "", "type": "uint256" }],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -432,7 +432,7 @@
   {
     "constant": false,
     "inputs": [{ "name": "registry", "type": "address" }],
-    "name": "setEstateRegistry",
+    "name": "setSectorRegistry",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -513,7 +513,7 @@
       { "name": "y", "type": "int256[]" },
       { "name": "beneficiary", "type": "address" }
     ],
-    "name": "createEstate",
+    "name": "createSector",
     "outputs": [{ "name": "", "type": "uint256" }],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -591,7 +591,7 @@
       { "name": "y", "type": "int256[]" },
       { "name": "estateId", "type": "uint256" }
     ],
-    "name": "transferManyLandToEstate",
+    "name": "transferManyLandToSector",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -604,7 +604,7 @@
       { "name": "y", "type": "int256" },
       { "name": "estateId", "type": "uint256" }
     ],
-    "name": "transferLandToEstate",
+    "name": "transferLandToSector",
     "outputs": [],
     "payable": false,
     "stateMutability": "nonpayable",
@@ -622,7 +622,7 @@
   {
     "anonymous": false,
     "inputs": [{ "indexed": true, "name": "registry", "type": "address" }],
-    "name": "EstateRegistrySet",
+    "name": "SectorRegistrySet",
     "type": "event"
   },
   {

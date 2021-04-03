@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
-import { Transaction } from 'decentraland-dapps/dist/modules/transaction/types'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
+import { Transaction } from 'telestoworld-dapps/dist/modules/transaction/types'
 import { RootState } from 'modules/common/types'
 import { getPendingTransactions } from 'modules/transaction/selectors'
 import { getItems } from 'modules/item/selectors'

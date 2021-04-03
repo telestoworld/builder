@@ -61,7 +61,7 @@ export type ParcelFields = {
 }
 
 export const estateFields = () => gql`
-  fragment estateFields on Estate {
+  fragment estateFields on Sector {
     id
     owner {
       address
@@ -80,7 +80,7 @@ export const estateFields = () => gql`
   }
 `
 
-export type EstateFields = {
+export type SectorFields = {
   id: string
   owner: {
     address: string

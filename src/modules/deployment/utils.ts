@@ -1,6 +1,6 @@
 import path from 'path'
 import uuid from 'uuid'
-import { DeploymentContent } from 'dcl-catalyst-commons'
+import { DeploymentContent } from 'tw-catalyst-commons'
 const CID = require('cids')
 const MemoryDatastore = require('interface-datastore').MemoryDatastore
 const pull = require('pull-stream')

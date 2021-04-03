@@ -3,10 +3,10 @@ import { Address } from 'web3x-es/address'
 import { Eth } from 'web3x-es/eth'
 import { TxSend } from 'web3x-es/contract'
 import { LegacyProviderAdapter } from 'web3x-es/providers'
-import { ContractName, getContract, sendMetaTransaction } from 'decentraland-transactions'
-import { getNetworkProvider, getConnectedProvider } from 'decentraland-dapps/dist/lib/eth'
-import { Wallet, Provider } from 'decentraland-dapps/dist/modules/wallet/types'
-import { getData as getBaseWallet } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { ContractName, getContract, sendMetaTransaction } from 'telestoworld-transactions'
+import { getNetworkProvider, getConnectedProvider } from 'telestoworld-dapps/dist/lib/eth'
+import { Wallet, Provider } from 'telestoworld-dapps/dist/modules/wallet/types'
+import { getData as getBaseWallet } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 
 export async function getEth(): Promise<Eth> {
   const provider: Provider | null = await getConnectedProvider()

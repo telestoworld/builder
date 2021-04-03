@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import SquaresGrid from 'components/SquaresGrid'
 import Icon from 'components/Icon'
@@ -94,7 +94,7 @@ export default class Metrics extends React.PureComponent<Props, State> {
           <div className="bubble">
             <div className="bubble-title">
               <span>
-                {rows}x{cols} LAND
+                {rows}x{cols} SPACE
               </span>
               &nbsp;
               <span className="dimensions">{getDimensions(rows, cols)}</span>

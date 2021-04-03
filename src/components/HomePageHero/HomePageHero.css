@@ -1,4 +1,4 @@
-.dcl.hero.HomePageHero {
+.tw.hero.HomePageHero {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6,24 +6,24 @@
   user-select: none;
 }
 
-.dcl.hero.HomePageHero .hero-subtitle {
+.tw.hero.HomePageHero .hero-subtitle {
   padding-right: 400px;
 }
 
-.dcl.hero.HomePageHero .hero-actions {
+.tw.hero.HomePageHero .hero-actions {
   margin-top: 36px;
 }
 
-.dcl.hero.HomePageHero .hero-actions button.primary {
+.tw.hero.HomePageHero .hero-actions button.primary {
   border: 1px solid var(--primary);
 }
 
-.dcl.hero.HomePageHero .hero-actions button {
+.tw.hero.HomePageHero .hero-actions button {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
   transition: box-shadow 0.1s ease-in-out;
 }
 
-.dcl.hero.HomePageHero .hero-actions button:hover {
+.tw.hero.HomePageHero .hero-actions button:hover {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.24);
 }
 
@@ -83,7 +83,7 @@
 }
 
 @media (max-width: 1280px) {
-  .dcl.hero.HomePageHero .hero-subtitle {
+  .tw.hero.HomePageHero .hero-subtitle {
     padding-right: 100px;
   }
 }

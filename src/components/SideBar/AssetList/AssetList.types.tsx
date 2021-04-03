@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { GridProps } from 'decentraland-ui'
+import { GridProps } from 'telestoworld-ui'
 
 import { Category } from 'modules/ui/sidebar/types'
 import { Project } from 'modules/project/types'

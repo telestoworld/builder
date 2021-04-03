@@ -1,6 +1,6 @@
 import React from 'react'
-import { Confirm } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Confirm } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import { Props, State } from './ConfirmDelete.types'
 

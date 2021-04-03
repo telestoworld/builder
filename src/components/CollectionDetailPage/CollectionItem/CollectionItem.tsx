@@ -1,6 +1,6 @@
 import React from 'react'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { Grid, Dropdown, Icon, Button, Mana } from 'decentraland-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { Grid, Dropdown, Icon, Button, Telo } from 'telestoworld-ui'
 import { Link } from 'react-router-dom'
 import { fromWei } from 'web3x-es/utils'
 

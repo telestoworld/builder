@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { ModalProps } from 'decentraland-dapps/dist/providers/ModalProvider/ModalProvider.types'
+import { ModalProps } from 'telestoworld-dapps/dist/providers/ModalProvider/ModalProvider.types'
 import { publishCollectionRequest, PublishCollectionRequestAction } from 'modules/collection/actions'
 import { Collection } from 'modules/collection/types'
 import { Item } from 'modules/item/types'

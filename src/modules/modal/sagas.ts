@@ -1,4 +1,4 @@
-import { getOpenModals } from 'decentraland-dapps/dist/modules/modal/selectors'
+import { getOpenModals } from 'telestoworld-dapps/dist/modules/modal/selectors'
 
 import { history, store } from 'modules/common/store'
 import { closeAllModals } from './actions'

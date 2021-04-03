@@ -1,5 +1,5 @@
 import { Store } from 'redux'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import {
   setGizmo,

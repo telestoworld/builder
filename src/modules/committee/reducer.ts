@@ -1,4 +1,4 @@
-import { loadingReducer, LoadingState } from 'decentraland-dapps/dist/modules/loading/reducer'
+import { loadingReducer, LoadingState } from 'telestoworld-dapps/dist/modules/loading/reducer'
 import {
   FetchCommitteeMembersFailureAction,
   FetchCommitteeMembersRequestAction,

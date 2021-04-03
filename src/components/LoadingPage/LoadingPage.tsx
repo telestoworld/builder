@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Loader, Page } from 'decentraland-ui'
-// import Ad from 'decentraland-ad/lib/Ad/Ad'
+import { Loader, Page } from 'telestoworld-ui'
+// import Ad from 'telestoworld-ad/lib/Ad/Ad'
 
 import Navbar from 'components/Navbar'
 import Footer from 'components/Footer'

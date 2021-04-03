@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ModalNavigation, ModalContent, ModalActions, Form, Field, Button, InputOnChangeData } from 'decentraland-ui'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { ModalNavigation, ModalContent, ModalActions, Form, Field, Button, InputOnChangeData } from 'telestoworld-ui'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { fromWei, toWei } from 'web3x-es/utils'
 
 import { isValid } from 'lib/address'

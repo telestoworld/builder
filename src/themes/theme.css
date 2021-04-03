@@ -50,7 +50,7 @@
   --facebook: #4267b2;
   --twitter: #1da1f2;
 
-  /* Colors to be moved to decentraland ui */
+  /* Colors to be moved to telestoworld ui */
   --smart-grey-raw: 55, 51, 61;
   --smart-grey: #37333d;
   --dark-two: #242129;
@@ -58,7 +58,7 @@
   --parameter-font-size: 15px;
 }
 
-.dcl.navbar .ui.menu .item {
+.tw.navbar .ui.menu .item {
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -71,11 +71,11 @@
   height: auto;
 }
 
-/* TODO: this removes the Matic Mana balance from the navbar. Remove this once we launch on Matic. */
-.dcl.navbar .dcl.user-menu .dcl.mana .symbol {
+/* TODO: this removes the Matic Telo balance from the navbar. Remove this once we launch on Matic. */
+.tw.navbar .tw.user-menu .tw.telo .symbol {
   color: var(--text);
 }
 
-.dcl.navbar .dcl.user-menu .dcl.mana + .dcl.mana {
+.tw.navbar .tw.user-menu .tw.telo + .tw.telo {
   display: none;
 }

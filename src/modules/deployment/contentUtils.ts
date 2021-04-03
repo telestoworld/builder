@@ -1,7 +1,7 @@
 import CID from 'cids'
 // @ts-ignore
 import multihashing from 'multihashing-async'
-import { Authenticator, AuthLink, AuthIdentity } from 'dcl-crypto'
+import { Authenticator, AuthLink, AuthIdentity } from 'tw-crypto'
 const toBuffer = require('blob-to-buffer')
 
 export type Timestamp = number
@@ -51,7 +51,7 @@ export enum EntityField {
 
 export const ENTITY_FILE_NAME = 'entity.json'
 
-export const FILE_NAME_BLACKLIST = ['.dclignore', 'Dockerfile', 'builder.json', 'src/game.ts']
+export const FILE_NAME_BLACKLIST = ['.twignore', 'Dockerfile', 'builder.json', 'src/game.ts']
 
 export class Entity {
   constructor(

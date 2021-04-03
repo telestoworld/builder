@@ -1,6 +1,6 @@
 import React from 'react'
-import { Row, Column, Header, Section, Container, Dropdown, Pagination, Empty } from 'decentraland-ui'
-import { T, t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Row, Column, Header, Section, Container, Dropdown, Pagination, Empty } from 'telestoworld-ui'
+import { T, t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Collection } from 'modules/collection/types'
 import { hasReviews } from 'modules/collection/utils'
 import NotFound from 'components/NotFound'

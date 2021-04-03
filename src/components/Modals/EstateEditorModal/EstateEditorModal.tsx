@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { ModalNavigation, ModalActions, Button, Layer, Coord, Field } from 'decentraland-ui'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { ModalNavigation, ModalActions, Button, Layer, Coord, Field } from 'telestoworld-ui'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Atlas } from 'components/Atlas'
 import {
   getCenter,
@@ -14,8 +14,8 @@ import {
   MAX_PARCELS_PER_TX
 } from 'modules/land/utils'
 import { LandType, Land } from 'modules/land/types'
-import { Props, State } from './EstateEditorModal.types'
-import './EstateEditorModal.css'
+import { Props, State } from './SectorEditorModal.types'
+import './SectorEditorModal.css'
 
 const getInitialCoords = (land: Land) => {
   let x = 0
@@ -41,7 +41,7 @@ const getOriginalParcels = (land: Land) => {
   return land.type === LandType.PARCEL ? [] : land.parcels!.map(({ id, ...coord }) => coord)
 }
 
-export default class EstateEditorModal extends React.PureComponent<Props, State> {
+export default class SectorEditorModal extends React.PureComponent<Props, State> {
   state: State = {
     name: '',
     description: '',
@@ -121,7 +121,7 @@ export default class EstateEditorModal extends React.PureComponent<Props, State>
   }
 
   handleSubmit = () => {
-    const { onCreateEstate, onEditEstate, metadata } = this.props
+    const { onCreateSector, onEditSector, metadata } = this.props
     const { land } = metadata
     if (land.type === LandType.PARCEL) {
       // creating a new estate
@@ -129,13 +129,13 @@ export default class EstateEditorModal extends React.PureComponent<Props, State>
         this.setState({ showCreationForm: true })
       } else {
         const { name, description, selection } = this.state
-        onCreateEstate(name, description, selection)
+        onCreateSector(name, description, selection)
       }
     } else {
       // editing an existing estate
       const toAdd = this.getCoordsToAdd()
       const toRemove = this.getCoordsToRemove()
-      onEditEstate(land, toAdd, toRemove)
+      onEditSector(land, toAdd, toRemove)
     }
   }
 

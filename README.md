@@ -1,10 +1,10 @@
-![](https://ui.decentraland.org/decentraland_128x128.png)
+![](https://ui.telesto.world/telestoworld_128x128.png)
 
 # Decentraland Builder
 
-You can create beautiful scenes for [Decentraland](https://decentraland.org) even if you don't own a parcel.
+You can create beautiful scenes for [Decentraland](https://telesto.world) even if you don't own a parcel.
 
-![](https://github.com/decentraland/builder/blob/master/public/images/intro.gif)
+![](https://github.com/telestoworld/builder/blob/master/public/images/intro.gif)
 
 # How to run
 
@@ -12,7 +12,7 @@ The builder is a SPA or single page application built with [create-react-app](ht
 
 After that, to run this app you have two options:
 
-- **Development Server**: run `npm start` from the [`root`](https://github.com/decentraland/builder/tree/master) path
+- **Development Server**: run `npm start` from the [`root`](https://github.com/telestoworld/builder/tree/master) path
 - **Production**: run `npm run build` and host the resulting index.html file with your server of choice, for example `python -m SimpleHTTPServer 5000`
 
 For more information, check the [create-react-app](https://github.com/facebook/create-react-app) repo.
@@ -24,9 +24,9 @@ The front-end connects to these services via URLs set via environment variables.
 
 **Creating an environment file**
 
-You'll need Create an `.env` file on the [`root`](https://github.com/decentraland/builder/tree/master) folder and fill it following the `.env.example` file found there.
+You'll need Create an `.env` file on the [`root`](https://github.com/telestoworld/builder/tree/master) folder and fill it following the `.env.example` file found there.
 
-You will need to specify `NODE_PATH` to be `src/` and you can check the [contract addresses](https://raw.githubusercontent.com/decentraland/contracts/gh-pages/addresses.json) for values like `REACT_APP_MANA_TOKEN_CONTRACT_ADDRESS`.
+You will need to specify `NODE_PATH` to be `src/` and you can check the [contract addresses](https://raw.githubusercontent.com/telestoworld/contracts/gh-pages/addresses.json) for values like `REACT_APP_TELO_TOKEN_CONTRACT_ADDRESS`.
 
 Here are the basic requirements to run the project:
 
@@ -36,10 +36,10 @@ Here are the basic requirements to run the project:
 NODE_PATH=src
 
 REACT_APP_ASSETS_URL=https://builder-packs-prod.now.sh
-REACT_APP_CONTENT_SERVER_URL=https://content.decentraland.org
+REACT_APP_CONTENT_SERVER_URL=https://content.telesto.world
 REACT_APP_DAR_URL=https://schema-api-staging.now.sh/dar
-REACT_APP_BUILDER_SERVER_URL=https://builder-api.decentraland.org/v1
-REACT_APP_MARKETPLACE_URL=https://api.decentraland.org/v1
+REACT_APP_BUILDER_SERVER_URL=https://builder-api.telesto.world/v1
+REACT_APP_MARKETPLACE_URL=https://api.telesto.world/v1
 
 # Third party
 
@@ -49,7 +49,7 @@ REACT_APP_ROLLBAR_ACCESS_TOKEN=
 
 # Contracts
 
-REACT_APP_MANA_TOKEN_CONTRACT_ADDRESS=0x0f5d2fb29fb7d3cfee444a200298f468908cc942
+REACT_APP_TELO_TOKEN_CONTRACT_ADDRESS=0x0f5d2fb29fb7d3cfee444a200298f468908cc942
 ```
 
 ## Asset packs
@@ -67,7 +67,7 @@ To populate the builder sidebar the front-end needs to fetch these asset packs f
     {
       "id": "127727a7e8d9d265cc55ce4dcbbad3caa582d792a8792d1ff07cc36ab2c3b045",
       "name": "Barbacue",
-      "thumbnail": "https://content.decentraland.today/contents/QmRBuZoF2TiD8Egonw5Y6g7AfqgVKGihPwtE4pG5uxLtHX",
+      "thumbnail": "https://content.telestoworld.today/contents/QmRBuZoF2TiD8Egonw5Y6g7AfqgVKGihPwtE4pG5uxLtHX",
       "url": "Barbacue_01/Barbacue_01.glb",
       "tags": ["decoration", "sausage", "sausages", "hamburger", "hamburgers", "backyard", "eggplant", "charcoal", "fire"],
       "category": "decorations",

@@ -75,7 +75,7 @@
   padding: 15px;
 }
 
-.CollectionsPage .filters .dcl.row.actions .ui.dropdown .ui.button {
+.CollectionsPage .filters .tw.row.actions .ui.dropdown .ui.button {
   width: 16px;
   height: 16px;
   box-sizing: content-box;
@@ -84,11 +84,11 @@
   border: solid 1px var(--gray);
 }
 
-.CollectionsPage .filters .dcl.row.actions .ui.button.open-editor {
+.CollectionsPage .filters .tw.row.actions .ui.button.open-editor {
   padding: 6px 13px;
 }
 
-.CollectionsPage .filters .dcl.row.actions .ui.button.open-editor:hover {
+.CollectionsPage .filters .tw.row.actions .ui.button.open-editor:hover {
   transform: translateY(0px);
 }
 

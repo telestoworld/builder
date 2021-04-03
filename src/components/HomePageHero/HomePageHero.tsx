@@ -1,7 +1,7 @@
 import * as React from 'react'
-import { Hero, Button } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { env } from 'decentraland-commons'
+import { Hero, Button } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { env } from 'telestoworld-commons'
 
 import { Props } from './HomePageHero.types'
 import './HomePageHero.css'

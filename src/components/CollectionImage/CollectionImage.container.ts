@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { RootState } from 'modules/common/types'
 import { getLoading as getLoadingItem } from 'modules/item/selectors'
 import { getCollectionItems, getLoading as getLoadingCollection } from 'modules/collection/selectors'

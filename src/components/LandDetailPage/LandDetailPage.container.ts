@@ -3,7 +3,7 @@ import { push, replace } from 'connected-react-router'
 import { RootState } from 'modules/common/types'
 import { getLandId } from 'modules/location/selectors'
 import { openModal } from 'modules/modal/actions'
-import { getParcelsAvailableToBuildEstates, getDeploymentsByCoord, getLandTiles } from 'modules/land/selectors'
+import { getParcelsAvailableToBuildSectors, getDeploymentsByCoord, getLandTiles } from 'modules/land/selectors'
 import { getENSForLand } from 'modules/ens/selectors'
 import { getData as getProjects } from 'modules/project/selectors'
 import { MapStateProps, MapDispatchProps, MapDispatch } from './LandDetailPage.types'
@@ -13,7 +13,7 @@ const mapState = (state: RootState): MapStateProps => {
   const landId = getLandId(state) || ''
   return {
     ensList: getENSForLand(state, landId),
-    parcelsAvailableToBuildEstates: getParcelsAvailableToBuildEstates(state),
+    parcelsAvailableToBuildSectors: getParcelsAvailableToBuildSectors(state),
     deploymentsByCoord: getDeploymentsByCoord(state),
     landTiles: getLandTiles(state),
     projects: getProjects(state)

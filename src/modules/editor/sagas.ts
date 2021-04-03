@@ -1,7 +1,7 @@
 // @ts-ignore
 import { takeLatest, select, put, call, delay, take, race } from 'redux-saga/effects'
 import { getSearch } from 'connected-react-router'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import {
   updateEditor,
   BIND_EDITOR_KEYBOARD_SHORTCUTS,
@@ -125,7 +125,7 @@ import { Item, WearableBodyShape } from 'modules/item/types'
 import { getItems } from 'modules/item/selectors'
 import maleAvatar from './wearables/male.json'
 import femaleAvatar from './wearables/female.json'
-import { Wearable } from 'decentraland-ecs'
+import { Wearable } from 'telestoworld-ecs'
 import { SAVE_ITEM_SUCCESS } from 'modules/item/actions'
 import { AssetPackState } from 'modules/assetPack/reducer'
 import { getBodyShapes, hasBodyShape } from 'modules/item/utils'
@@ -368,7 +368,7 @@ function* handleOpenEditor(action: OpenEditorAction) {
       yield put(setItems([]))
     }
   } else {
-    // Creates a new scene in the dcl client's side
+    // Creates a new scene in the tw client's side
     const project: Project | Pool | null = yield type === PreviewType.POOL ? select(getCurrentPool) : select(getCurrentProject)
 
     // set editor in "scene mode" (min/max zoom, and show floor)
@@ -621,8 +621,8 @@ function* getDefaultWearables() {
   // @TODO: remove this when unity build accepts urn
   return ((bodyShape === WearableBodyShape.MALE ? maleAvatar : femaleAvatar) as Wearable[]).map(w => ({
     ...w,
-    id: w.id.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/'),
-    representations: w.representations.map(r => ({ ...r, bodyShapes: r.bodyShapes.map(b => b.replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/')) })
+    id: w.id.replace('urn:telestoworld:off-chain:base-avatars:', 'tw://base-avatars/'),
+    representations: w.representations.map(r => ({ ...r, bodyShapes: r.bodyShapes.map(b => b.replace('urn:telestoworld:off-chain:base-avatars:', 'tw://base-avatars/')) })
     )
   }))
 }

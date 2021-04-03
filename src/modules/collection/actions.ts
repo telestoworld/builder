@@ -1,6 +1,6 @@
 import { action } from 'typesafe-actions'
-import { ChainId } from '@dcl/schemas'
-import { buildTransactionPayload } from 'decentraland-dapps/dist/modules/transaction/utils'
+import { ChainId } from 'tw-schemas'
+import { buildTransactionPayload } from 'telestoworld-dapps/dist/modules/transaction/utils'
 import { Item } from 'modules/item/types'
 import { Collection, Mint, Access } from './types'
 

@@ -2,8 +2,8 @@
     Rounded input
  ----------------------------- */
 
-.ui.form .dcl.field .ui.input.rounded > input,
-.dcl.field .ui.input.rounded > input {
+.ui.form .tw.field .ui.input.rounded > input,
+.tw.field .ui.input.rounded > input {
   border: 1px solid var(--gray);
   border-radius: 6px;
   font-size: 15px;
@@ -11,22 +11,22 @@
   padding-left: 1em;
 }
 
-.ui.form .dcl.field .ui.input.rounded > input:focus,
-.dcl.field .ui.input.rounded > input:focus {
+.ui.form .tw.field .ui.input.rounded > input:focus,
+.tw.field .ui.input.rounded > input:focus {
   border: 1px solid var(--light-gray);
 }
 
-.ui.form .dcl.field.error .ui.input.rounded > input,
-.ui.form .dcl.field.error .ui.input.rounded > input:focus,
-.dcl.field.error .ui.input.rounded > input,
-.dcl.field.error .ui.input.rounded > input:focus {
+.ui.form .tw.field.error .ui.input.rounded > input,
+.ui.form .tw.field.error .ui.input.rounded > input:focus,
+.tw.field.error .ui.input.rounded > input,
+.tw.field.error .ui.input.rounded > input:focus {
   border: 1px solid var(--error);
 }
 
-.dcl.field.address .ui.input.rounded + .dcl.blockie {
+.tw.field.address .ui.input.rounded + .tw.blockie {
   margin-right: 12px;
 }
 
-.dcl.field .ui.input.rounded ~ .message {
+.tw.field .ui.input.rounded ~ .message {
   display: none;
 }

@@ -1,8 +1,8 @@
 import { store } from 'modules/common/store'
 import { RootState } from 'modules/common/types'
 import { getData } from 'modules/identity/selectors'
-import { Authenticator } from 'dcl-crypto'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { Authenticator } from 'tw-crypto'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 
 const AUTH_CHAIN_HEADER_PREFIX = 'x-identity-auth-chain-'
 

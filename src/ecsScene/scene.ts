@@ -12,17 +12,17 @@ import {
   AvatarShape,
   Color4,
   Wearable
-} from 'decentraland-ecs'
-import * as ECS from 'decentraland-ecs'
-import { createChannel } from 'decentraland-builder-scripts/channel'
-import { createInventory } from 'decentraland-builder-scripts/inventory'
+} from 'telestoworld-ecs'
+import * as ECS from 'telestoworld-ecs'
+import { createChannel } from 'telestoworld-builder-scripts/channel'
+import { createInventory } from 'telestoworld-builder-scripts/inventory'
 
-import { DecentralandInterface } from 'decentraland-ecs/dist/decentraland/Types'
+import { DecentralandInterface } from 'telestoworld-ecs/dist/telestoworld/Types'
 import { EntityDefinition, AnyComponent, ComponentData, ComponentType, Scene } from 'modules/scene/types'
 import { AssetParameterValues } from 'modules/asset/types'
 import { BODY_SHAPE_CATEGORY, WearableBodyShape } from 'modules/item/types'
-const { Gizmos, SmartItem } = require('decentraland-ecs') as any
-declare var dcl: DecentralandInterface
+const { Gizmos, SmartItem } = require('telestoworld-ecs') as any
+declare var tw: DecentralandInterface
 
 const inventory = createInventory(ECS.UICanvas, ECS.UIContainerStack, ECS.UIImage)
 class MockMessageBus {
@@ -51,11 +51,11 @@ let scriptBaseUrl: string | null = null
 const scriptPromises = new Map<string, Promise<string>>()
 const scriptInstances = new Map<string, IScript<any>>()
 
-@Component('org.decentraland.staticEntity')
+@Component('org.telestoworld.staticEntity')
 // @ts-ignore
 export class StaticEntity { }
 
-@Component('org.decentraland.script')
+@Component('org.telestoworld.script')
 // @ts-ignore
 export class Script {
   constructor(public assetId: string, public src: string, public values: AssetParameterValues) { }
@@ -112,7 +112,7 @@ function getAvatar(): Entity {
     avatar.addComponent(new Transform({ position: new Vector3(8, 0, 8), scale: new Vector3(1, 1, 1) }))
     const avatarShape = new AvatarShape()
     // @TODO: Remove replace when unity accepts urn
-    avatarShape.bodyShape = ('urn:decentraland:off-chain:base-avatars:BaseMale').replace('urn:decentraland:off-chain:base-avatars:', 'dcl://base-avatars/')
+    avatarShape.bodyShape = ('urn:telestoworld:off-chain:base-avatars:BaseMale').replace('urn:telestoworld:off-chain:base-avatars:', 'tw://base-avatars/')
     avatarShape.skinColor = new Color4(0.8671875, 0.6953125, 0.5625, 1)
     avatarShape.hairColor = new Color4(0.8671875, 0.6953125, 0.5625, 1)
     avatarShape.eyeColor = new Color4(0.8671875, 0.6953125, 0.5625, 1)
@@ -352,9 +352,9 @@ function removeUnusedEntities(entities: Record<string, EntityDefinition>) {
 }
 
 function subscribeToExternalActions() {
-  dcl.subscribe('externalAction')
+  tw.subscribe('externalAction')
 
-  dcl.onEvent(e => {
+  tw.onEvent(e => {
     if ((e.type as any) === 'externalAction') {
       handleExternalAction(e.data as any)
     }

@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Icon } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Icon } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 
 import SquaresGrid from 'components/SquaresGrid'
 import { preventDefault } from 'lib/preventDefault'

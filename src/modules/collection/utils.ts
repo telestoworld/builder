@@ -1,4 +1,4 @@
-import { env, utils } from 'decentraland-commons'
+import { env, utils } from 'telestoworld-commons'
 import { Address } from 'web3x-es/address'
 import { toBN } from 'web3x-es/utils'
 import { Item } from 'modules/item/types'
@@ -21,7 +21,7 @@ export function getCollectionBaseURI() {
 
 export function getCollectionSymbol(collection: Collection) {
   const vowelLessName = collection.name.replace(/a|e|i|o|u|\s/g, '')
-  return 'DCL-' + vowelLessName.toUpperCase()
+  return 'TW-' + vowelLessName.toUpperCase()
 }
 
 // TODO: check getRarityIndex

@@ -1,5 +1,5 @@
 import React from 'react'
-import { StrictConfirmProps } from 'decentraland-ui'
+import { StrictConfirmProps } from 'telestoworld-ui'
 
 export type Props = {
   name: string

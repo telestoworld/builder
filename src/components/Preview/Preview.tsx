@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { DropTarget } from 'react-dnd'
 import Lottie from 'react-lottie'
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 
 import animationData from './loader.json'
 
@@ -16,7 +16,7 @@ const editorWindow = window as EditorWindow
 const unityDebugParams = env.get('REACT_APP_UNITY_DEBUG_PARAMS')
 
 let canvas: HTMLCanvasElement | null = null
-let isDCLInitialized: boolean = false
+let isTWInitialized: boolean = false
 
 class Preview extends React.Component<Props & CollectedProps, State> {
   canvasContainer = React.createRef<HTMLDivElement>()
@@ -26,7 +26,7 @@ class Preview extends React.Component<Props & CollectedProps, State> {
       history.replaceState('', 'Unity Debug', `?${unityDebugParams}`)
     }
 
-    if (!isDCLInitialized) {
+    if (!isTWInitialized) {
       this.startEditor().catch(error => console.error('Failed to start editor', error))
     } else {
       this.moveCanvas()
@@ -73,12 +73,12 @@ class Preview extends React.Component<Props & CollectedProps, State> {
       throw new Error('Missing canvas container')
     }
     try {
-      isDCLInitialized = true
+      isTWInitialized = true
       ;(window as any).devicePixelRatio = 1 // without this unity blows up majestically 💥🌈🦄🔥🤷🏼‍♂️
       await editorWindow.editor.initEngine(this.canvasContainer.current, '/unity/Build/unity.json')
       if (!unityDebugParams) {
-        canvas = await editorWindow.editor.getDCLCanvas()
-        canvas && canvas.classList.add('dcl-canvas')
+        canvas = await editorWindow.editor.getTWCanvas()
+        canvas && canvas.classList.add('tw-canvas')
       }
 
       this.moveCanvas()
@@ -86,7 +86,7 @@ class Preview extends React.Component<Props & CollectedProps, State> {
 
       this.subscribeKeyDownEvent()
     } catch (error) {
-      isDCLInitialized = false
+      isTWInitialized = false
       console.error('Failed to load Preview', error)
     }
   }

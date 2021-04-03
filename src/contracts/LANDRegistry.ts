@@ -3,8 +3,8 @@ import { Address } from 'web3x-es/address'
 import { EventLog, TransactionReceipt } from 'web3x-es/formatters'
 import { Contract, ContractOptions, TxCall, TxSend, EventSubscriptionFactory } from 'web3x-es/contract'
 import { Eth } from 'web3x-es/eth'
-import abi from './LANDRegistryAbi'
-export type EstateRegistrySetEvent = {
+import abi from './SPACERegistryAbi'
+export type SectorRegistrySetEvent = {
   registry: Address
 }
 export type UpdateEvent = {
@@ -53,7 +53,7 @@ export type OwnerUpdateEvent = {
   _prevOwner: Address
   _newOwner: Address
 }
-export interface EstateRegistrySetEventLog extends EventLog<EstateRegistrySetEvent, 'EstateRegistrySet'> {}
+export interface SectorRegistrySetEventLog extends EventLog<SectorRegistrySetEvent, 'SectorRegistrySet'> {}
 export interface UpdateEventLog extends EventLog<UpdateEvent, 'Update'> {}
 export interface UpdateOperatorEventLog extends EventLog<UpdateOperatorEvent, 'UpdateOperator'> {}
 export interface UpdateManagerEventLog extends EventLog<UpdateManagerEvent, 'UpdateManager'> {}
@@ -63,8 +63,8 @@ export interface TransferEventLog extends EventLog<TransferEvent, 'Transfer'> {}
 export interface ApprovalForAllEventLog extends EventLog<ApprovalForAllEvent, 'ApprovalForAll'> {}
 export interface ApprovalEventLog extends EventLog<ApprovalEvent, 'Approval'> {}
 export interface OwnerUpdateEventLog extends EventLog<OwnerUpdateEvent, 'OwnerUpdate'> {}
-interface LANDRegistryEvents {
-  EstateRegistrySet: EventSubscriptionFactory<EstateRegistrySetEventLog>
+interface SPACERegistryEvents {
+  SectorRegistrySet: EventSubscriptionFactory<SectorRegistrySetEventLog>
   Update: EventSubscriptionFactory<UpdateEventLog>
   UpdateOperator: EventSubscriptionFactory<UpdateOperatorEventLog>
   UpdateManager: EventSubscriptionFactory<UpdateManagerEventLog>
@@ -75,8 +75,8 @@ interface LANDRegistryEvents {
   Approval: EventSubscriptionFactory<ApprovalEventLog>
   OwnerUpdate: EventSubscriptionFactory<OwnerUpdateEventLog>
 }
-interface LANDRegistryEventLogs {
-  EstateRegistrySet: EstateRegistrySetEventLog
+interface SPACERegistryEventLogs {
+  SectorRegistrySet: SectorRegistrySetEventLog
   Update: UpdateEventLog
   UpdateOperator: UpdateOperatorEventLog
   UpdateManager: UpdateManagerEventLog
@@ -87,8 +87,8 @@ interface LANDRegistryEventLogs {
   Approval: ApprovalEventLog
   OwnerUpdate: OwnerUpdateEventLog
 }
-interface LANDRegistryTxEventLogs {
-  EstateRegistrySet: EstateRegistrySetEventLog[]
+interface SPACERegistryTxEventLogs {
+  SectorRegistrySet: SectorRegistrySetEventLog[]
   Update: UpdateEventLog[]
   UpdateOperator: UpdateOperatorEventLog[]
   UpdateManager: UpdateManagerEventLog[]
@@ -99,35 +99,35 @@ interface LANDRegistryTxEventLogs {
   Approval: ApprovalEventLog[]
   OwnerUpdate: OwnerUpdateEventLog[]
 }
-export interface LANDRegistryTransactionReceipt extends TransactionReceipt<LANDRegistryTxEventLogs> {}
-interface LANDRegistryMethods {
+export interface SPACERegistryTransactionReceipt extends TransactionReceipt<SPACERegistryTxEventLogs> {}
+interface SPACERegistryMethods {
   supportsInterface(_interfaceID: string): TxCall<boolean>
   proxyOwner(): TxCall<Address>
   name(): TxCall<string>
   updateManager(a0: Address, a1: Address): TxCall<boolean>
   getApproved(assetId: number | string | BN): TxCall<Address>
-  approve(operator: Address, assetId: number | string | BN): TxSend<LANDRegistryTransactionReceipt>
+  approve(operator: Address, assetId: number | string | BN): TxSend<SPACERegistryTransactionReceipt>
   ownerOfLand(x: number | string | BN, y: number | string | BN): TxCall<Address>
-  setLatestToNow(user: Address): TxSend<LANDRegistryTransactionReceipt>
+  setLatestToNow(user: Address): TxSend<SPACERegistryTransactionReceipt>
   totalSupply(): TxCall<string>
-  assignNewParcel(x: number | string | BN, y: number | string | BN, beneficiary: Address): TxSend<LANDRegistryTransactionReceipt>
+  assignNewParcel(x: number | string | BN, y: number | string | BN, beneficiary: Address): TxSend<SPACERegistryTransactionReceipt>
   ownerOfLandMany(x: (number | string | BN)[], y: (number | string | BN)[]): TxCall<Address[]>
   latestPing(a0: Address): TxCall<string>
-  updateManyLandData(x: (number | string | BN)[], y: (number | string | BN)[], data: string): TxSend<LANDRegistryTransactionReceipt>
-  transferFrom(from: Address, to: Address, assetId: number | string | BN): TxSend<LANDRegistryTransactionReceipt>
+  updateManyLandData(x: (number | string | BN)[], y: (number | string | BN)[], data: string): TxSend<SPACERegistryTransactionReceipt>
+  transferFrom(from: Address, to: Address, assetId: number | string | BN): TxSend<SPACERegistryTransactionReceipt>
   isAuthorized(operator: Address, assetId: number | string | BN): TxCall<boolean>
   authorizedDeploy(a0: Address): TxCall<boolean>
   tokenOfOwnerByIndex(owner: Address, index: number | string | BN): TxCall<string>
   decimals(): TxCall<string>
-  authorizeDeploy(beneficiary: Address): TxSend<LANDRegistryTransactionReceipt>
-  transferLand(x: number | string | BN, y: number | string | BN, to: Address): TxSend<LANDRegistryTransactionReceipt>
-  safeTransferFrom(from: Address, to: Address, assetId: number | string | BN): TxSend<LANDRegistryTransactionReceipt>
-  initialize(a0: string): TxSend<LANDRegistryTransactionReceipt>
+  authorizeDeploy(beneficiary: Address): TxSend<SPACERegistryTransactionReceipt>
+  transferLand(x: number | string | BN, y: number | string | BN, to: Address): TxSend<SPACERegistryTransactionReceipt>
+  safeTransferFrom(from: Address, to: Address, assetId: number | string | BN): TxSend<SPACERegistryTransactionReceipt>
+  initialize(a0: string): TxSend<SPACERegistryTransactionReceipt>
   landData(x: number | string | BN, y: number | string | BN): TxCall<string>
-  transferManyLand(x: (number | string | BN)[], y: (number | string | BN)[], to: Address): TxSend<LANDRegistryTransactionReceipt>
+  transferManyLand(x: (number | string | BN)[], y: (number | string | BN)[], to: Address): TxSend<SPACERegistryTransactionReceipt>
   exists(assetId: number | string | BN): TxCall<boolean>
   tokensOf(owner: Address): TxCall<string[]>
-  ping(): TxSend<LANDRegistryTransactionReceipt>
+  ping(): TxSend<SPACERegistryTransactionReceipt>
   ownerOf(assetId: number | string | BN): TxCall<Address>
   GET_METADATA(): TxCall<string>
   isUpdateAuthorized(operator: Address, assetId: number | string | BN): TxCall<boolean>
@@ -135,7 +135,7 @@ interface LANDRegistryMethods {
   encodeTokenId(x: number | string | BN, y: number | string | BN): TxCall<string>
   balanceOf(owner: Address): TxCall<string>
   currentContract(): TxCall<Address>
-  setManyUpdateOperator(_assetIds: (number | string | BN)[], _operator: Address): TxSend<LANDRegistryTransactionReceipt>
+  setManyUpdateOperator(_assetIds: (number | string | BN)[], _operator: Address): TxSend<SPACERegistryTransactionReceipt>
   description(): TxCall<string>
   decodeTokenId(
     value: number | string | BN
@@ -147,13 +147,13 @@ interface LANDRegistryMethods {
     x: (number | string | BN)[],
     y: (number | string | BN)[],
     beneficiary: Address
-  ): TxSend<LANDRegistryTransactionReceipt>
-  createEstateWithMetadata(
+  ): TxSend<SPACERegistryTransactionReceipt>
+  createSectorWithMetadata(
     x: (number | string | BN)[],
     y: (number | string | BN)[],
     beneficiary: Address,
     metadata: string
-  ): TxSend<LANDRegistryTransactionReceipt>
+  ): TxSend<SPACERegistryTransactionReceipt>
   landOf(
     owner: Address
   ): TxCall<{
@@ -161,40 +161,40 @@ interface LANDRegistryMethods {
     1: string[]
   }>
   owner(): TxCall<Address>
-  setEstateRegistry(registry: Address): TxSend<LANDRegistryTransactionReceipt>
+  setSectorRegistry(registry: Address): TxSend<SPACERegistryTransactionReceipt>
   symbol(): TxCall<string>
   updateOperator(a0: number | string | BN): TxCall<Address>
-  setApprovalForAll(operator: Address, authorized: boolean): TxSend<LANDRegistryTransactionReceipt>
+  setApprovalForAll(operator: Address, authorized: boolean): TxSend<SPACERegistryTransactionReceipt>
   exists(x: number | string | BN, y: number | string | BN): TxCall<boolean>
-  setUpdateOperator(assetId: number | string | BN, operator: Address): TxSend<LANDRegistryTransactionReceipt>
-  safeTransferFrom(from: Address, to: Address, assetId: number | string | BN, userData: string): TxSend<LANDRegistryTransactionReceipt>
-  createEstate(x: (number | string | BN)[], y: (number | string | BN)[], beneficiary: Address): TxSend<LANDRegistryTransactionReceipt>
-  updateLandData(x: number | string | BN, y: number | string | BN, data: string): TxSend<LANDRegistryTransactionReceipt>
+  setUpdateOperator(assetId: number | string | BN, operator: Address): TxSend<SPACERegistryTransactionReceipt>
+  safeTransferFrom(from: Address, to: Address, assetId: number | string | BN, userData: string): TxSend<SPACERegistryTransactionReceipt>
+  createSector(x: (number | string | BN)[], y: (number | string | BN)[], beneficiary: Address): TxSend<SPACERegistryTransactionReceipt>
+  updateLandData(x: number | string | BN, y: number | string | BN, data: string): TxSend<SPACERegistryTransactionReceipt>
   estateRegistry(): TxCall<Address>
   isApprovedForAll(assetHolder: Address, operator: Address): TxCall<boolean>
   getApprovedAddress(assetId: number | string | BN): TxCall<Address>
-  setUpdateManager(_owner: Address, _operator: Address, _approved: boolean): TxSend<LANDRegistryTransactionReceipt>
-  transferOwnership(_newOwner: Address): TxSend<LANDRegistryTransactionReceipt>
-  transferManyLandToEstate(
+  setUpdateManager(_owner: Address, _operator: Address, _approved: boolean): TxSend<SPACERegistryTransactionReceipt>
+  transferOwnership(_newOwner: Address): TxSend<SPACERegistryTransactionReceipt>
+  transferManyLandToSector(
     x: (number | string | BN)[],
     y: (number | string | BN)[],
     estateId: number | string | BN
-  ): TxSend<LANDRegistryTransactionReceipt>
-  transferLandToEstate(
+  ): TxSend<SPACERegistryTransactionReceipt>
+  transferLandToSector(
     x: number | string | BN,
     y: number | string | BN,
     estateId: number | string | BN
-  ): TxSend<LANDRegistryTransactionReceipt>
-  forbidDeploy(beneficiary: Address): TxSend<LANDRegistryTransactionReceipt>
+  ): TxSend<SPACERegistryTransactionReceipt>
+  forbidDeploy(beneficiary: Address): TxSend<SPACERegistryTransactionReceipt>
 }
-export interface LANDRegistryDefinition {
-  methods: LANDRegistryMethods
-  events: LANDRegistryEvents
-  eventLogs: LANDRegistryEventLogs
+export interface SPACERegistryDefinition {
+  methods: SPACERegistryMethods
+  events: SPACERegistryEvents
+  eventLogs: SPACERegistryEventLogs
 }
-export class LANDRegistry extends Contract<LANDRegistryDefinition> {
+export class SPACERegistry extends Contract<SPACERegistryDefinition> {
   constructor(eth: Eth, address?: Address, options?: ContractOptions) {
     super(eth, abi, address, options)
   }
 }
-export const LANDRegistryAbi = abi
+export const SPACERegistryAbi = abi

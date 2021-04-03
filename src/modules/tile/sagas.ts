@@ -1,6 +1,6 @@
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 import { takeEvery, call, put } from 'redux-saga/effects'
-import { Atlas } from 'decentraland-ui'
+import { Atlas } from 'telestoworld-ui'
 import { FETCH_TILES_REQUEST, FetchTilesRequestAction, fetchTilesSuccess, fetchTilesFailure } from './actions'
 
 export const MARKETPLACE_URL = env.get('REACT_APP_MARKETPLACE_URL', '')

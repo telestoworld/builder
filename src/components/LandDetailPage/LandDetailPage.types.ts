@@ -8,7 +8,7 @@ import { ENS } from 'modules/ens/types'
 
 export type Props = {
   ensList: ENS[]
-  parcelsAvailableToBuildEstates: Record<string, boolean>
+  parcelsAvailableToBuildSectors: Record<string, boolean>
   deploymentsByCoord: Record<string, Deployment>
   landTiles: Record<string, LandTile>
   projects: ProjectState['data']
@@ -24,6 +24,6 @@ export type State = {
   showTooltip: boolean
 }
 
-export type MapStateProps = Pick<Props, 'ensList' | 'parcelsAvailableToBuildEstates' | 'deploymentsByCoord' | 'projects' | 'landTiles'>
+export type MapStateProps = Pick<Props, 'ensList' | 'parcelsAvailableToBuildSectors' | 'deploymentsByCoord' | 'projects' | 'landTiles'>
 export type MapDispatchProps = Pick<Props, 'onNavigate' | 'onOpenModal' | 'onReplace'>
 export type MapDispatch = Dispatch<CallHistoryMethodAction | OpenModalAction>

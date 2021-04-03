@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
-import { getData as getWallet, isConnecting } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
+import { getData as getWallet, isConnecting } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { RootState } from 'modules/common/types'
 import { getCollections, getLoading as getLoadingCollection } from 'modules/collection/selectors'
 import { getLoading as getLoadingItem } from 'modules/item/selectors'

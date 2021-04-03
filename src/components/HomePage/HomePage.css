@@ -62,8 +62,8 @@
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.24);
   transform: translateY(-4px);
 }
-.HomePage .dcl.tabs,
-.HomePage .dcl.tabs .ui.container {
+.HomePage .tw.tabs,
+.HomePage .tw.tabs .ui.container {
   position: relative;
 }
 

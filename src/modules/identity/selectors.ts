@@ -1,9 +1,9 @@
 import { createSelector } from 'reselect'
-import { AuthIdentity } from 'dcl-crypto'
-import { isConnecting, getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { AuthIdentity } from 'tw-crypto'
+import { isConnecting, getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import { RootState } from 'modules/common/types'
 import { isValid } from './utils'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { GENERATE_IDENTITY_REQUEST } from './actions'
 
 export const getState = (state: RootState) => state.identity

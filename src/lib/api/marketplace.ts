@@ -1,5 +1,5 @@
 import { gql } from 'apollo-boost'
-import { env } from 'decentraland-commons'
+import { env } from 'telestoworld-commons'
 import { createClient } from './graph'
 
 export const MARKETPLACE_URL = env.get('REACT_APP_MARKETPLACE_GRAPH_URL', '')

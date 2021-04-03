@@ -4,9 +4,9 @@ import { takeLatest, put, select, take, call, all, race, delay } from 'redux-sag
 import { ActionCreators } from 'redux-undo'
 import JSZip from 'jszip'
 import { saveAs } from 'file-saver'
-import { ModelById } from 'decentraland-dapps/dist/lib/types'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { ModelById } from 'telestoworld-dapps/dist/lib/types'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 import {
   CREATE_PROJECT_FROM_TEMPLATE,
   CreateProjectFromTemplateAction,
@@ -54,7 +54,7 @@ import { builder } from 'lib/api/builder'
 import { saveProjectRequest } from 'modules/sync/actions'
 import { Gizmo } from 'modules/editor/types'
 import { Pool } from 'modules/pool/types'
-import { loadProfileRequest } from 'decentraland-dapps/dist/modules/profile/actions'
+import { loadProfileRequest } from 'telestoworld-dapps/dist/modules/profile/actions'
 import { LOGIN_SUCCESS, LoginSuccessAction } from 'modules/identity/actions'
 import { getName } from 'modules/profile/selectors'
 import { locations } from 'routing/locations'

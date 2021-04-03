@@ -5,8 +5,8 @@
 }
 
 .LandDetailPage .atlas-wrapper.clickable,
-.LandDetailPage .atlas-wrapper.clickable .dcl.atlas .react-tile-map-canvas:not(.draggable),
-.LandDetailPage .atlas-wrapper.clickable .dcl.atlas .react-tile-map-canvas.draggable {
+.LandDetailPage .atlas-wrapper.clickable .tw.atlas .react-tile-map-canvas:not(.draggable),
+.LandDetailPage .atlas-wrapper.clickable .tw.atlas .react-tile-map-canvas.draggable {
   cursor: pointer;
 }
 
@@ -22,11 +22,11 @@
   margin-left: 8px;
 }
 
-.LandDetailPage .dcl.atlas .react-tile-map-canvas {
+.LandDetailPage .tw.atlas .react-tile-map-canvas {
   border-radius: 8px;
 }
 
-.LandDetailPage .dcl.stats.operators .Profile {
+.LandDetailPage .tw.stats.operators .Profile {
   display: inline-block;
   margin-right: 20px;
 }
@@ -35,19 +35,19 @@
   text-transform: capitalize;
 }
 
-.LandDetailPage .dcl.column.actions {
+.LandDetailPage .tw.column.actions {
   margin-left: 20px;
 }
 
-.LandDetailPage .dcl.section.medium.no-margin-bottom {
+.LandDetailPage .tw.section.medium.no-margin-bottom {
   margin-bottom: 0px;
 }
 
-.LandDetailPage .dcl.section.data .dcl.stats {
+.LandDetailPage .tw.section.data .tw.stats {
   margin-right: 48px;
 }
 
-.LandDetailPage .dcl.section.data .dcl.stats + .dcl.stats {
+.LandDetailPage .tw.section.data .tw.stats + .tw.stats {
   margin-left: 0px;
 }
 

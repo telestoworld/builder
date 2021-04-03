@@ -9,6 +9,6 @@
     "importHelpers": true,
     "outDir": "."
   },
-  "includes": ["../../node_modules/decentraland-builder-scripts/types.d.ts", "*.ts"],
+  "includes": ["../../node_modules/telestoworld-builder-scripts/types.d.ts", "*.ts"],
   "exclude": []
 }

@@ -1,5 +1,5 @@
-import { Coord } from 'decentraland-ui'
-import { Transaction } from 'decentraland-dapps/dist/modules/transaction/types'
+import { Coord } from 'telestoworld-ui'
+import { Transaction } from 'telestoworld-dapps/dist/modules/transaction/types'
 import { Collection } from 'modules/collection/types'
 import { Item } from 'modules/item/types'
 

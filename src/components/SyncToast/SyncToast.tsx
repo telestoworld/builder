@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { Close, Button } from 'decentraland-ui'
-import { t, T } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { Close, Button } from 'telestoworld-ui'
+import { t, T } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 
 import { Props, State } from './SyncToast.types'
 import './SyncToast.css'

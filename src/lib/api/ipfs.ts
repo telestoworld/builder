@@ -1,12 +1,12 @@
 import * as contentHash from 'content-hash'
-import { env } from 'decentraland-commons'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { env } from 'telestoworld-commons'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Land } from 'modules/land/types'
 import { getSelection, getCenter, coordsToId } from 'modules/land/utils'
 import { blobToCID } from 'modules/media/utils'
 
 export const IPFS_URL = env.get('REACT_APP_IPFS_URL', '')
-export const LAND_POSITION_URL = env.get('REACT_APP_LAND_POSITION_URL', '')
+export const SPACE_POSITION_URL = env.get('REACT_APP_SPACE_POSITION_URL', '')
 
 const INDEX_FILE_PATH = 'index.html'
 
@@ -19,13 +19,13 @@ export class IpfsAPI {
     <head>
       <meta
         http-equiv="refresh"
-        content="0; URL=${LAND_POSITION_URL}${coordsToId(x, y)}"
+        content="0; URL=${SPACE_POSITION_URL}${coordsToId(x, y)}"
       />
     </head>
     <body>
       <p>
         ${t('ipfs_api.not_redirected')}
-        <a href="${LAND_POSITION_URL}${coordsToId(x, y)}">
+        <a href="${SPACE_POSITION_URL}${coordsToId(x, y)}">
           ${t('global.click_here')}
         </a>.
       </p>

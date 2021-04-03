@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Form, Field, Row, Button, InputOnChangeData } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Form, Field, Row, Button, InputOnChangeData } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Link } from 'react-router-dom'
 import { getUpdateOperator } from 'modules/land/utils'
 import { locations } from 'routing/locations'

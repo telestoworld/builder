@@ -1,10 +1,10 @@
 import React from 'react'
-import { T, t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { T, t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import { Link } from 'react-router-dom'
 import { locations } from 'routing/locations'
 import {
-  TRANSFER_LAND_SUCCESS,
-  EDIT_LAND_SUCCESS,
+  TRANSFER_SPACE_SUCCESS,
+  EDIT_SPACE_SUCCESS,
   SET_OPERATOR_SUCCESS,
   CREATE_ESTATE_SUCCESS,
   EDIT_ESTATE_SUCCESS,
@@ -18,8 +18,8 @@ import {
   SET_COLLECTION_MANAGERS_SUCCESS,
   PUBLISH_COLLECTION_SUCCESS
 } from 'modules/collection/actions'
-import { SET_ENS_RESOLVER_SUCCESS, SET_ENS_CONTENT_SUCCESS, ALLOW_CLAIM_MANA_SUCCESS, CLAIM_NAME_SUCCESS } from 'modules/ens/actions'
-import { isEnoughClaimMana } from 'modules/ens/utils'
+import { SET_ENS_RESOLVER_SUCCESS, SET_ENS_CONTENT_SUCCESS, ALLOW_CLAIM_TELO_SUCCESS, CLAIM_NAME_SUCCESS } from 'modules/ens/actions'
+import { isEnoughClaimTelo } from 'modules/ens/utils'
 import Profile from 'components/Profile'
 import { Props } from './Transaction.types'
 import TransactionDetail from './TransactionDetail'
@@ -27,7 +27,7 @@ import TransactionDetail from './TransactionDetail'
 const Transaction = (props: Props) => {
   const { tx } = props
   switch (tx.actionType) {
-    case TRANSFER_LAND_SUCCESS: {
+    case TRANSFER_SPACE_SUCCESS: {
       const { name, address, selection } = tx.payload
       return (
         <TransactionDetail
@@ -45,7 +45,7 @@ const Transaction = (props: Props) => {
         />
       )
     }
-    case EDIT_LAND_SUCCESS: {
+    case EDIT_SPACE_SUCCESS: {
       const { name, selection } = tx.payload
       return (
         <TransactionDetail
@@ -274,13 +274,13 @@ const Transaction = (props: Props) => {
         />
       )
     }
-    case ALLOW_CLAIM_MANA_SUCCESS: {
+    case ALLOW_CLAIM_TELO_SUCCESS: {
       const { address, allowance } = tx.payload
       return (
         <TransactionDetail
           address={address}
           text={
-            isEnoughClaimMana(allowance) ? (
+            isEnoughClaimTelo(allowance) ? (
               <T id="transaction.allowed_claim_mana" values={{ address: <Profile address={address} /> }} />
             ) : (
               <T id="transaction.disallowed_claim_mana" values={{ address: <Profile address={address} /> }} />

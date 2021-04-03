@@ -1,5 +1,5 @@
-import { loadingReducer, LoadingState } from 'decentraland-dapps/dist/modules/loading/reducer'
-import { DataByKey } from 'decentraland-dapps/dist/lib/types'
+import { loadingReducer, LoadingState } from 'telestoworld-dapps/dist/modules/loading/reducer'
+import { DataByKey } from 'telestoworld-dapps/dist/lib/types'
 
 import { DELETE_PROJECT, DeleteProjectAction } from 'modules/project/actions'
 import {
@@ -10,16 +10,16 @@ import {
   DeployToPoolFailureAction,
   SetProgressAction,
   SET_PROGRESS,
-  DEPLOY_TO_LAND_SUCCESS,
+  DEPLOY_TO_SPACE_SUCCESS,
   DeployToLandSuccessAction,
   ClearDeploymentSuccessAction,
   ClearDeploymentFailureAction,
   CLEAR_DEPLOYMENT_SUCCESS,
   CLEAR_DEPLOYMENT_FAILURE,
-  DEPLOY_TO_LAND_FAILURE,
+  DEPLOY_TO_SPACE_FAILURE,
   DeployToLandFailureAction,
   DEPLOY_TO_POOL_REQUEST,
-  DEPLOY_TO_LAND_REQUEST,
+  DEPLOY_TO_SPACE_REQUEST,
   DeployToLandRequestAction,
   CLEAR_DEPLOYMENT_REQUEST,
   ClearDeploymentRequestAction,
@@ -105,13 +105,13 @@ export const deploymentReducer = (state = INITIAL_STATE, action: DeploymentReduc
         loading: loadingReducer(state.loading, action)
       }
     }
-    case DEPLOY_TO_LAND_REQUEST: {
+    case DEPLOY_TO_SPACE_REQUEST: {
       return {
         ...state,
         error: null
       }
     }
-    case DEPLOY_TO_LAND_SUCCESS: {
+    case DEPLOY_TO_SPACE_SUCCESS: {
       const { deployment, overrideDeploymentId } = action.payload
 
       const newData = {
@@ -132,7 +132,7 @@ export const deploymentReducer = (state = INITIAL_STATE, action: DeploymentReduc
         }
       }
     }
-    case DEPLOY_TO_LAND_FAILURE: {
+    case DEPLOY_TO_SPACE_FAILURE: {
       return {
         ...state,
         data: {

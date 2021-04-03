@@ -1,5 +1,5 @@
-import { FetchTransactionSuccessAction, FETCH_TRANSACTION_SUCCESS } from 'decentraland-dapps/dist/modules/transaction/actions'
-import { LoadingState, loadingReducer } from 'decentraland-dapps/dist/modules/loading/reducer'
+import { FetchTransactionSuccessAction, FETCH_TRANSACTION_SUCCESS } from 'telestoworld-dapps/dist/modules/transaction/actions'
+import { LoadingState, loadingReducer } from 'telestoworld-dapps/dist/modules/loading/reducer'
 import { Mint } from 'modules/collection/types'
 import { PUBLISH_COLLECTION_SUCCESS, MINT_COLLECTION_ITEMS_SUCCESS } from 'modules/collection/actions'
 import {

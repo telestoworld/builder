@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { RootState } from 'modules/common/types'
 import { saveItemRequest, savePublishedItemRequest, SAVE_ITEM_REQUEST, SAVE_PUBLISHED_ITEM_REQUEST } from 'modules/item/actions'
 import { getLoading, getError } from 'modules/item/selectors'

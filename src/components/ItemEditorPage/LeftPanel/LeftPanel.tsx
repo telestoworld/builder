@@ -1,6 +1,6 @@
 import * as React from 'react'
-import { Loader } from 'decentraland-ui'
-import { t } from 'decentraland-dapps/dist/modules/translation/utils'
+import { Loader } from 'telestoworld-ui'
+import { t } from 'telestoworld-dapps/dist/modules/translation/utils'
 import CollectionProvider from 'components/CollectionProvider'
 import Header from './Header'
 import Items from './Items'

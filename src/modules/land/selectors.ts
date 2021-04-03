@@ -1,12 +1,12 @@
 import { createSelector } from 'reselect'
-import { AtlasTile, Coord } from 'decentraland-ui'
-import { getAddress } from 'decentraland-dapps/dist/modules/wallet/selectors'
-import { isLoadingType } from 'decentraland-dapps/dist/modules/loading/selectors'
+import { AtlasTile, Coord } from 'telestoworld-ui'
+import { getAddress } from 'telestoworld-dapps/dist/modules/wallet/selectors'
+import { isLoadingType } from 'telestoworld-dapps/dist/modules/loading/selectors'
 import { RootState } from 'modules/common/types'
 import { getData as getDeployments } from 'modules/deployment/selectors'
 import { DeploymentState } from 'modules/deployment/reducer'
 import { getTiles } from 'modules/tile/selectors'
-import { FETCH_LANDS_REQUEST } from './actions'
+import { FETCH_SPACES_REQUEST } from './actions'
 import { coordsToId, colorByRole, hasNeighbour } from './utils'
 import { Land, LandType, LandTile } from './types'
 import { Deployment } from 'modules/deployment/types'
@@ -21,9 +21,9 @@ export const getLands = createSelector<RootState, string | undefined, Record<str
   getData,
   (address, data) => (address && address in data ? data[address] : [])
 )
-export const isLoading = (state: RootState) => isLoadingType(getLoading(state), FETCH_LANDS_REQUEST)
+export const isLoading = (state: RootState) => isLoadingType(getLoading(state), FETCH_SPACES_REQUEST)
 
-export const getCoordsByEstateId = createSelector<RootState, Record<string, AtlasTile>, Record<string, string[]>>(getTiles, tiles => {
+export const getCoordsBySectorId = createSelector<RootState, Record<string, AtlasTile>, Record<string, string[]>>(getTiles, tiles => {
   const result: Record<string, string[]> = {}
   for (const tile of Object.values(tiles)) {
     if (tile.estate_id) {
@@ -43,7 +43,7 @@ export const getLandTiles = createSelector<
   Record<string, AtlasTile>,
   Record<string, string[]>,
   Record<string, LandTile>
->(getLands, getTiles, getCoordsByEstateId, (lands, tiles, coordsByEstateId) => {
+>(getLands, getTiles, getCoordsBySectorId, (lands, tiles, coordsBySectorId) => {
   const result: Record<string, LandTile> = {}
   for (const land of lands) {
     if (land.type === LandType.PARCEL) {
@@ -54,7 +54,7 @@ export const getLandTiles = createSelector<
       }
     } else {
       const estateId = land.id
-      const coords = coordsByEstateId[estateId]
+      const coords = coordsBySectorId[estateId]
       if (coords) {
         for (const coord of coords) {
           const tile = tiles[coord]
@@ -113,7 +113,7 @@ export const getDeploymentsByLandId = createSelector<
   return out
 })
 
-export const getParcelsAvailableToBuildEstates = createSelector<RootState, Record<string, LandTile>, Record<string, boolean>>(
+export const getParcelsAvailableToBuildSectors = createSelector<RootState, Record<string, LandTile>, Record<string, boolean>>(
   getLandTiles,
   landTiles => {
     const all = Object.values(landTiles)

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { push } from 'connected-react-router'
-import { getAddress, getMana } from 'decentraland-dapps/dist/modules/wallet/selectors'
+import { getAddress, getTelo } from 'telestoworld-dapps/dist/modules/wallet/selectors'
 
 import { RootState } from 'modules/common/types'
 import { getAuthorizations } from 'modules/land/selectors'
@@ -10,7 +10,7 @@ import SettingsPage from './SettingsPage'
 
 const mapState = (state: RootState): MapStateProps => ({
   address: getAddress(state),
-  mana: getMana(state),
+  mana: getTelo(state),
   authorizations: getAuthorizations(state)
 })
 

@@ -1,8 +1,8 @@
 import * as React from 'react'
-import { Button, Loader, Header, Row } from 'decentraland-ui'
-import Modal from 'decentraland-dapps/dist/containers/Modal'
-import { T, t } from 'decentraland-dapps/dist/modules/translation/utils'
-import { getAnalytics } from 'decentraland-dapps/dist/modules/analytics/utils'
+import { Button, Loader, Header, Row } from 'telestoworld-ui'
+import Modal from 'telestoworld-dapps/dist/containers/Modal'
+import { T, t } from 'telestoworld-dapps/dist/modules/translation/utils'
+import { getAnalytics } from 'telestoworld-dapps/dist/modules/analytics/utils'
 import { DeploymentStatus } from 'modules/deployment/types'
 import { coordsToId } from 'modules/land/utils'
 import { getDeployment, getStatus } from 'modules/deployment/utils'
@@ -37,7 +37,7 @@ export default class DeployToLand extends React.PureComponent<Props, State> {
 
   componentWillUpdate(_: Props, nextState: State) {
     if (nextState.view !== this.state.view) {
-      this.analytics.track('Publish to LAND step', { step: nextState.view })
+      this.analytics.track('Publish to SPACE step', { step: nextState.view })
     }
   }
 
@@ -271,7 +271,7 @@ export default class DeployToLand extends React.PureComponent<Props, State> {
           <Button
             size="small"
             primary
-            href={`https://play.decentraland.org?position=${placement!.point.x},${placement!.point.y}`}
+            href={`https://play.telesto.world?position=${placement!.point.x},${placement!.point.y}`}
             target="_blank"
             rel="no:opener no:referrer"
           >

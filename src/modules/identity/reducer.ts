@@ -1,5 +1,5 @@
-import { AuthIdentity } from 'dcl-crypto'
-import { loadingReducer, LoadingState } from 'decentraland-dapps/dist/modules/loading/reducer'
+import { AuthIdentity } from 'tw-crypto'
+import { loadingReducer, LoadingState } from 'telestoworld-dapps/dist/modules/loading/reducer'
 import {
   GenerateIdentityRequestAction,
   GenerateIdentitySuccessAction,

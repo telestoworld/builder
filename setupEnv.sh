@@ -2,5 +2,5 @@
 
 set -e
 
-source dcl-env
+source tw-env
 cp .ci/.env.${ENVIRONMENT} .env

@@ -1,13 +1,13 @@
 {
   "outputPath": "./src/contracts",
   "contracts": {
-    "LANDRegistry": {
+    "SPACERegistry": {
       "source": "files",
-      "abiFile": "./src/contracts/LANDRegistry.json"
+      "abiFile": "./src/contracts/SPACERegistry.json"
     },
-    "EstateRegistry": {
+    "SectorRegistry": {
       "source": "files",
-      "abiFile": "./src/contracts/EstateRegistry.json"
+      "abiFile": "./src/contracts/SectorRegistry.json"
     },
     "CollectionManager": {
       "source": "files",
@@ -33,13 +33,13 @@
       "source": "files",
       "abiFile": "./src/contracts/ERC20.json"
     },
-    "DCLController": {
+    "TWController": {
       "source": "files",
-      "abiFile": "./src/contracts/DCLController.json"
+      "abiFile": "./src/contracts/TWController.json"
     },
-    "DCLRegistrar": {
+    "TWRegistrar": {
       "source": "files",
-      "abiFile": "./src/contracts/DCLRegistrar.json"
+      "abiFile": "./src/contracts/TWRegistrar.json"
     }
   }
 }

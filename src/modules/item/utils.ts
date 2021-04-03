@@ -1,5 +1,5 @@
-import { ChainId, getChainName } from '@dcl/schemas'
-import { utils } from 'decentraland-commons'
+import { ChainId, getChainName } from 'tw-schemas'
+import { utils } from 'telestoworld-commons'
 import future from 'fp-future'
 import { getContentsStorageUrl } from 'lib/api/builder'
 import { Collection } from 'modules/collection/types'
@@ -26,7 +26,7 @@ export function getCatalystPointer(collection: Collection, item: Item) {
     throw new Error('You need the collection and item to be published to get the catalyst entity id')
   }
   const chainName = getChainName(ChainId.MATIC_MUMBAI)!.toLowerCase()
-  return `urn:decentraland:${chainName}:collections-v2:${collection.contractAddress}:${item.tokenId}`
+  return `urn:telestoworld:${chainName}:collections-v2:${collection.contractAddress}:${item.tokenId}`
 }
 
 export function getBodyShapeType(item: Item) {
@@ -98,7 +98,7 @@ export function getMetadata(item: Item) {
       const data = item.data as WearableData
       const bodyShapes = getBodyShapes(item)
       return `${version}:${type}:${item.name}:${item.description}:${data.category}:${bodyShapes
-        .map(bodyShape => bodyShape.split(':').pop()) // bodyShape is like "urn:decentraland:off-chain:base-avatars:BaseMale" and we just want the "BaseMale" part
+        .map(bodyShape => bodyShape.split(':').pop()) // bodyShape is like "urn:telestoworld:off-chain:base-avatars:BaseMale" and we just want the "BaseMale" part
         .join(',')}`
     }
     default:
